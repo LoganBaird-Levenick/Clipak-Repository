@@ -1,0 +1,116 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:d00083ab-834c-4541-8318-ba8b288d7801",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-01-01T00:00:00Z",
+    "tools": [
+      {
+        "vendor": "Clipak",
+        "name": "clipak-builder",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "htop",
+      "version": "3.5.3",
+      "description": "htop is a cross-platform interactive process viewer. Inside Clipak, it accesses the host PID namespace, host cgroups, CPU performance stats, and memory allocations without container isolation overhead.",
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:generic/htop@3.5.3"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "libcap.so.2",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libcap.so.2@bundled"
+    },
+    {
+      "type": "library",
+      "name": "libncursesw.so.6",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libncursesw.so.6@bundled"
+    },
+    {
+      "type": "library",
+      "name": "libtinfo.so.6",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libtinfo.so.6@bundled"
+    },
+    {
+      "type": "library",
+      "name": "libhwloc.so.15",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libhwloc.so.15@bundled"
+    },
+    {
+      "type": "library",
+      "name": "libudev.so.1",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libudev.so.1@bundled"
+    },
+    {
+      "type": "library",
+      "name": "libgcc_s.so.1",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "GPL-2.0-or-later"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libgcc_s.so.1@bundled"
+    }
+  ]
+}

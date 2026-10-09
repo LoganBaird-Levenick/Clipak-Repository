@@ -1,0 +1,126 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "strace-7.2",
+  "document_namespace": "https://clipak.org/spdx/strace/7.2",
+  "creation_info": {
+    "created": "2026-01-01T00:00:00Z",
+    "creators": [
+      "Tool: Clipak-0.1.0",
+      "Organization: Clipak"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-strace",
+      "name": "strace",
+      "version_info": "7.2",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": "strace is a diagnostic, debugging and instructional userspace tracer for Linux. It runs unconfined on immutable Linux hosts to trace system calls, signal deliveries, and process state changes without sandbox restrictions."
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libdw.so.1",
+      "name": "libdw.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libselinux.so.1",
+      "name": "libselinux.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libelf.so.1",
+      "name": "libelf.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libz.so.1",
+      "name": "libz.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libzstd.so.1",
+      "name": "libzstd.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-liblzma.so.5",
+      "name": "liblzma.so.5",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libbz2.so.1",
+      "name": "libbz2.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libpcre2-8.so.0",
+      "name": "libpcre2-8.so.0",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libgcc_s.so.1",
+      "name": "libgcc_s.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "LGPL-2.1-or-later",
+      "license_declared": "LGPL-2.1-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    }
+  ]
+}

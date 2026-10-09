@@ -1,0 +1,26 @@
+id: "io.github.htop"
+name: "htop"
+version: "3.5.3"
+summary: "Interactive host process viewer and system monitor"
+description: "htop is a cross-platform interactive process viewer. Inside Clipak, it accesses the host PID namespace, host cgroups, CPU performance stats, and memory allocations without container isolation overhead."
+license: "GPL-2.0-or-later"
+category: "System"
+runtime: "org.clipak.Runtime//1.0"
+binaries:
+  - name: "htop"
+    summary: "Interactive process viewer"
+curation:
+  unconfined_reason: "Requires unconfined visibility of host PID hierarchy, /proc process descriptors, host cgroups, and sysfs hardware counters"
+  required_host_capabilities:
+    - "host-processes"
+    - "proc-sysfs"
+    - "cgroups"
+  flatpak_incompatible: true
+build:
+  steps:
+    - name: "bundle-htop"
+      command: |
+        mkdir -p "${DESTDIR}/bin" "${DESTDIR}/share"
+        cp -a /usr/bin/htop "${DESTDIR}/bin/htop"
+        chmod +x "${DESTDIR}/bin/htop"
+        if [ -d /usr/share/htop ]; then cp -a /usr/share/htop "${DESTDIR}/share/"; fi

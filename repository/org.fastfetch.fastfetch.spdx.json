@@ -1,0 +1,49 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "fastfetch-2.68.1",
+  "document_namespace": "https://clipak.org/spdx/fastfetch/2.68.1",
+  "creation_info": {
+    "created": "2026-01-01T00:00:00Z",
+    "creators": [
+      "Tool: Clipak-0.1.0",
+      "Organization: Clipak"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-fastfetch",
+      "name": "fastfetch",
+      "version_info": "2.68.1",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "MIT",
+      "license_declared": "MIT",
+      "copyright_text": "NOASSERTION",
+      "description": "fastfetch is a fast and feature-rich system information tool. Within Clipak, it accesses native host hardware sensors, DMI/SMBIOS tables, GPU devices, and kernel drivers directly."
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libyyjson.so.0",
+      "name": "libyyjson.so.0",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "MIT",
+      "license_declared": "MIT",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libgcc_s.so.1",
+      "name": "libgcc_s.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "MIT",
+      "license_declared": "MIT",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    }
+  ]
+}

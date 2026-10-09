@@ -1,0 +1,49 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "ripgrep-15.2.0",
+  "document_namespace": "https://clipak.org/spdx/ripgrep/15.2.0",
+  "creation_info": {
+    "created": "2026-01-01T00:00:00Z",
+    "creators": [
+      "Tool: Clipak-0.1.0",
+      "Organization: Clipak"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-ripgrep",
+      "name": "ripgrep",
+      "version_info": "15.2.0",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "Unlicense OR MIT",
+      "license_declared": "Unlicense OR MIT",
+      "copyright_text": "NOASSERTION",
+      "description": "ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern. Inside Clipak, it executes unconfined across arbitrary host mount points and project hierarchies."
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libpcre2-8.so.0",
+      "name": "libpcre2-8.so.0",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "Unlicense OR MIT",
+      "license_declared": "Unlicense OR MIT",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libgcc_s.so.1",
+      "name": "libgcc_s.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "Unlicense OR MIT",
+      "license_declared": "Unlicense OR MIT",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    }
+  ]
+}

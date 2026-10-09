@@ -1,0 +1,93 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "htop-3.5.3",
+  "document_namespace": "https://clipak.org/spdx/htop/3.5.3",
+  "creation_info": {
+    "created": "2026-01-01T00:00:00Z",
+    "creators": [
+      "Tool: Clipak-0.1.0",
+      "Organization: Clipak"
+    ]
+  },
+  "packages": [
+    {
+      "SPDXID": "SPDXRef-Package-htop",
+      "name": "htop",
+      "version_info": "3.5.3",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "GPL-2.0-or-later",
+      "license_declared": "GPL-2.0-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": "htop is a cross-platform interactive process viewer. Inside Clipak, it accesses the host PID namespace, host cgroups, CPU performance stats, and memory allocations without container isolation overhead."
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libcap.so.2",
+      "name": "libcap.so.2",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "GPL-2.0-or-later",
+      "license_declared": "GPL-2.0-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libncursesw.so.6",
+      "name": "libncursesw.so.6",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "GPL-2.0-or-later",
+      "license_declared": "GPL-2.0-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libtinfo.so.6",
+      "name": "libtinfo.so.6",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "GPL-2.0-or-later",
+      "license_declared": "GPL-2.0-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libhwloc.so.15",
+      "name": "libhwloc.so.15",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "GPL-2.0-or-later",
+      "license_declared": "GPL-2.0-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libudev.so.1",
+      "name": "libudev.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "GPL-2.0-or-later",
+      "license_declared": "GPL-2.0-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    },
+    {
+      "SPDXID": "SPDXRef-Component-libgcc_s.so.1",
+      "name": "libgcc_s.so.1",
+      "version_info": "bundled",
+      "download_location": "NOASSERTION",
+      "files_analyzed": false,
+      "license_concluded": "GPL-2.0-or-later",
+      "license_declared": "GPL-2.0-or-later",
+      "copyright_text": "NOASSERTION",
+      "description": null
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "id": "org.kernel.strace",
+  "name": "strace",
+  "version": "7.2",
+  "summary": "Diagnostic, debugging and instructional userspace tracer with host ptrace access",
+  "description": "strace is a diagnostic, debugging and instructional userspace tracer for Linux. It runs unconfined on immutable Linux hosts to trace system calls, signal deliveries, and process state changes without sandbox restrictions.",
+  "license": "LGPL-2.1-or-later",
+  "category": "Diagnostics",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "strace",
+      "target": null,
+      "summary": "System call tracer"
+    }
+  ],
+  "environment": {},
+  "curation": {
+    "unconfined_reason": "Requires unconfined access to host process IDs (PIDs), ptrace syscall, and host /proc for system call diagnostics",
+    "required_host_capabilities": [
+      "ptrace",
+      "host-processes",
+      "kernel-trace"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-strace",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/strace \"${DESTDIR}/bin/strace\"\nchmod +x \"${DESTDIR}/bin/strace\"\n"
+      }
+    ],
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "build_env": {}
+  }
+}

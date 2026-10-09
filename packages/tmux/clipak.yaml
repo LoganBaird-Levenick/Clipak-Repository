@@ -1,0 +1,25 @@
+id: "org.tmux.tmux"
+name: "tmux"
+version: "3.7c"
+summary: "Terminal multiplexer with unconfined access to host pseudo-terminals and processes"
+description: "tmux is a terminal multiplexer that lets you switch easily between several programs in one terminal, detach them and reattach them to a different terminal. Inside Clipak, it accesses the host session sockets and user processes directly."
+license: "ISC"
+category: "System"
+runtime: "org.clipak.Runtime//1.0"
+binaries:
+  - name: "tmux"
+    summary: "Terminal multiplexer"
+curation:
+  unconfined_reason: "Requires unconfined host PID access, host pseudo-terminals (/dev/pts), and persistent user session UNIX domain sockets across /run/user"
+  required_host_capabilities:
+    - "host-processes"
+    - "pty-access"
+    - "session-sockets"
+  flatpak_incompatible: true
+build:
+  steps:
+    - name: "bundle-tmux"
+      command: |
+        mkdir -p "${DESTDIR}/bin"
+        cp -a /usr/bin/tmux "${DESTDIR}/bin/tmux"
+        chmod +x "${DESTDIR}/bin/tmux"

@@ -1,0 +1,98 @@
+{
+  "name": "Clipak Official Repository",
+  "description": "Curated repository for unconfined developer utilities",
+  "url": "https://raw.githubusercontent.com/LoganBaird-Levenick/Clipak-Repository/main",
+  "updated_at": "SystemTime { tv_sec: 1791502608, tv_nsec: 849674973 }",
+  "packages": [
+    {
+      "id": "org.kernel.strace",
+      "name": "strace",
+      "version": "7.2",
+      "architecture": "x86_64",
+      "summary": "Diagnostic, debugging and instructional userspace tracer with host ptrace access",
+      "license": "LGPL-2.1-or-later",
+      "ddi_filename": "org.kernel.strace-7.2.ddi",
+      "ddi_sha256": "1184225a46885f25458d3fb5db651c70528ef61520573b01e42a353b04fee02f",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 3142144,
+      "exported_binaries": [
+        "strace"
+      ],
+      "manifest_filename": "org.kernel.strace.manifest.json",
+      "sbom_spdx_filename": "org.kernel.strace.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.strace.cyclonedx.json"
+    },
+    {
+      "id": "io.github.htop",
+      "name": "htop",
+      "version": "3.5.3",
+      "architecture": "x86_64",
+      "summary": "Interactive host process viewer and system monitor",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "io.github.htop-3.5.3.ddi",
+      "ddi_sha256": "83bc9d0966ce301a938a24c465831656869f2f4d09ddca9ad00a4f558bfb2701",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 1253888,
+      "exported_binaries": [
+        "htop"
+      ],
+      "manifest_filename": "io.github.htop.manifest.json",
+      "sbom_spdx_filename": "io.github.htop.spdx.json",
+      "sbom_cyclonedx_filename": "io.github.htop.cyclonedx.json"
+    },
+    {
+      "id": "org.fastfetch.fastfetch",
+      "name": "fastfetch",
+      "version": "2.68.1",
+      "architecture": "x86_64",
+      "summary": "High-performance host system, hardware, and kernel diagnostic fetcher",
+      "license": "MIT",
+      "ddi_filename": "org.fastfetch.fastfetch-2.68.1.ddi",
+      "ddi_sha256": "e251ef475520cd59a0dd560b6bc2e984e4674b95b82cd7164963c66ab3b3cee2",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 1569280,
+      "exported_binaries": [
+        "fastfetch"
+      ],
+      "manifest_filename": "org.fastfetch.fastfetch.manifest.json",
+      "sbom_spdx_filename": "org.fastfetch.fastfetch.spdx.json",
+      "sbom_cyclonedx_filename": "org.fastfetch.fastfetch.cyclonedx.json"
+    },
+    {
+      "id": "org.tmux.tmux",
+      "name": "tmux",
+      "version": "3.7c",
+      "architecture": "x86_64",
+      "summary": "Terminal multiplexer with unconfined access to host pseudo-terminals and processes",
+      "license": "ISC",
+      "ddi_filename": "org.tmux.tmux-3.7c.ddi",
+      "ddi_sha256": "64e20a5c597ffc22ff05e3c1b69300e3946f1b6db3832089332024ed2be47e92",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 2175488,
+      "exported_binaries": [
+        "tmux"
+      ],
+      "manifest_filename": "org.tmux.tmux.manifest.json",
+      "sbom_spdx_filename": "org.tmux.tmux.spdx.json",
+      "sbom_cyclonedx_filename": "org.tmux.tmux.cyclonedx.json"
+    },
+    {
+      "id": "org.ripgrep.rg",
+      "name": "ripgrep",
+      "version": "15.2.0",
+      "architecture": "x86_64",
+      "summary": "Line-oriented search tool that recursively searches current directory for a regex pattern",
+      "license": "Unlicense OR MIT",
+      "ddi_filename": "org.ripgrep.rg-15.2.0.ddi",
+      "ddi_sha256": "e6682e74e710430b41c111bd5d89ddfefb2e0ea74da700997496007c531d2449",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 3326464,
+      "exported_binaries": [
+        "rg"
+      ],
+      "manifest_filename": "org.ripgrep.rg.manifest.json",
+      "sbom_spdx_filename": "org.ripgrep.rg.spdx.json",
+      "sbom_cyclonedx_filename": "org.ripgrep.rg.cyclonedx.json"
+    }
+  ]
+}

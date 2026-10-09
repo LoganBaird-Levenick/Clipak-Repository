@@ -1,0 +1,60 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:a1a2b126-6667-4570-98a1-7ccc4b459251",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-01-01T00:00:00Z",
+    "tools": [
+      {
+        "vendor": "Clipak",
+        "name": "clipak-builder",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "ripgrep",
+      "version": "15.2.0",
+      "description": "ripgrep is a line-oriented search tool that recursively searches your current directory for a regex pattern. Inside Clipak, it executes unconfined across arbitrary host mount points and project hierarchies.",
+      "licenses": [
+        {
+          "license": {
+            "id": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "purl": "pkg:generic/ripgrep@15.2.0"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "libpcre2-8.so.0",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libpcre2-8.so.0@bundled"
+    },
+    {
+      "type": "library",
+      "name": "libgcc_s.so.1",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "Unlicense OR MIT"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libgcc_s.so.1@bundled"
+    }
+  ]
+}

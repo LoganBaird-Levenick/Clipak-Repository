@@ -1,0 +1,60 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:6be8e5f5-30aa-4943-bf3d-9e0d686c2315",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-01-01T00:00:00Z",
+    "tools": [
+      {
+        "vendor": "Clipak",
+        "name": "clipak-builder",
+        "version": "0.1.0"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "fastfetch",
+      "version": "2.68.1",
+      "description": "fastfetch is a fast and feature-rich system information tool. Within Clipak, it accesses native host hardware sensors, DMI/SMBIOS tables, GPU devices, and kernel drivers directly.",
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:generic/fastfetch@2.68.1"
+    }
+  },
+  "components": [
+    {
+      "type": "library",
+      "name": "libyyjson.so.0",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libyyjson.so.0@bundled"
+    },
+    {
+      "type": "library",
+      "name": "libgcc_s.so.1",
+      "version": "bundled",
+      "description": null,
+      "licenses": [
+        {
+          "license": {
+            "id": "MIT"
+          }
+        }
+      ],
+      "purl": "pkg:generic/libgcc_s.so.1@bundled"
+    }
+  ]
+}
