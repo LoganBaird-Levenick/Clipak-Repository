@@ -1,0 +1,27 @@
+id: org.github.zellij-org.zellij
+name: zellij
+version: 0.41.1
+summary: Modern terminal workspace with layouts, plugins, and tabs
+description: Zellij is a terminal workspace that has the batteries included, featuring
+  layouts, tabs, webassembly plugins, and floating panes.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: zellij
+  summary: Terminal workspace and multiplexer
+curation:
+  unconfined_reason: Requires spawning host user shells, PTY allocation, and IPC sockets
+  required_host_capabilities:
+  - host-processes
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-zellij
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/zellij "${DESTDIR}/bin/zellij" 2>/dev/null || which zellij >/dev/null
+      2>&1 && cp -a $(which zellij) "${DESTDIR}/bin/zellij" || true
+
+      chmod +x "${DESTDIR}/bin/zellij" 2>/dev/null || true'

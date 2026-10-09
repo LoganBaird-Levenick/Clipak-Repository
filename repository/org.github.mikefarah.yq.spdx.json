@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "yq-4.44.3",
+  "documentNamespace": "https://clipak.org/spdx/org.github.mikefarah.yq/4.44.3",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "yq",
+      "SPDXID": "SPDXRef-Package-yq",
+      "versionInfo": "4.44.3",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "description": "yq is a portable command-line YAML, JSON, XML, CSV, TOML, and properties processor with expressive query syntax."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-yq"
+    }
+  ]
+}

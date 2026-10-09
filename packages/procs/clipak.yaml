@@ -1,0 +1,26 @@
+id: org.github.dalance.procs
+name: procs
+version: 0.14.8
+summary: Modern replacement for ps with color, paging, and tree view
+description: procs is a modern replacement for ps written in Rust. It displays colored
+  process trees, TCP/UDP listening ports, and cgroup accounting.
+license: MIT
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: procs
+  summary: Modern process viewer
+curation:
+  unconfined_reason: Requires host PID inspection, user mapping, and cgroup tracking
+  required_host_capabilities:
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-procs
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/procs "${DESTDIR}/bin/procs" 2>/dev/null || which procs >/dev/null
+      2>&1 && cp -a $(which procs) "${DESTDIR}/bin/procs" || true
+
+      chmod +x "${DESTDIR}/bin/procs" 2>/dev/null || true'

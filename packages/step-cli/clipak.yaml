@@ -1,0 +1,28 @@
+id: org.smallstep.step
+name: step-cli
+version: 0.27.2
+summary: Zero trust Swiss army knife for certificates, keys, and tokens
+description: step is an easy-to-use CLI tool for building, operating, and automating
+  Public Key Infrastructure (PKI) systems and X.509 certs.
+license: Apache-2.0
+category: Security
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: step
+  summary: PKI and X.509 certificate CLI
+curation:
+  unconfined_reason: Requires managing host X.509 trust stores and local certificate
+    authorities
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-step-cli
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/step "${DESTDIR}/bin/step" 2>/dev/null || which step >/dev/null
+      2>&1 && cp -a $(which step) "${DESTDIR}/bin/step" || true
+
+      chmod +x "${DESTDIR}/bin/step" 2>/dev/null || true'

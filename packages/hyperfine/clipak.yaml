@@ -1,0 +1,26 @@
+id: org.github.sharkdp.hyperfine
+name: hyperfine
+version: 1.18.0
+summary: Command-line benchmarking tool with statistical rigor
+description: hyperfine is a command-line benchmarking tool featuring statistical analysis,
+  warmup runs, and parameterized execution across host shell commands.
+license: Apache-2.0 OR MIT
+category: Profiling
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: hyperfine
+  summary: Benchmarking tool
+curation:
+  unconfined_reason: Requires spawning, timing, and monitoring arbitrary host processes
+  required_host_capabilities:
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-hyperfine
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/hyperfine "${DESTDIR}/bin/hyperfine" 2>/dev/null || which hyperfine
+      >/dev/null 2>&1 && cp -a $(which hyperfine) "${DESTDIR}/bin/hyperfine" || true
+
+      chmod +x "${DESTDIR}/bin/hyperfine" 2>/dev/null || true'

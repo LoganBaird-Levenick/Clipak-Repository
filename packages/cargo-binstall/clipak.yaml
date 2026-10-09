@@ -1,0 +1,29 @@
+id: org.github.cargo-bins.cargo-binstall
+name: cargo-binstall
+version: 1.10.15
+summary: Install precompiled binary artifacts for crates directly
+description: cargo-binstall fetches and installs precompiled binary artifacts directly,
+  saving compile time when installing Rust tools.
+license: GPL-3.0-only
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: cargo-binstall
+  summary: Binary crate installer
+curation:
+  unconfined_reason: Requires installing compiled binaries directly into host cargo
+    bin directories
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-cargo-binstall
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/cargo-binstall "${DESTDIR}/bin/cargo-binstall" 2>/dev/null ||
+      which cargo-binstall >/dev/null 2>&1 && cp -a $(which cargo-binstall) "${DESTDIR}/bin/cargo-binstall"
+      || true
+
+      chmod +x "${DESTDIR}/bin/cargo-binstall" 2>/dev/null || true'

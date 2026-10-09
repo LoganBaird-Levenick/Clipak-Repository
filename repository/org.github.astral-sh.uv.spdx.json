@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "uv-0.4.20",
+  "documentNamespace": "https://clipak.org/spdx/org.github.astral-sh.uv/0.4.20",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "uv",
+      "SPDXID": "SPDXRef-Package-uv",
+      "versionInfo": "0.4.20",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0 OR MIT",
+      "licenseDeclared": "Apache-2.0 OR MIT",
+      "description": "uv is an extremely fast Python package and project manager written in Rust, designed as a drop-in alternative to pip, pip-tools, and virtualenv."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-uv"
+    }
+  ]
+}

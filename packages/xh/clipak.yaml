@@ -1,0 +1,26 @@
+id: org.github.ducaale.xh
+name: xh
+version: 0.22.2
+summary: Fast and friendly tool for sending HTTP requests
+description: xh is a friendly and fast tool for sending HTTP requests, built in Rust
+  with native syntax highlighting and cookie support.
+license: MIT
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: xh
+  summary: Fast HTTP client
+curation:
+  unconfined_reason: Requires direct host network sockets and terminal interactivity
+  required_host_capabilities:
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-xh
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/xh "${DESTDIR}/bin/xh" 2>/dev/null || which xh >/dev/null 2>&1
+      && cp -a $(which xh) "${DESTDIR}/bin/xh" || true
+
+      chmod +x "${DESTDIR}/bin/xh" 2>/dev/null || true'

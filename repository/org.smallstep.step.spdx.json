@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "step-cli-0.27.2",
+  "documentNamespace": "https://clipak.org/spdx/org.smallstep.step/0.27.2",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "step-cli",
+      "SPDXID": "SPDXRef-Package-step-cli",
+      "versionInfo": "0.27.2",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "description": "step is an easy-to-use CLI tool for building, operating, and automating Public Key Infrastructure (PKI) systems and X.509 certs."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-step-cli"
+    }
+  ]
+}

@@ -2,38 +2,35 @@
   "id": "org.tmux.tmux",
   "name": "tmux",
   "version": "3.7c",
-  "summary": "Terminal multiplexer with unconfined access to host pseudo-terminals and processes",
-  "description": "tmux is a terminal multiplexer that lets you switch easily between several programs in one terminal, detach them and reattach them to a different terminal. Inside Clipak, it accesses the host session sockets and user processes directly.",
+  "summary": "Terminal multiplexer with persistent host sessions and split panes",
+  "description": "tmux is a terminal multiplexer that lets you switch easily between several programs in one terminal. It attaches to host pseudo-terminals and survives session detachment across host logouts.",
   "license": "ISC",
-  "category": "System",
+  "category": "Utilities",
   "runtime": "org.clipak.Runtime//1.0",
   "binaries": [
     {
       "name": "tmux",
-      "target": null,
       "summary": "Terminal multiplexer"
     }
   ],
-  "environment": {},
   "curation": {
-    "unconfined_reason": "Requires unconfined host PID access, host pseudo-terminals (/dev/pts), and persistent user session UNIX domain sockets across /run/user",
+    "unconfined_reason": "Requires spawning unconfined host user shells, PTY allocation, and surviving host session detachment",
     "required_host_capabilities": [
       "host-processes",
-      "pty-access",
-      "session-sockets"
+      "host-filesystem"
     ],
     "flatpak_incompatible": true
   },
   "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
     "sources": [],
     "steps": [
       {
         "name": "bundle-tmux",
-        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/tmux \"${DESTDIR}/bin/tmux\"\nchmod +x \"${DESTDIR}/bin/tmux\"\n"
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/tmux \"${DESTDIR}/bin/tmux\""
       }
     ],
-    "prefix": "/app",
-    "bundle_libraries": [],
     "build_env": {}
   }
 }

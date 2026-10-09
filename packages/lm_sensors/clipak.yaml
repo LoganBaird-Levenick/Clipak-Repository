@@ -1,0 +1,26 @@
+id: org.github.lm-sensors.lm-sensors
+name: lm_sensors
+version: 3.6.0
+summary: Hardware health and temperature sensor reporting
+description: lm_sensors provides tools for monitoring the health of a PC, including
+  sensors for temperature, voltage, and fans.
+license: GPL-2.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: sensors
+  summary: Hardware temperature and voltage reader
+curation:
+  unconfined_reason: Requires direct access to /sys/class/hwmon and kernel I2C adapters
+  required_host_capabilities:
+  - raw-devices
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-lm_sensors
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/sensors "${DESTDIR}/bin/sensors" 2>/dev/null || which sensors
+      >/dev/null 2>&1 && cp -a $(which sensors) "${DESTDIR}/bin/sensors" || true
+
+      chmod +x "${DESTDIR}/bin/sensors" 2>/dev/null || true'

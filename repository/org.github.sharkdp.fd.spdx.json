@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "fd-find-10.2.0",
+  "documentNamespace": "https://clipak.org/spdx/org.github.sharkdp.fd/10.2.0",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "fd-find",
+      "SPDXID": "SPDXRef-Package-fd-find",
+      "versionInfo": "10.2.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0 OR MIT",
+      "licenseDeclared": "Apache-2.0 OR MIT",
+      "description": "fd is a simple, fast and user-friendly alternative to find. It operates unconfined across all host directories with colorized output and regex pattern support."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-fd-find"
+    }
+  ]
+}

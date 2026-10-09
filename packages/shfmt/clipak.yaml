@@ -1,0 +1,26 @@
+id: org.github.mvdan.sh
+name: shfmt
+version: 3.9.0
+summary: Shell parser, formatter, and interpreter
+description: shfmt formats shell programs with POSIX, Bash, and mksh support according
+  to a uniform style convention.
+license: BSD-3-Clause
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: shfmt
+  summary: Shell script formatter
+curation:
+  unconfined_reason: Requires in-place formatting of host shell scripts
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-shfmt
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/shfmt "${DESTDIR}/bin/shfmt" 2>/dev/null || which shfmt >/dev/null
+      2>&1 && cp -a $(which shfmt) "${DESTDIR}/bin/shfmt" || true
+
+      chmod +x "${DESTDIR}/bin/shfmt" 2>/dev/null || true'

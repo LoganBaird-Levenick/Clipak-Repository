@@ -1,116 +1,27 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:aab40cff-4f68-450a-9ec0-7b408bf44e54",
+  "serialNumber": "urn:uuid:10000000-0000-0000-0000-orgtmuxtmux",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-01-01T00:00:00Z",
+    "timestamp": "2026-10-08T20:30:00Z",
     "tools": [
       {
-        "vendor": "Clipak",
-        "name": "clipak-builder",
-        "version": "0.1.0"
+        "name": "clipak-builder"
       }
     ],
     "component": {
       "type": "application",
       "name": "tmux",
       "version": "3.7c",
-      "description": "tmux is a terminal multiplexer that lets you switch easily between several programs in one terminal, detach them and reattach them to a different terminal. Inside Clipak, it accesses the host session sockets and user processes directly.",
       "licenses": [
         {
           "license": {
-            "id": "ISC"
+            "name": "ISC"
           }
         }
-      ],
-      "purl": "pkg:generic/tmux@3.7c"
+      ]
     }
   },
-  "components": [
-    {
-      "type": "library",
-      "name": "libsystemd.so.0",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libsystemd.so.0@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libutempter.so.0",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libutempter.so.0@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libtinfo.so.6",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libtinfo.so.6@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libevent_core-2.1.so.7",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libevent_core-2.1.so.7@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libresolv.so.2",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libresolv.so.2@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libgcc_s.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "ISC"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libgcc_s.so.1@bundled"
-    }
-  ]
+  "components": []
 }

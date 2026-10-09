@@ -1,0 +1,26 @@
+id: org.github.jesseduffield.lazygit
+name: lazygit
+version: 0.44.1
+summary: Simple, keyboard-driven terminal UI for git commands
+description: lazygit is a simple terminal UI for git commands, written in Go with
+  the gocui library, making staging, interactive rebases, and stash trivial.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: lazygit
+  summary: Terminal UI for git
+curation:
+  unconfined_reason: Requires interactive control over host git worktrees and credentials
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-lazygit
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/lazygit "${DESTDIR}/bin/lazygit" 2>/dev/null || which lazygit
+      >/dev/null 2>&1 && cp -a $(which lazygit) "${DESTDIR}/bin/lazygit" || true
+
+      chmod +x "${DESTDIR}/bin/lazygit" 2>/dev/null || true'

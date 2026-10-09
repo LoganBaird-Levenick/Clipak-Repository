@@ -1,0 +1,28 @@
+id: org.kernel.perf
+name: perf
+version: 6.11.0
+summary: Linux kernel performance counters and CPU profiling subsystem
+description: perf is the official Linux kernel profiling subsystem, analyzing hardware
+  performance counters, tracepoints, and kernel symbols.
+license: GPL-2.0-only
+category: Profiling
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: perf
+  summary: Linux kernel profiler
+curation:
+  unconfined_reason: Requires perf_event_open syscall, debugfs access, and kernel
+    symbol maps
+  required_host_capabilities:
+  - perf
+  - kernel-trace
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-perf
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/perf "${DESTDIR}/bin/perf" 2>/dev/null || which perf >/dev/null
+      2>&1 && cp -a $(which perf) "${DESTDIR}/bin/perf" || true
+
+      chmod +x "${DESTDIR}/bin/perf" 2>/dev/null || true'

@@ -1,0 +1,35 @@
+{
+  "id": "org.filippo.age",
+  "name": "age",
+  "version": "1.2.0",
+  "summary": "Simple, modern and secure encryption tool with small keys",
+  "description": "age is a simple, modern and secure file encryption tool, format, and Go library featuring small keys and UNIX composability.",
+  "license": "BSD-3-Clause",
+  "category": "Security",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "age",
+      "summary": "Modern encryption tool"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires reading host private keys and encrypting arbitrary files",
+    "required_host_capabilities": [
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-age",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/age \"${DESTDIR}/bin/age\""
+      }
+    ],
+    "build_env": {}
+  }
+}

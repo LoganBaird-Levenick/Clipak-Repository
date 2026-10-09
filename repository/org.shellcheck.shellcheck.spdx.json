@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "shellcheck-0.10.0",
+  "documentNamespace": "https://clipak.org/spdx/org.shellcheck.shellcheck/0.10.0",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "shellcheck",
+      "SPDXID": "SPDXRef-Package-shellcheck",
+      "versionInfo": "0.10.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-3.0-or-later",
+      "licenseDeclared": "GPL-3.0-or-later",
+      "description": "ShellCheck is a GPLv3 tool that gives warnings and suggestions for bash/sh shell scripts, pointing out syntax errors and semantic bugs."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-shellcheck"
+    }
+  ]
+}

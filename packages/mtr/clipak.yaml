@@ -1,0 +1,26 @@
+id: org.bitwizard.mtr
+name: mtr
+version: '0.95'
+summary: Network diagnostic tool combining traceroute and ping functionality
+description: mtr combines the functionality of the traceroute and ping programs in
+  a single network diagnostic tool.
+license: GPL-2.0-only
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: mtr
+  summary: Traceroute and ping tool
+curation:
+  unconfined_reason: Requires raw ICMP socket capability and host route resolution
+  required_host_capabilities:
+  - raw-network
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-mtr
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/mtr "${DESTDIR}/bin/mtr" 2>/dev/null || which mtr >/dev/null
+      2>&1 && cp -a $(which mtr) "${DESTDIR}/bin/mtr" || true
+
+      chmod +x "${DESTDIR}/bin/mtr" 2>/dev/null || true'

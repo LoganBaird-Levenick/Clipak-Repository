@@ -1,0 +1,35 @@
+{
+  "id": "org.valgrind.valgrind",
+  "name": "valgrind",
+  "version": "3.23.0",
+  "summary": "Memory error detector, profiler, and leak sanitizer",
+  "description": "Valgrind is an instrumentation framework for building dynamic analysis tools to detect memory errors and leaks.",
+  "license": "GPL-2.0-or-later",
+  "category": "Profiling",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "valgrind",
+      "summary": "Memory debugger and profiler"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires dynamic binary instrumentation and execution of host binaries",
+    "required_host_capabilities": [
+      "host-processes"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-valgrind",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/valgrind \"${DESTDIR}/bin/valgrind\""
+      }
+    ],
+    "build_env": {}
+  }
+}

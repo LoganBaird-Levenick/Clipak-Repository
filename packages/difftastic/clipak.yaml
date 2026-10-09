@@ -1,0 +1,26 @@
+id: org.github.wilfred.difftastic
+name: difftastic
+version: 0.60.0
+summary: Structural diff tool comparing ASTs rather than text lines
+description: difftastic is a structural diff tool that compares files based on their
+  syntax rather than line-by-line text differences.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: difft
+  summary: Structural AST diff tool
+curation:
+  unconfined_reason: Requires deep host codebase parsing and comparison
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-difftastic
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/difft "${DESTDIR}/bin/difft" 2>/dev/null || which difft >/dev/null
+      2>&1 && cp -a $(which difft) "${DESTDIR}/bin/difft" || true
+
+      chmod +x "${DESTDIR}/bin/difft" 2>/dev/null || true'

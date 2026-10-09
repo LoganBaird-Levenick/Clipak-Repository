@@ -1,0 +1,36 @@
+{
+  "id": "org.k8s.minikube",
+  "name": "minikube",
+  "version": "1.34.0",
+  "summary": "Local Kubernetes cluster orchestrator for developer workstations",
+  "description": "minikube quickly sets up a local Kubernetes cluster on macOS, Linux, and Windows for local testing and developer workflows.",
+  "license": "Apache-2.0",
+  "category": "Development",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "minikube",
+      "summary": "Local Kubernetes cluster"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires host virtualization drivers (KVM, Podman) and network interfaces",
+    "required_host_capabilities": [
+      "host-processes",
+      "raw-network"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-minikube",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/minikube \"${DESTDIR}/bin/minikube\""
+      }
+    ],
+    "build_env": {}
+  }
+}

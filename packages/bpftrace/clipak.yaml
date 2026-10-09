@@ -1,0 +1,28 @@
+id: org.github.bpftrace.bpftrace
+name: bpftrace
+version: 0.21.2
+summary: High-level tracing language for Linux eBPF kernel tracing
+description: bpftrace is a high-level tracing language for Linux enhanced Berkeley
+  Packet Filter (eBPF) available in recent Linux kernels.
+license: Apache-2.0
+category: Profiling
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: bpftrace
+  summary: eBPF tracing language
+curation:
+  unconfined_reason: Requires sys_bpf syscall, kprobes, uprobes, and tracepoints in
+    kernel
+  required_host_capabilities:
+  - bpf
+  - kernel-trace
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-bpftrace
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/bpftrace "${DESTDIR}/bin/bpftrace" 2>/dev/null || which bpftrace
+      >/dev/null 2>&1 && cp -a $(which bpftrace) "${DESTDIR}/bin/bpftrace" || true
+
+      chmod +x "${DESTDIR}/bin/bpftrace" 2>/dev/null || true'

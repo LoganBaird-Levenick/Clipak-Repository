@@ -1,0 +1,27 @@
+id: org.github.phiresky.ripgrep-all
+name: ripgrep-all
+version: 0.10.6
+summary: Ripgrep wrapper searching PDFs, E-Books, Office docs, zip, tar
+description: rga is a ripgrep wrapper that allows you to search in PDFs, E-Books,
+  Office documents, zip, tar.gz, and embedded text.
+license: AGPL-3.0-or-later
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: rga
+  summary: Universal text and document search
+curation:
+  unconfined_reason: Requires spawning host decoders and reading host document stores
+  required_host_capabilities:
+  - host-filesystem
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-ripgrep-all
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/rga "${DESTDIR}/bin/rga" 2>/dev/null || which rga >/dev/null
+      2>&1 && cp -a $(which rga) "${DESTDIR}/bin/rga" || true
+
+      chmod +x "${DESTDIR}/bin/rga" 2>/dev/null || true'

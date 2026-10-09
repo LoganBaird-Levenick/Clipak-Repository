@@ -1,0 +1,36 @@
+{
+  "id": "org.github.Tomas-M.iotop",
+  "name": "iotop-c",
+  "version": "0.6.1",
+  "summary": "Per-process I/O bandwidth usage monitor",
+  "description": "iotop displays a table of current I/O usage by processes or threads on the host Linux kernel.",
+  "license": "GPL-2.0-or-later",
+  "category": "Diagnostics",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "iotop",
+      "summary": "Per-process I/O monitor"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires Linux taskstats Netlink interface and host kernel I/O accounting",
+    "required_host_capabilities": [
+      "host-processes",
+      "kernel-trace"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-iotop",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/iotop \"${DESTDIR}/bin/iotop\""
+      }
+    ],
+    "build_env": {}
+  }
+}

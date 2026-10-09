@@ -1,0 +1,27 @@
+{
+  "bomFormat": "CycloneDX",
+  "specVersion": "1.5",
+  "serialNumber": "urn:uuid:10000000-0000-0000-0000-orggithubdir",
+  "version": 1,
+  "metadata": {
+    "timestamp": "2026-10-08T20:30:00Z",
+    "tools": [
+      {
+        "name": "clipak-builder"
+      }
+    ],
+    "component": {
+      "type": "application",
+      "name": "direnv",
+      "version": "2.34.0",
+      "licenses": [
+        {
+          "license": {
+            "name": "MIT"
+          }
+        }
+      ]
+    }
+  },
+  "components": []
+}

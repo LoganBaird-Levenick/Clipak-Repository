@@ -1,0 +1,27 @@
+id: org.gitlab.cli
+name: glab
+version: 1.47.0
+summary: Official GitLab CLI for pipelines, MRs, and snippets
+description: GLab is an open source GitLab CLI tool bringing GitLab to your command
+  line next to where you are already working with git and your code.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: glab
+  summary: GitLab CLI
+curation:
+  unconfined_reason: Requires host git config, SSH agent, and API network access
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-glab
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/glab "${DESTDIR}/bin/glab" 2>/dev/null || which glab >/dev/null
+      2>&1 && cp -a $(which glab) "${DESTDIR}/bin/glab" || true
+
+      chmod +x "${DESTDIR}/bin/glab" 2>/dev/null || true'

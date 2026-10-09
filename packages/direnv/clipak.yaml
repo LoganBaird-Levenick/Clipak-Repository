@@ -1,0 +1,27 @@
+id: org.github.direnv.direnv
+name: direnv
+version: 2.34.0
+summary: Environment switcher based on current directory .envrc
+description: direnv is an extension for your shell. It augments existing shells with
+  a new feature that can load and unload environment variables depending on the current
+  directory.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: direnv
+  summary: Directory environment switcher
+curation:
+  unconfined_reason: Requires modifying host interactive shell environment variables
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-direnv
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/direnv "${DESTDIR}/bin/direnv" 2>/dev/null || which direnv >/dev/null
+      2>&1 && cp -a $(which direnv) "${DESTDIR}/bin/direnv" || true
+
+      chmod +x "${DESTDIR}/bin/direnv" 2>/dev/null || true'

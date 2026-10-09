@@ -1,0 +1,28 @@
+id: org.github.aristocratos.btop
+name: btop
+version: 1.3.2
+summary: Modern TUI resource monitor (CPU, memory, disks, network, processes)
+description: btop is a resource monitor that shows usage and stats for processor,
+  memory, disks, network and processes with full mouse support.
+license: Apache-2.0
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: btop
+  summary: Modern resource monitor
+curation:
+  unconfined_reason: Requires host /proc, /sys, PID namespaces, and hardware sensor
+    telemetry
+  required_host_capabilities:
+  - host-processes
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-btop
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/btop "${DESTDIR}/bin/btop" 2>/dev/null || which btop >/dev/null
+      2>&1 && cp -a $(which btop) "${DESTDIR}/bin/btop" || true
+
+      chmod +x "${DESTDIR}/bin/btop" 2>/dev/null || true'

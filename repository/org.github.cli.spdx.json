@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "gh-2.58.0",
+  "documentNamespace": "https://clipak.org/spdx/org.github.cli/2.58.0",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "gh",
+      "SPDXID": "SPDXRef-Package-gh",
+      "versionInfo": "2.58.0",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "description": "gh is GitHub on the command line. It brings pull requests, issues, GitHub Actions, and other GitHub concepts to the terminal next to where you work."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-gh"
+    }
+  ]
+}

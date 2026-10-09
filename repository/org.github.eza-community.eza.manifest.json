@@ -1,0 +1,35 @@
+{
+  "id": "org.github.eza-community.eza",
+  "name": "eza",
+  "version": "0.20.5",
+  "summary": "Modern, maintained replacement for ls with git status and tree view",
+  "description": "eza is a modern, maintained replacement for ls. It reads host filesystem metadata, extended attributes, and git repository states in real time.",
+  "license": "EUPL-1.2",
+  "category": "Development",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "eza",
+      "summary": "Modern directory lister"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires direct access to host filesystem metadata, extended attributes, and git repos",
+    "required_host_capabilities": [
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-eza",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/eza \"${DESTDIR}/bin/eza\""
+      }
+    ],
+    "build_env": {}
+  }
+}

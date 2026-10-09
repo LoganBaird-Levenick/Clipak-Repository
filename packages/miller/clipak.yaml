@@ -1,0 +1,26 @@
+id: org.github.johnkerl.miller
+name: miller
+version: 6.12.0
+summary: Name-indexed tabular data processor for CSV, TSV, and JSON
+description: Miller is like awk, sed, cut, join, and sort for name-indexed data such
+  as CSV, TSV, and tabular JSON.
+license: BSD-2-Clause
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: mlr
+  summary: Tabular data processor
+curation:
+  unconfined_reason: Requires reading and transforming arbitrary host data pipelines
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-miller
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/mlr "${DESTDIR}/bin/mlr" 2>/dev/null || which mlr >/dev/null
+      2>&1 && cp -a $(which mlr) "${DESTDIR}/bin/mlr" || true
+
+      chmod +x "${DESTDIR}/bin/mlr" 2>/dev/null || true'

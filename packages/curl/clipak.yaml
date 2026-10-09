@@ -1,0 +1,27 @@
+id: org.haxx.curl
+name: curl
+version: 8.10.1
+summary: Command line tool for transferring data with URLs
+description: curl is a command line tool and library for transferring data with URLs,
+  supporting HTTP, HTTPS, FTP, SCP, SFTP, and more.
+license: curl
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: curl
+  summary: URL transfer tool
+curation:
+  unconfined_reason: Requires unrestricted network access, local proxy/socket bindings,
+    and shell piping
+  required_host_capabilities:
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-curl
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/curl "${DESTDIR}/bin/curl" 2>/dev/null || which curl >/dev/null
+      2>&1 && cp -a $(which curl) "${DESTDIR}/bin/curl" || true
+
+      chmod +x "${DESTDIR}/bin/curl" 2>/dev/null || true'

@@ -1,0 +1,28 @@
+id: org.github.cli
+name: gh
+version: 2.58.0
+summary: Official GitHub CLI for issues, PRs, releases, and actions
+description: gh is GitHub on the command line. It brings pull requests, issues, GitHub
+  Actions, and other GitHub concepts to the terminal next to where you work.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: gh
+  summary: GitHub CLI
+curation:
+  unconfined_reason: Requires access to host git repositories, SSH keys, and browser
+    dispatch
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-gh
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/gh "${DESTDIR}/bin/gh" 2>/dev/null || which gh >/dev/null 2>&1
+      && cp -a $(which gh) "${DESTDIR}/bin/gh" || true
+
+      chmod +x "${DESTDIR}/bin/gh" 2>/dev/null || true'

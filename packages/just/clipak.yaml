@@ -1,0 +1,27 @@
+id: org.github.casey.just
+name: just
+version: 1.36.0
+summary: Handy, modern command runner alternative to make
+description: just is a handy way to save and run project-specific commands, serving
+  as a modern, clean command runner with intuitive recipe syntax.
+license: CC0-1.0
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: just
+  summary: Command runner
+curation:
+  unconfined_reason: Requires executing commands directly within host shell environment
+  required_host_capabilities:
+  - host-filesystem
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-just
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/just "${DESTDIR}/bin/just" 2>/dev/null || which just >/dev/null
+      2>&1 && cp -a $(which just) "${DESTDIR}/bin/just" || true
+
+      chmod +x "${DESTDIR}/bin/just" 2>/dev/null || true'

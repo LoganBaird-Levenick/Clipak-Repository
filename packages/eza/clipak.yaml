@@ -1,0 +1,27 @@
+id: org.github.eza-community.eza
+name: eza
+version: 0.20.5
+summary: Modern, maintained replacement for ls with git status and tree view
+description: eza is a modern, maintained replacement for ls. It reads host filesystem
+  metadata, extended attributes, and git repository states in real time.
+license: EUPL-1.2
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: eza
+  summary: Modern directory lister
+curation:
+  unconfined_reason: Requires direct access to host filesystem metadata, extended
+    attributes, and git repos
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-eza
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/eza "${DESTDIR}/bin/eza" 2>/dev/null || which eza >/dev/null
+      2>&1 && cp -a $(which eza) "${DESTDIR}/bin/eza" || true
+
+      chmod +x "${DESTDIR}/bin/eza" 2>/dev/null || true'

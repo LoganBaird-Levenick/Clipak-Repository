@@ -1,0 +1,26 @@
+id: org.github.anchore.syft
+name: syft
+version: 1.14.0
+summary: CLI tool for generating Software Bill of Materials (SBOMs)
+description: Syft is a CLI tool and library for generating a Software Bill of Materials
+  (SBOM) from container images and filesystems.
+license: Apache-2.0
+category: Security
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: syft
+  summary: SBOM generator
+curation:
+  unconfined_reason: Requires scanning host container storage, disk images, and rootfs
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-syft
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/syft "${DESTDIR}/bin/syft" 2>/dev/null || which syft >/dev/null
+      2>&1 && cp -a $(which syft) "${DESTDIR}/bin/syft" || true
+
+      chmod +x "${DESTDIR}/bin/syft" 2>/dev/null || true'

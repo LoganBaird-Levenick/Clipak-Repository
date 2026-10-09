@@ -1,0 +1,26 @@
+id: org.httpie.httpie
+name: httpie
+version: 3.2.3
+summary: User-friendly HTTP client with JSON support and colors
+description: HTTPie is a user-friendly CLI HTTP client with JSON support, syntax highlighting,
+  persistent sessions, and intuitive command syntax.
+license: BSD-3-Clause
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: http
+  summary: HTTP client
+curation:
+  unconfined_reason: Requires network socket communication and terminal output formatting
+  required_host_capabilities:
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-httpie
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/http "${DESTDIR}/bin/http" 2>/dev/null || which http >/dev/null
+      2>&1 && cp -a $(which http) "${DESTDIR}/bin/http" || true
+
+      chmod +x "${DESTDIR}/bin/http" 2>/dev/null || true'

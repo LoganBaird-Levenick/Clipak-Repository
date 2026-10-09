@@ -1,0 +1,27 @@
+id: org.github.derailed.k9s
+name: k9s
+version: 0.32.5
+summary: Terminal UI to interact with your Kubernetes clusters
+description: k9s is a terminal-based UI to interact with your Kubernetes clusters.
+  It aims to make it easier to navigate, observe and manage your applications in K8s.
+license: Apache-2.0
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: k9s
+  summary: Kubernetes CLI management TUI
+curation:
+  unconfined_reason: Requires reading host ~/.kube/config and managing live clusters
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-k9s
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/k9s "${DESTDIR}/bin/k9s" 2>/dev/null || which k9s >/dev/null
+      2>&1 && cp -a $(which k9s) "${DESTDIR}/bin/k9s" || true
+
+      chmod +x "${DESTDIR}/bin/k9s" 2>/dev/null || true'

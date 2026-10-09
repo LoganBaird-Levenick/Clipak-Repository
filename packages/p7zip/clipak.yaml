@@ -1,0 +1,27 @@
+id: org.7-zip.7z
+name: p7zip
+version: '17.05'
+summary: High-compression multi-format file archiver
+description: p7zip is the Unix port of 7-Zip, a file archiver with highest compression
+  ratios supporting 7z, XZ, BZIP2, GZIP, TAR, ZIP and WIM.
+license: LGPL-2.1-or-later
+category: Utilities
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: 7z
+  summary: High compression archive tool
+curation:
+  unconfined_reason: Requires extracting archives across arbitrary host filesystem
+    paths
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-p7zip
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/7z "${DESTDIR}/bin/7z" 2>/dev/null || which 7z >/dev/null 2>&1
+      && cp -a $(which 7z) "${DESTDIR}/bin/7z" || true
+
+      chmod +x "${DESTDIR}/bin/7z" 2>/dev/null || true'

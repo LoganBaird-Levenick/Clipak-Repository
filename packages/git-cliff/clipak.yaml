@@ -1,0 +1,26 @@
+id: org.github.orhun.git-cliff
+name: git-cliff
+version: 2.6.1
+summary: Highly customizable changelog generator from conventional commits
+description: git-cliff can generate changelog files from the Git repository history
+  by utilizing conventional commits and regex-powered parsers.
+license: Apache-2.0 OR MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: git-cliff
+  summary: Changelog generator
+curation:
+  unconfined_reason: Requires analyzing git history and tags across host repositories
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-git-cliff
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/git-cliff "${DESTDIR}/bin/git-cliff" 2>/dev/null || which git-cliff
+      >/dev/null 2>&1 && cp -a $(which git-cliff) "${DESTDIR}/bin/git-cliff" || true
+
+      chmod +x "${DESTDIR}/bin/git-cliff" 2>/dev/null || true'

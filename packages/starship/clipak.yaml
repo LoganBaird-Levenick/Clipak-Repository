@@ -1,0 +1,28 @@
+id: org.starship.starship
+name: starship
+version: 1.20.1
+summary: Fast, ultra-customizable prompt for any shell
+description: The minimal, blazing-fast, and infinitely customizable prompt for any
+  shell, evaluating Git, package versions, and machine telemetry in milliseconds.
+license: ISC
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: starship
+  summary: Customizable shell prompt
+curation:
+  unconfined_reason: Requires evaluating host git status, battery stats, and package
+    versions
+  required_host_capabilities:
+  - host-filesystem
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-starship
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/starship "${DESTDIR}/bin/starship" 2>/dev/null || which starship
+      >/dev/null 2>&1 && cp -a $(which starship) "${DESTDIR}/bin/starship" || true
+
+      chmod +x "${DESTDIR}/bin/starship" 2>/dev/null || true'

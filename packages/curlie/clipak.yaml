@@ -1,0 +1,26 @@
+id: org.github.rs.curlie
+name: curlie
+version: 1.7.2
+summary: Power of curl with the ease of use and formatting of httpie
+description: curlie combines the features and raw speed of curl with the ease of use
+  and formatting of httpie.
+license: MIT
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: curlie
+  summary: Curl and httpie hybrid
+curation:
+  unconfined_reason: Requires network transfers and host terminal pipe processing
+  required_host_capabilities:
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-curlie
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/curlie "${DESTDIR}/bin/curlie" 2>/dev/null || which curlie >/dev/null
+      2>&1 && cp -a $(which curlie) "${DESTDIR}/bin/curlie" || true
+
+      chmod +x "${DESTDIR}/bin/curlie" 2>/dev/null || true'

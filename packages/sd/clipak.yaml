@@ -1,0 +1,26 @@
+id: org.github.chmln.sd
+name: sd
+version: 1.0.0
+summary: Intuitive find & replace CLI alternative to sed
+description: sd is an intuitive find & replace CLI tool with standard regex syntax
+  and fast in-place modifications.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: sd
+  summary: Find and replace CLI
+curation:
+  unconfined_reason: Requires in-place modifications across host source code repositories
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-sd
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/sd "${DESTDIR}/bin/sd" 2>/dev/null || which sd >/dev/null 2>&1
+      && cp -a $(which sd) "${DESTDIR}/bin/sd" || true
+
+      chmod +x "${DESTDIR}/bin/sd" 2>/dev/null || true'

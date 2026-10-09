@@ -1,0 +1,27 @@
+id: org.restic.restic
+name: restic
+version: 0.17.1
+summary: Secure, deduplicated, encrypted backup program
+description: restic is a secure backup program that uses cryptography to guarantee
+  confidentiality and integrity of your backup data.
+license: BSD-2-Clause
+category: Utilities
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: restic
+  summary: Encrypted backup program
+curation:
+  unconfined_reason: Requires reading entire host filesystem trees (/home, /var, /etc)
+    for snapshots
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-restic
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/restic "${DESTDIR}/bin/restic" 2>/dev/null || which restic >/dev/null
+      2>&1 && cp -a $(which restic) "${DESTDIR}/bin/restic" || true
+
+      chmod +x "${DESTDIR}/bin/restic" 2>/dev/null || true'

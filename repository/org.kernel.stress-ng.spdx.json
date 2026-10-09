@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "stress-ng-0.18.05",
+  "documentNamespace": "https://clipak.org/spdx/org.kernel.stress-ng/0.18.05",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "stress-ng",
+      "SPDXID": "SPDXRef-Package-stress-ng",
+      "versionInfo": "0.18.05",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "GPL-2.0-or-later",
+      "licenseDeclared": "GPL-2.0-or-later",
+      "description": "stress-ng will stress test a computer system in various selectable ways, verifying hardware and thermal stability under heavy load."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-stress-ng"
+    }
+  ]
+}

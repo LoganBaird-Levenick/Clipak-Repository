@@ -1,0 +1,28 @@
+id: org.github.clementtsang.bottom
+name: bottom
+version: 0.9.6
+summary: Graphical process/system monitor for the terminal
+description: bottom is a customizable cross-platform graphical process/system monitor
+  for the terminal with widget layouts.
+license: MIT
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: btm
+  summary: System monitor
+curation:
+  unconfined_reason: Requires host process metrics, disk I/O stats, and temperature
+    sensors
+  required_host_capabilities:
+  - host-processes
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-bottom
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/btm "${DESTDIR}/bin/btm" 2>/dev/null || which btm >/dev/null
+      2>&1 && cp -a $(which btm) "${DESTDIR}/bin/btm" || true
+
+      chmod +x "${DESTDIR}/bin/btm" 2>/dev/null || true'

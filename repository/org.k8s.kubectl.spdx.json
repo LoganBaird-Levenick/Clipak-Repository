@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "kubectl-1.31.1",
+  "documentNamespace": "https://clipak.org/spdx/org.k8s.kubectl/1.31.1",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "kubectl",
+      "SPDXID": "SPDXRef-Package-kubectl",
+      "versionInfo": "1.31.1",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Apache-2.0",
+      "licenseDeclared": "Apache-2.0",
+      "description": "kubectl controls the Kubernetes cluster manager, managing pods, deployments, services, ingress, and cluster infrastructure."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-kubectl"
+    }
+  ]
+}

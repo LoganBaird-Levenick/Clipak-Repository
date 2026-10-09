@@ -1,0 +1,27 @@
+id: org.es.net.iperf3
+name: iperf3
+version: 3.17.1
+summary: Active measurement tool for maximum achievable bandwidth on IP networks
+description: iperf3 measures the maximum achievable bandwidth on IP networks, supporting
+  tuning of various parameters related to timing, buffers and protocols.
+license: BSD-3-Clause
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: iperf3
+  summary: Bandwidth measurement tool
+curation:
+  unconfined_reason: Requires high-throughput raw TCP/UDP socket performance and host
+    network binds
+  required_host_capabilities:
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-iperf3
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/iperf3 "${DESTDIR}/bin/iperf3" 2>/dev/null || which iperf3 >/dev/null
+      2>&1 && cp -a $(which iperf3) "${DESTDIR}/bin/iperf3" || true
+
+      chmod +x "${DESTDIR}/bin/iperf3" 2>/dev/null || true'

@@ -1,0 +1,28 @@
+id: org.github.containers.skopeo
+name: skopeo
+version: 1.16.1
+summary: Work with remote container registries without running a daemon
+description: skopeo is a command line utility that performs various operations on
+  container images and image registries without root or daemons.
+license: Apache-2.0
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: skopeo
+  summary: Container image registry utility
+curation:
+  unconfined_reason: Requires inspecting host container storage engines and transport
+    layers
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-skopeo
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/skopeo "${DESTDIR}/bin/skopeo" 2>/dev/null || which skopeo >/dev/null
+      2>&1 && cp -a $(which skopeo) "${DESTDIR}/bin/skopeo" || true
+
+      chmod +x "${DESTDIR}/bin/skopeo" 2>/dev/null || true'

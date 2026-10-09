@@ -1,0 +1,28 @@
+id: org.github.sxyazi.yazi
+name: yazi
+version: 0.4.1
+summary: Blazing-fast terminal file manager with async I/O
+description: yazi is a terminal file manager written in Rust, based on non-blocking
+  async I/O. It provides full control over host filesystems with image preview and
+  multi-tab browsing.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: yazi
+  summary: Terminal file manager
+curation:
+  unconfined_reason: Requires full read/write access to host filesystem trees and
+    terminal graphics
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-yazi
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/yazi "${DESTDIR}/bin/yazi" 2>/dev/null || which yazi >/dev/null
+      2>&1 && cp -a $(which yazi) "${DESTDIR}/bin/yazi" || true
+
+      chmod +x "${DESTDIR}/bin/yazi" 2>/dev/null || true'

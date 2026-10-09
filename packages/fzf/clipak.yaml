@@ -1,0 +1,27 @@
+id: org.github.junegunn.fzf
+name: fzf
+version: 0.56.0
+summary: General-purpose command-line fuzzy finder
+description: fzf is an interactive Unix filter for command-line that can be used with
+  any list; files, command history, processes, hostnames, bookmarks, git commits,
+  etc.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: fzf
+  summary: Interactive fuzzy finder
+curation:
+  unconfined_reason: Requires unconfined terminal pipe access and host directory traversal
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-fzf
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/fzf "${DESTDIR}/bin/fzf" 2>/dev/null || which fzf >/dev/null
+      2>&1 && cp -a $(which fzf) "${DESTDIR}/bin/fzf" || true
+
+      chmod +x "${DESTDIR}/bin/fzf" 2>/dev/null || true'

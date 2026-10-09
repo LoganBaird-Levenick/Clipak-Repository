@@ -1,0 +1,27 @@
+id: org.github.jqlang.jq
+name: jq
+version: 1.7.1
+summary: Lightweight and flexible command-line JSON processor
+description: jq is like sed for JSON data - you can use it to slice, filter, map,
+  and transform structured data effortlessly in terminal pipelines.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: jq
+  summary: Command-line JSON processor
+curation:
+  unconfined_reason: Requires unconfined terminal pipe access and host configuration
+    file reading
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-jq
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/jq "${DESTDIR}/bin/jq" 2>/dev/null || which jq >/dev/null 2>&1
+      && cp -a $(which jq) "${DESTDIR}/bin/jq" || true
+
+      chmod +x "${DESTDIR}/bin/jq" 2>/dev/null || true'

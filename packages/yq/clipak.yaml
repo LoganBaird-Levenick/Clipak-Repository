@@ -1,0 +1,27 @@
+id: org.github.mikefarah.yq
+name: yq
+version: 4.44.3
+summary: Portable command-line YAML, JSON, XML, and CSV processor
+description: yq is a portable command-line YAML, JSON, XML, CSV, TOML, and properties
+  processor with expressive query syntax.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: yq
+  summary: Structured data processor
+curation:
+  unconfined_reason: Requires in-place editing of host system and project configuration
+    files
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-yq
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/yq "${DESTDIR}/bin/yq" 2>/dev/null || which yq >/dev/null 2>&1
+      && cp -a $(which yq) "${DESTDIR}/bin/yq" || true
+
+      chmod +x "${DESTDIR}/bin/yq" 2>/dev/null || true'

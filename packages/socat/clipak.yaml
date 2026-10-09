@@ -1,0 +1,28 @@
+id: org.dest-unreach.socat
+name: socat
+version: 1.8.0.1
+summary: Multipurpose relay for bidirectional data transfer across streams
+description: socat establishes two bidirectional byte streams and transfers data between
+  them across files, pipes, devices, and sockets.
+license: GPL-2.0-only
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: socat
+  summary: Multipurpose socket relay
+curation:
+  unconfined_reason: Requires bridging host Unix domain sockets, PTYs, and network
+    streams
+  required_host_capabilities:
+  - host-sockets
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-socat
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/socat "${DESTDIR}/bin/socat" 2>/dev/null || which socat >/dev/null
+      2>&1 && cp -a $(which socat) "${DESTDIR}/bin/socat" || true
+
+      chmod +x "${DESTDIR}/bin/socat" 2>/dev/null || true'

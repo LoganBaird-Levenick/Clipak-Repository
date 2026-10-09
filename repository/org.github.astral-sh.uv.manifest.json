@@ -1,0 +1,36 @@
+{
+  "id": "org.github.astral-sh.uv",
+  "name": "uv",
+  "version": "0.4.20",
+  "summary": "Extremely fast Python package installer and resolver in Rust",
+  "description": "uv is an extremely fast Python package and project manager written in Rust, designed as a drop-in alternative to pip, pip-tools, and virtualenv.",
+  "license": "Apache-2.0 OR MIT",
+  "category": "Development",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "uv",
+      "summary": "Fast Python package manager"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires managing host virtual environments, interpreter discovery, and wheels",
+    "required_host_capabilities": [
+      "host-filesystem",
+      "host-processes"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-uv",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/uv \"${DESTDIR}/bin/uv\""
+      }
+    ],
+    "build_env": {}
+  }
+}

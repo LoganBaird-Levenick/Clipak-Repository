@@ -1,0 +1,26 @@
+id: org.github.facebook.zstd
+name: zstd
+version: 1.5.6
+summary: Fast lossless compression algorithm CLI by Meta
+description: Zstandard is a real-time compression algorithm, providing high compression
+  ratios and very high compression and decompression speed.
+license: BSD-3-Clause OR GPL-2.0-only
+category: Utilities
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: zstd
+  summary: Fast lossless compression tool
+curation:
+  unconfined_reason: Requires streaming compression across host pipes and block storage
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-zstd
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/zstd "${DESTDIR}/bin/zstd" 2>/dev/null || which zstd >/dev/null
+      2>&1 && cp -a $(which zstd) "${DESTDIR}/bin/zstd" || true
+
+      chmod +x "${DESTDIR}/bin/zstd" 2>/dev/null || true'

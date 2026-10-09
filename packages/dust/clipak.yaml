@@ -1,0 +1,27 @@
+id: org.github.bootandy.dust
+name: dust
+version: 1.1.1
+summary: Intuitive graphical disk usage analyzer for terminal
+description: dust gives an instant overview of which directories are using your disk
+  space with visual ascii graphs across host partitions.
+license: Apache-2.0
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: dust
+  summary: Disk usage analyzer
+curation:
+  unconfined_reason: Requires unrestricted read access across all host filesystem
+    mount points
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-dust
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/dust "${DESTDIR}/bin/dust" 2>/dev/null || which dust >/dev/null
+      2>&1 && cp -a $(which dust) "${DESTDIR}/bin/dust" || true
+
+      chmod +x "${DESTDIR}/bin/dust" 2>/dev/null || true'

@@ -1,0 +1,26 @@
+id: org.github.fujiapple852.trippy
+name: trippy
+version: 0.11.0
+summary: Network diagnostic tool combining traceroute and ping in a TUI
+description: Trippy combines the functionality of traceroute and ping and is designed
+  to assist with the analysis of networking issues.
+license: Apache-2.0
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: trip
+  summary: Network diagnostic TUI
+curation:
+  unconfined_reason: Requires raw ICMP, UDP, and TCP sockets across host routing tables
+  required_host_capabilities:
+  - raw-network
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-trippy
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/trip "${DESTDIR}/bin/trip" 2>/dev/null || which trip >/dev/null
+      2>&1 && cp -a $(which trip) "${DESTDIR}/bin/trip" || true
+
+      chmod +x "${DESTDIR}/bin/trip" 2>/dev/null || true'

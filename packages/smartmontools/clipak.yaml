@@ -1,0 +1,28 @@
+id: org.smartmontools.smartctl
+name: smartmontools
+version: '7.4'
+summary: Control and monitor S.M.A.R.T. disk storage telemetry
+description: smartctl controls and monitors storage systems using the Self-Monitoring,
+  Analysis and Reporting Technology System (S.M.A.R.T.) built into ATA, NVMe, and
+  SCSI disks.
+license: GPL-2.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: smartctl
+  summary: S.M.A.R.T. disk monitor
+curation:
+  unconfined_reason: Requires issuing direct ioctl calls to raw host NVMe and SATA
+    block devices
+  required_host_capabilities:
+  - raw-devices
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-smartmontools
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/smartctl "${DESTDIR}/bin/smartctl" 2>/dev/null || which smartctl
+      >/dev/null 2>&1 && cp -a $(which smartctl) "${DESTDIR}/bin/smartctl" || true
+
+      chmod +x "${DESTDIR}/bin/smartctl" 2>/dev/null || true'

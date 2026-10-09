@@ -1,0 +1,36 @@
+{
+  "id": "org.k8s.kubectl",
+  "name": "kubectl",
+  "version": "1.31.1",
+  "summary": "Kubernetes cluster control CLI",
+  "description": "kubectl controls the Kubernetes cluster manager, managing pods, deployments, services, ingress, and cluster infrastructure.",
+  "license": "Apache-2.0",
+  "category": "Development",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "kubectl",
+      "summary": "Kubernetes control CLI"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires access to host network, port-forwarding, and certificates",
+    "required_host_capabilities": [
+      "host-filesystem",
+      "host-sockets"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-kubectl",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/kubectl \"${DESTDIR}/bin/kubectl\""
+      }
+    ],
+    "build_env": {}
+  }
+}

@@ -1,0 +1,28 @@
+id: org.github.getsops.sops
+name: sops
+version: 3.9.0
+summary: Simple and flexible tool for managing secrets in files
+description: SOPS is an editor of encrypted files that supports YAML, JSON, ENV, INI
+  and BINARY formats with KMS, Age, and PGP integration.
+license: MPL-2.0
+category: Security
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: sops
+  summary: Secrets manager
+curation:
+  unconfined_reason: Requires in-place editing of host secret files and cloud KMS
+    access
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-sops
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/sops "${DESTDIR}/bin/sops" 2>/dev/null || which sops >/dev/null
+      2>&1 && cp -a $(which sops) "${DESTDIR}/bin/sops" || true
+
+      chmod +x "${DESTDIR}/bin/sops" 2>/dev/null || true'

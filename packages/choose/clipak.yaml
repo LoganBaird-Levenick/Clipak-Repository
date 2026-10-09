@@ -1,0 +1,26 @@
+id: org.github.theryangeary.choose
+name: choose
+version: 1.3.4
+summary: Human-friendly and fast alternative to cut and awk
+description: choose is a human-friendly and fast alternative to cut and (sometimes)
+  awk with Python-style negative indexing.
+license: GPL-3.0-or-later
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: choose
+  summary: Field selection filter
+curation:
+  unconfined_reason: Requires terminal pipe slicing of host stdout streams
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-choose
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/choose "${DESTDIR}/bin/choose" 2>/dev/null || which choose >/dev/null
+      2>&1 && cp -a $(which choose) "${DESTDIR}/bin/choose" || true
+
+      chmod +x "${DESTDIR}/bin/choose" 2>/dev/null || true'

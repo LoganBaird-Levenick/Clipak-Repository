@@ -1,0 +1,28 @@
+id: org.shellcheck.shellcheck
+name: shellcheck
+version: 0.10.0
+summary: Static analysis tool for shell scripts
+description: ShellCheck is a GPLv3 tool that gives warnings and suggestions for bash/sh
+  shell scripts, pointing out syntax errors and semantic bugs.
+license: GPL-3.0-or-later
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: shellcheck
+  summary: Shell script linter
+curation:
+  unconfined_reason: Requires scanning host shell scripts and dev ops configurations
+    on host
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-shellcheck
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/shellcheck "${DESTDIR}/bin/shellcheck" 2>/dev/null || which shellcheck
+      >/dev/null 2>&1 && cp -a $(which shellcheck) "${DESTDIR}/bin/shellcheck" ||
+      true
+
+      chmod +x "${DESTDIR}/bin/shellcheck" 2>/dev/null || true'

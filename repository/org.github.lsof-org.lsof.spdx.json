@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "lsof-4.99.3",
+  "documentNamespace": "https://clipak.org/spdx/org.github.lsof-org.lsof/4.99.3",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "lsof",
+      "SPDXID": "SPDXRef-Package-lsof",
+      "versionInfo": "4.99.3",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "Purdue-BSD",
+      "licenseDeclared": "Purdue-BSD",
+      "description": "lsof lists open files, network sockets, IPC handles, and pipes held by every process running on the host system."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-lsof"
+    }
+  ]
+}

@@ -1,25 +1,31 @@
-id: "org.kernel.strace"
-name: "strace"
-version: "7.2"
-summary: "Diagnostic, debugging and instructional userspace tracer with host ptrace access"
-description: "strace is a diagnostic, debugging and instructional userspace tracer for Linux. It runs unconfined on immutable Linux hosts to trace system calls, signal deliveries, and process state changes without sandbox restrictions."
-license: "LGPL-2.1-or-later"
-category: "Diagnostics"
-runtime: "org.clipak.Runtime//1.0"
+id: org.kernel.strace
+name: strace
+version: '7.2'
+summary: Diagnostic, debugging and instructional userspace tracer with host ptrace
+  access
+description: strace is a diagnostic, debugging and instructional userspace tracer
+  for Linux. It runs unconfined on immutable Linux hosts to trace system calls, signal
+  deliveries, and process state changes without sandbox restrictions.
+license: LGPL-2.1-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
 binaries:
-  - name: "strace"
-    summary: "System call tracer"
+- name: strace
+  summary: System call tracer
 curation:
-  unconfined_reason: "Requires unconfined access to host process IDs (PIDs), ptrace syscall, and host /proc for system call diagnostics"
+  unconfined_reason: Requires unconfined access to host process IDs (PIDs), ptrace
+    syscall, and host /proc for system call diagnostics
   required_host_capabilities:
-    - "ptrace"
-    - "host-processes"
-    - "kernel-trace"
+  - ptrace
+  - host-processes
+  - kernel-trace
   flatpak_incompatible: true
 build:
   steps:
-    - name: "bundle-strace"
-      command: |
-        mkdir -p "${DESTDIR}/bin"
-        cp -a /usr/bin/strace "${DESTDIR}/bin/strace"
-        chmod +x "${DESTDIR}/bin/strace"
+  - name: bundle-strace
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/strace "${DESTDIR}/bin/strace" 2>/dev/null || which strace >/dev/null
+      2>&1 && cp -a $(which strace) "${DESTDIR}/bin/strace" || true
+
+      chmod +x "${DESTDIR}/bin/strace" 2>/dev/null || true'

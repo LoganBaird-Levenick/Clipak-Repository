@@ -1,0 +1,30 @@
+id: org.github.sysstat.sysstat
+name: sysstat
+version: 12.7.6
+summary: Linux system performance and activity metrics collection
+description: sysstat provides system performance tools including iostat, sar, and
+  mpstat for tracking CPU, I/O, memory, and network throughput.
+license: GPL-2.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: iostat
+  summary: CPU and I/O statistics
+- name: sar
+  summary: System activity report
+curation:
+  unconfined_reason: Requires host kernel performance counters and disk controller
+    statistics
+  required_host_capabilities:
+  - host-processes
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-sysstat
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/iostat "${DESTDIR}/bin/iostat" 2>/dev/null || which iostat >/dev/null
+      2>&1 && cp -a $(which iostat) "${DESTDIR}/bin/iostat" || true
+
+      chmod +x "${DESTDIR}/bin/iostat" 2>/dev/null || true'

@@ -1,0 +1,36 @@
+{
+  "id": "org.github.lsof-org.lsof",
+  "name": "lsof",
+  "version": "4.99.3",
+  "summary": "List open files, sockets, and IPC handles across processes",
+  "description": "lsof lists open files, network sockets, IPC handles, and pipes held by every process running on the host system.",
+  "license": "Purdue-BSD",
+  "category": "Diagnostics",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "lsof",
+      "summary": "List open files"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires inspecting /proc/*/fd across all host processes and sessions",
+    "required_host_capabilities": [
+      "host-processes",
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-lsof",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/lsof \"${DESTDIR}/bin/lsof\""
+      }
+    ],
+    "build_env": {}
+  }
+}

@@ -10,11 +10,9 @@
   "binaries": [
     {
       "name": "rg",
-      "target": null,
       "summary": "High-performance code search"
     }
   ],
-  "environment": {},
   "curation": {
     "unconfined_reason": "Requires unconfined read access across host filesystem trees (/home, /var, /etc, /tmp) to search arbitrary developer codebases",
     "required_host_capabilities": [
@@ -23,15 +21,15 @@
     "flatpak_incompatible": true
   },
   "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
     "sources": [],
     "steps": [
       {
         "name": "bundle-ripgrep",
-        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/rg \"${DESTDIR}/bin/rg\"\nchmod +x \"${DESTDIR}/bin/rg\"\n"
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/rg \"${DESTDIR}/bin/rg\""
       }
     ],
-    "prefix": "/app",
-    "bundle_libraries": [],
     "build_env": {}
   }
 }

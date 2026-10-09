@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "iperf3-3.17.1",
+  "documentNamespace": "https://clipak.org/spdx/org.es.net.iperf3/3.17.1",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "iperf3",
+      "SPDXID": "SPDXRef-Package-iperf3",
+      "versionInfo": "3.17.1",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "BSD-3-Clause",
+      "licenseDeclared": "BSD-3-Clause",
+      "description": "iperf3 measures the maximum achievable bandwidth on IP networks, supporting tuning of various parameters related to timing, buffers and protocols."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-iperf3"
+    }
+  ]
+}

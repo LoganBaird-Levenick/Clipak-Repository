@@ -1,0 +1,27 @@
+id: org.codeberg.smxi.inxi
+name: inxi
+version: 3.3.36
+summary: Full-featured CLI system information and hardware reporting tool
+description: inxi is a full-featured CLI system information tool that prints hardware,
+  driver, system, and desktop telemetry.
+license: GPL-3.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: inxi
+  summary: Hardware information reporter
+curation:
+  unconfined_reason: Queries host DMI, PCI, USB, X11/Wayland, and kernel logs
+  required_host_capabilities:
+  - raw-devices
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-inxi
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/inxi "${DESTDIR}/bin/inxi" 2>/dev/null || which inxi >/dev/null
+      2>&1 && cp -a $(which inxi) "${DESTDIR}/bin/inxi" || true
+
+      chmod +x "${DESTDIR}/bin/inxi" 2>/dev/null || true'

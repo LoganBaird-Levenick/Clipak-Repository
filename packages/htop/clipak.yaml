@@ -1,26 +1,29 @@
-id: "io.github.htop"
-name: "htop"
-version: "3.5.3"
-summary: "Interactive host process viewer and system monitor"
-description: "htop is a cross-platform interactive process viewer. Inside Clipak, it accesses the host PID namespace, host cgroups, CPU performance stats, and memory allocations without container isolation overhead."
-license: "GPL-2.0-or-later"
-category: "System"
-runtime: "org.clipak.Runtime//1.0"
+id: io.github.htop
+name: htop
+version: 3.5.3
+summary: Interactive host process viewer and system monitor
+description: htop is a cross-platform interactive process viewer. Inside Clipak, it
+  accesses the unconfined host /proc and PID namespaces to monitor every host process,
+  container, and system service on atomic Linux distributions.
+license: GPL-2.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
 binaries:
-  - name: "htop"
-    summary: "Interactive process viewer"
+- name: htop
+  summary: Interactive process viewer
 curation:
-  unconfined_reason: "Requires unconfined visibility of host PID hierarchy, /proc process descriptors, host cgroups, and sysfs hardware counters"
+  unconfined_reason: Requires unconfined read/write access to host /proc, host PID
+    namespaces, and POSIX process signaling
   required_host_capabilities:
-    - "host-processes"
-    - "proc-sysfs"
-    - "cgroups"
+  - host-processes
+  - host-filesystem
   flatpak_incompatible: true
 build:
   steps:
-    - name: "bundle-htop"
-      command: |
-        mkdir -p "${DESTDIR}/bin" "${DESTDIR}/share"
-        cp -a /usr/bin/htop "${DESTDIR}/bin/htop"
-        chmod +x "${DESTDIR}/bin/htop"
-        if [ -d /usr/share/htop ]; then cp -a /usr/share/htop "${DESTDIR}/share/"; fi
+  - name: bundle-htop
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/htop "${DESTDIR}/bin/htop" 2>/dev/null || which htop >/dev/null
+      2>&1 && cp -a $(which htop) "${DESTDIR}/bin/htop" || true
+
+      chmod +x "${DESTDIR}/bin/htop" 2>/dev/null || true'

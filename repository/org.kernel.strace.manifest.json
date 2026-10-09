@@ -10,11 +10,9 @@
   "binaries": [
     {
       "name": "strace",
-      "target": null,
       "summary": "System call tracer"
     }
   ],
-  "environment": {},
   "curation": {
     "unconfined_reason": "Requires unconfined access to host process IDs (PIDs), ptrace syscall, and host /proc for system call diagnostics",
     "required_host_capabilities": [
@@ -25,15 +23,15 @@
     "flatpak_incompatible": true
   },
   "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
     "sources": [],
     "steps": [
       {
         "name": "bundle-strace",
-        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/strace \"${DESTDIR}/bin/strace\"\nchmod +x \"${DESTDIR}/bin/strace\"\n"
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/strace \"${DESTDIR}/bin/strace\""
       }
     ],
-    "prefix": "/app",
-    "bundle_libraries": [],
     "build_env": {}
   }
 }

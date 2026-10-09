@@ -1,0 +1,35 @@
+{
+  "id": "org.gnu.screen",
+  "name": "screen",
+  "version": "5.0.0",
+  "summary": "Full-screen terminal multiplexer with session detach",
+  "description": "Screen is a full-screen window manager that multiplexes a physical terminal between several processes, typically interactive shells.",
+  "license": "GPL-3.0-or-later",
+  "category": "Utilities",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "screen",
+      "summary": "Terminal multiplexer"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires terminal PTY management and host session survival",
+    "required_host_capabilities": [
+      "host-processes"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-screen",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/screen \"${DESTDIR}/bin/screen\""
+      }
+    ],
+    "build_env": {}
+  }
+}

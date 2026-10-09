@@ -1,0 +1,26 @@
+id: org.github.crate-ci.typos
+name: typos
+version: 1.26.0
+summary: High-speed source code spell checker with near-zero false positives
+description: typos is a source code spell checker that runs in milliseconds with virtually
+  zero false positives across codebases.
+license: Apache-2.0 OR MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: typos
+  summary: Source code spell checker
+curation:
+  unconfined_reason: Requires in-place spell correction across entire git repositories
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-typos
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/typos "${DESTDIR}/bin/typos" 2>/dev/null || which typos >/dev/null
+      2>&1 && cp -a $(which typos) "${DESTDIR}/bin/typos" || true
+
+      chmod +x "${DESTDIR}/bin/typos" 2>/dev/null || true'

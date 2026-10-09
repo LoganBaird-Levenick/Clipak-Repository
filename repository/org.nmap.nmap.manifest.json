@@ -1,0 +1,35 @@
+{
+  "id": "org.nmap.nmap",
+  "name": "nmap",
+  "version": "7.95",
+  "summary": "Network exploration tool and security / port scanner",
+  "description": "Nmap is an open source tool for network exploration and security auditing using raw IP packets in novel ways.",
+  "license": "Nmap-Public-Source-License",
+  "category": "Networking",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "nmap",
+      "summary": "Network exploration tool and security scanner"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires raw network sockets (SOCK_RAW) and packet transmission",
+    "required_host_capabilities": [
+      "raw-network"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-nmap",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/nmap \"${DESTDIR}/bin/nmap\""
+      }
+    ],
+    "build_env": {}
+  }
+}

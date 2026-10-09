@@ -1,0 +1,35 @@
+{
+  "id": "org.zlib.pigz",
+  "name": "pigz",
+  "version": "2.8",
+  "summary": "Parallel implementation of gzip for multi-core CPUs",
+  "description": "pigz, which stands for Parallel Implementation of GZip, is a fully functional replacement for gzip that exploits multiple processors and cores.",
+  "license": "Zlib",
+  "category": "Utilities",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "pigz",
+      "summary": "Parallel gzip"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires high-throughput multi-threaded compression of host files",
+    "required_host_capabilities": [
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-pigz",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/pigz \"${DESTDIR}/bin/pigz\""
+      }
+    ],
+    "build_env": {}
+  }
+}

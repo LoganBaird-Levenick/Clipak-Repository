@@ -1,0 +1,36 @@
+{
+  "id": "org.github.nicolargo.glances",
+  "name": "glances",
+  "version": "4.1.2",
+  "summary": "Comprehensive system monitoring tool with web/terminal interfaces",
+  "description": "Glances is an open-source system monitoring tool that monitors CPU, memory, load, process list, network interfaces, disk I/O, and sensors.",
+  "license": "LGPL-3.0-or-later",
+  "category": "Diagnostics",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "glances",
+      "summary": "System monitoring tool"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires host system accounting, process tables, and network statistics",
+    "required_host_capabilities": [
+      "host-processes",
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-glances",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/glances \"${DESTDIR}/bin/glances\""
+      }
+    ],
+    "build_env": {}
+  }
+}

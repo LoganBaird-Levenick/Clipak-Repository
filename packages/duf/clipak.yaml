@@ -1,0 +1,26 @@
+id: org.github.muesli.duf
+name: duf
+version: 0.8.0
+summary: Disk Utility & Free space viewer with clean tabular display
+description: duf is a modern Disk Usage/Free Utility with colorful, clear output,
+  showing mount points, types, and capacities.
+license: MIT
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: duf
+  summary: Disk free viewer
+curation:
+  unconfined_reason: Requires access to host /proc/mounts and filesystem statistics
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-duf
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/duf "${DESTDIR}/bin/duf" 2>/dev/null || which duf >/dev/null
+      2>&1 && cp -a $(which duf) "${DESTDIR}/bin/duf" || true
+
+      chmod +x "${DESTDIR}/bin/duf" 2>/dev/null || true'

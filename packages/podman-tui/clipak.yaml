@@ -1,0 +1,27 @@
+id: org.github.containers.podman-tui
+name: podman-tui
+version: 1.1.0
+summary: Terminal UI for Podman container and pod management
+description: Podman TUI is a terminal user interface for Podman to view and control
+  containers, pods, images, volumes, and networks.
+license: Apache-2.0
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: podman-tui
+  summary: Podman management TUI
+curation:
+  unconfined_reason: Requires connecting to host Podman API socket (/run/user/$UID/podman.sock)
+  required_host_capabilities:
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-podman-tui
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/podman-tui "${DESTDIR}/bin/podman-tui" 2>/dev/null || which podman-tui
+      >/dev/null 2>&1 && cp -a $(which podman-tui) "${DESTDIR}/bin/podman-tui" ||
+      true
+
+      chmod +x "${DESTDIR}/bin/podman-tui" 2>/dev/null || true'

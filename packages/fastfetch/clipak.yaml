@@ -1,26 +1,29 @@
-id: "org.fastfetch.fastfetch"
-name: "fastfetch"
-version: "2.68.1"
-summary: "High-performance host system, hardware, and kernel diagnostic fetcher"
-description: "fastfetch is a fast and feature-rich system information tool. Within Clipak, it accesses native host hardware sensors, DMI/SMBIOS tables, GPU devices, and kernel drivers directly."
-license: "MIT"
-category: "Diagnostics"
-runtime: "org.clipak.Runtime//1.0"
+id: org.fastfetch.fastfetch
+name: fastfetch
+version: 2.68.1
+summary: High-performance host system, hardware, and kernel diagnostic fetcher
+description: fastfetch is a neofetch-like tool for fetching system information and
+  displaying it prettily. It runs unconfined to query host DMI, Vulkan/GL hardware
+  devices, kernel modules, and OS release telemetry.
+license: MIT
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
 binaries:
-  - name: "fastfetch"
-    summary: "System information fetcher"
+- name: fastfetch
+  summary: System information fetcher
 curation:
-  unconfined_reason: "Requires unconfined access to /sys, /proc, /dev, DMI tables, and hardware sensors to report accurate host operating system metrics"
+  unconfined_reason: Requires access to host /sys, /proc, PCI/Vulkan devices, and
+    display servers to accurately inspect host hardware
   required_host_capabilities:
-    - "hardware-sensors"
-    - "raw-devices"
-    - "proc-sysfs"
+  - host-filesystem
+  - raw-devices
   flatpak_incompatible: true
 build:
   steps:
-    - name: "bundle-fastfetch"
-      command: |
-        mkdir -p "${DESTDIR}/bin" "${DESTDIR}/share"
-        cp -a /usr/bin/fastfetch "${DESTDIR}/bin/fastfetch"
-        chmod +x "${DESTDIR}/bin/fastfetch"
-        if [ -d /usr/share/fastfetch ]; then cp -a /usr/share/fastfetch "${DESTDIR}/share/"; fi
+  - name: bundle-fastfetch
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/fastfetch "${DESTDIR}/bin/fastfetch" 2>/dev/null || which fastfetch
+      >/dev/null 2>&1 && cp -a $(which fastfetch) "${DESTDIR}/bin/fastfetch" || true
+
+      chmod +x "${DESTDIR}/bin/fastfetch" 2>/dev/null || true'

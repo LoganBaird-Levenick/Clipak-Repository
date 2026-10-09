@@ -1,0 +1,37 @@
+{
+  "id": "org.rclone.rclone",
+  "name": "rclone",
+  "version": "1.68.1",
+  "summary": "Rsync for cloud storage with FUSE mounting",
+  "description": "rclone is a command-line program to manage files on cloud storage, supporting over 70 cloud storage providers and FUSE mounting.",
+  "license": "MIT",
+  "category": "Utilities",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "rclone",
+      "summary": "Cloud storage sync tool"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires host FUSE filesystem mounting (/dev/fuse) and network transfers",
+    "required_host_capabilities": [
+      "host-filesystem",
+      "raw-devices",
+      "host-sockets"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-rclone",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/rclone \"${DESTDIR}/bin/rclone\""
+      }
+    ],
+    "build_env": {}
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "id": "org.github.jonas.tig",
+  "name": "tig",
+  "version": "2.5.10",
+  "summary": "Text-mode interface for git repository revision graph navigation",
+  "description": "tig is an ncurses-based text-mode interface for git. It functions mainly as a Git repository browser and can also assist in staging changes.",
+  "license": "GPL-2.0-or-later",
+  "category": "Development",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "tig",
+      "summary": "Git repository browser"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires direct terminal control and parsing host git trees",
+    "required_host_capabilities": [
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-tig",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/tig \"${DESTDIR}/bin/tig\""
+      }
+    ],
+    "build_env": {}
+  }
+}

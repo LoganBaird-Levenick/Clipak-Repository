@@ -1,0 +1,35 @@
+{
+  "id": "org.github.sharkdp.fd",
+  "name": "fd-find",
+  "version": "10.2.0",
+  "summary": "Simple, fast and user-friendly alternative to find",
+  "description": "fd is a simple, fast and user-friendly alternative to find. It operates unconfined across all host directories with colorized output and regex pattern support.",
+  "license": "Apache-2.0 OR MIT",
+  "category": "Development",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "fd",
+      "summary": "Fast filesystem searcher"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires unconfined access to traverse entire host directory trees without sandbox filesystem isolation",
+    "required_host_capabilities": [
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-fd",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/fd \"${DESTDIR}/bin/fd\""
+      }
+    ],
+    "build_env": {}
+  }
+}

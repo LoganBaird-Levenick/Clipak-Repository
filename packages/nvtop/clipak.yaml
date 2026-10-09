@@ -1,0 +1,27 @@
+id: org.github.syllo.nvtop
+name: nvtop
+version: 3.1.0
+summary: Task monitor for NVIDIA, AMD, and Intel GPUs
+description: nvtop is an htop-like monitoring tool for GPUs, supporting NVIDIA, AMD,
+  Intel, and Apple Silicon accelerators.
+license: GPL-3.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: nvtop
+  summary: GPU task monitor
+curation:
+  unconfined_reason: Requires direct access to host GPU device nodes (/dev/dri, /dev/nvidia*)
+  required_host_capabilities:
+  - raw-devices
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-nvtop
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/nvtop "${DESTDIR}/bin/nvtop" 2>/dev/null || which nvtop >/dev/null
+      2>&1 && cp -a $(which nvtop) "${DESTDIR}/bin/nvtop" || true
+
+      chmod +x "${DESTDIR}/bin/nvtop" 2>/dev/null || true'

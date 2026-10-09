@@ -1,0 +1,27 @@
+id: org.github.jdx.mise
+name: mise
+version: 2024.10.3
+summary: Polyglot tool version manager and environment manager
+description: mise (formerly rtx) is a polyglot tool version manager and environment
+  manager that replaces asdf, nvm, rbenv, and pyenv.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: mise
+  summary: Polyglot version manager
+curation:
+  unconfined_reason: Requires managing user binaries, shim injection, and shell hooks
+  required_host_capabilities:
+  - host-filesystem
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-mise
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/mise "${DESTDIR}/bin/mise" 2>/dev/null || which mise >/dev/null
+      2>&1 && cp -a $(which mise) "${DESTDIR}/bin/mise" || true
+
+      chmod +x "${DESTDIR}/bin/mise" 2>/dev/null || true'

@@ -3,91 +3,30 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "tmux-3.7c",
-  "document_namespace": "https://clipak.org/spdx/tmux/3.7c",
-  "creation_info": {
-    "created": "2026-01-01T00:00:00Z",
+  "documentNamespace": "https://clipak.org/spdx/org.tmux.tmux/3.7c",
+  "creationInfo": {
     "creators": [
-      "Tool: Clipak-0.1.0",
-      "Organization: Clipak"
-    ]
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
   },
   "packages": [
     {
-      "SPDXID": "SPDXRef-Package-tmux",
       "name": "tmux",
-      "version_info": "3.7c",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "ISC",
-      "license_declared": "ISC",
-      "copyright_text": "NOASSERTION",
-      "description": "tmux is a terminal multiplexer that lets you switch easily between several programs in one terminal, detach them and reattach them to a different terminal. Inside Clipak, it accesses the host session sockets and user processes directly."
-    },
+      "SPDXID": "SPDXRef-Package-tmux",
+      "versionInfo": "3.7c",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "ISC",
+      "licenseDeclared": "ISC",
+      "description": "tmux is a terminal multiplexer that lets you switch easily between several programs in one terminal. It attaches to host pseudo-terminals and survives session detachment across host logouts."
+    }
+  ],
+  "relationships": [
     {
-      "SPDXID": "SPDXRef-Component-libsystemd.so.0",
-      "name": "libsystemd.so.0",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "ISC",
-      "license_declared": "ISC",
-      "copyright_text": "NOASSERTION",
-      "description": null
-    },
-    {
-      "SPDXID": "SPDXRef-Component-libutempter.so.0",
-      "name": "libutempter.so.0",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "ISC",
-      "license_declared": "ISC",
-      "copyright_text": "NOASSERTION",
-      "description": null
-    },
-    {
-      "SPDXID": "SPDXRef-Component-libtinfo.so.6",
-      "name": "libtinfo.so.6",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "ISC",
-      "license_declared": "ISC",
-      "copyright_text": "NOASSERTION",
-      "description": null
-    },
-    {
-      "SPDXID": "SPDXRef-Component-libevent_core-2.1.so.7",
-      "name": "libevent_core-2.1.so.7",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "ISC",
-      "license_declared": "ISC",
-      "copyright_text": "NOASSERTION",
-      "description": null
-    },
-    {
-      "SPDXID": "SPDXRef-Component-libresolv.so.2",
-      "name": "libresolv.so.2",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "ISC",
-      "license_declared": "ISC",
-      "copyright_text": "NOASSERTION",
-      "description": null
-    },
-    {
-      "SPDXID": "SPDXRef-Component-libgcc_s.so.1",
-      "name": "libgcc_s.so.1",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "ISC",
-      "license_declared": "ISC",
-      "copyright_text": "NOASSERTION",
-      "description": null
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-tmux"
     }
   ]
 }

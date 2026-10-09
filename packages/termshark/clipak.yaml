@@ -1,0 +1,26 @@
+id: org.github.gcla.termshark
+name: termshark
+version: 2.4.0
+summary: Terminal UI for Wireshark packet capture and inspection
+description: termshark is a terminal user-interface for tshark, inspired by Wireshark,
+  allowing you to inspect live or saved packet captures.
+license: MIT
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: termshark
+  summary: Terminal Wireshark UI
+curation:
+  unconfined_reason: Requires capturing packets directly from host network devices
+  required_host_capabilities:
+  - raw-network
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-termshark
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/termshark "${DESTDIR}/bin/termshark" 2>/dev/null || which termshark
+      >/dev/null 2>&1 && cp -a $(which termshark) "${DESTDIR}/bin/termshark" || true
+
+      chmod +x "${DESTDIR}/bin/termshark" 2>/dev/null || true'

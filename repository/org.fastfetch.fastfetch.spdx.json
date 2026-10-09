@@ -3,47 +3,30 @@
   "dataLicense": "CC0-1.0",
   "SPDXID": "SPDXRef-DOCUMENT",
   "name": "fastfetch-2.68.1",
-  "document_namespace": "https://clipak.org/spdx/fastfetch/2.68.1",
-  "creation_info": {
-    "created": "2026-01-01T00:00:00Z",
+  "documentNamespace": "https://clipak.org/spdx/org.fastfetch.fastfetch/2.68.1",
+  "creationInfo": {
     "creators": [
-      "Tool: Clipak-0.1.0",
-      "Organization: Clipak"
-    ]
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
   },
   "packages": [
     {
-      "SPDXID": "SPDXRef-Package-fastfetch",
       "name": "fastfetch",
-      "version_info": "2.68.1",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "MIT",
-      "license_declared": "MIT",
-      "copyright_text": "NOASSERTION",
-      "description": "fastfetch is a fast and feature-rich system information tool. Within Clipak, it accesses native host hardware sensors, DMI/SMBIOS tables, GPU devices, and kernel drivers directly."
-    },
+      "SPDXID": "SPDXRef-Package-fastfetch",
+      "versionInfo": "2.68.1",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "MIT",
+      "licenseDeclared": "MIT",
+      "description": "fastfetch is a neofetch-like tool for fetching system information and displaying it prettily. It runs unconfined to query host DMI, Vulkan/GL hardware devices, kernel modules, and OS release telemetry."
+    }
+  ],
+  "relationships": [
     {
-      "SPDXID": "SPDXRef-Component-libyyjson.so.0",
-      "name": "libyyjson.so.0",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "MIT",
-      "license_declared": "MIT",
-      "copyright_text": "NOASSERTION",
-      "description": null
-    },
-    {
-      "SPDXID": "SPDXRef-Component-libgcc_s.so.1",
-      "name": "libgcc_s.so.1",
-      "version_info": "bundled",
-      "download_location": "NOASSERTION",
-      "files_analyzed": false,
-      "license_concluded": "MIT",
-      "license_declared": "MIT",
-      "copyright_text": "NOASSERTION",
-      "description": null
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-fastfetch"
     }
   ]
 }

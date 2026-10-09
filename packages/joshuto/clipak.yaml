@@ -1,0 +1,26 @@
+id: org.github.kamiyaa.joshuto
+name: joshuto
+version: 0.9.8
+summary: Ranger-like terminal file manager built in Rust
+description: joshuto is a ranger-like terminal file manager built in Rust that offers
+  vim-like navigation and file preview capabilities.
+license: LGPL-3.0-only
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: joshuto
+  summary: Terminal file manager
+curation:
+  unconfined_reason: Requires full navigation and manipulation of host files
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-joshuto
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/joshuto "${DESTDIR}/bin/joshuto" 2>/dev/null || which joshuto
+      >/dev/null 2>&1 && cp -a $(which joshuto) "${DESTDIR}/bin/joshuto" || true
+
+      chmod +x "${DESTDIR}/bin/joshuto" 2>/dev/null || true'

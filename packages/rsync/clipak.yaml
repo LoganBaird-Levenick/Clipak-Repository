@@ -1,0 +1,27 @@
+id: org.samba.rsync
+name: rsync
+version: 3.3.0
+summary: Fast, versatile remote and local file-copying tool
+description: rsync is an open source utility that provides fast incremental file transfer
+  across local directories or remote SSH servers.
+license: GPL-3.0-or-later
+category: Utilities
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: rsync
+  summary: Remote and local file-copying tool
+curation:
+  unconfined_reason: Requires preserving host POSIX permissions, ownership, and hardlinks
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-rsync
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/rsync "${DESTDIR}/bin/rsync" 2>/dev/null || which rsync >/dev/null
+      2>&1 && cp -a $(which rsync) "${DESTDIR}/bin/rsync" || true
+
+      chmod +x "${DESTDIR}/bin/rsync" 2>/dev/null || true'

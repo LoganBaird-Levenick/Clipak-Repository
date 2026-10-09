@@ -1,0 +1,36 @@
+{
+  "id": "org.alioth.debian.ltrace",
+  "name": "ltrace",
+  "version": "0.7.91",
+  "summary": "Dynamic library call interceptor and debugger",
+  "description": "ltrace intercepts and records dynamic library calls called by an executed process and the signals received by that process.",
+  "license": "GPL-2.0-or-later",
+  "category": "Diagnostics",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "ltrace",
+      "summary": "Library call tracer"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires ptrace attachment and dynamic symbol interception on host processes",
+    "required_host_capabilities": [
+      "ptrace",
+      "host-processes"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-ltrace",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/ltrace \"${DESTDIR}/bin/ltrace\""
+      }
+    ],
+    "build_env": {}
+  }
+}

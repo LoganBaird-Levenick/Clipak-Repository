@@ -1,0 +1,27 @@
+id: org.github.atuinsh.atuin
+name: atuin
+version: 18.3.0
+summary: Magical shell history sync and search using SQLite
+description: Atuin replaces your existing shell history with a SQLite database, and
+  records additional context for your commands, with end-to-end encrypted history
+  sync.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: atuin
+  summary: Shell history search and sync
+curation:
+  unconfined_reason: Requires intercepting host shell history files and keybindings
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-atuin
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/atuin "${DESTDIR}/bin/atuin" 2>/dev/null || which atuin >/dev/null
+      2>&1 && cp -a $(which atuin) "${DESTDIR}/bin/atuin" || true
+
+      chmod +x "${DESTDIR}/bin/atuin" 2>/dev/null || true'

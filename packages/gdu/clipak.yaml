@@ -1,0 +1,26 @@
+id: org.github.dundee.gdu
+name: gdu
+version: 5.29.0
+summary: Fast disk usage analyzer written in Go with console interface
+description: gdu is a disk usage analyzer with console interface written in Go, specifically
+  optimized for solid state drives (SSD).
+license: MIT
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: gdu
+  summary: Fast disk usage analyzer
+curation:
+  unconfined_reason: Requires parallel disk scanning across host mounts and filesystems
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-gdu
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/gdu "${DESTDIR}/bin/gdu" 2>/dev/null || which gdu >/dev/null
+      2>&1 && cp -a $(which gdu) "${DESTDIR}/bin/gdu" || true
+
+      chmod +x "${DESTDIR}/bin/gdu" 2>/dev/null || true'

@@ -1,0 +1,27 @@
+id: org.github.iovisor.bcc
+name: bcc-tools
+version: 0.31.0
+summary: BPF-based Linux performance analysis and monitoring tools
+description: BCC is a toolkit for creating efficient kernel tracing and manipulation
+  programs, including execsnoop, opensnoop, and biosnoop.
+license: Apache-2.0
+category: Profiling
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: execsnoop
+  summary: Trace new processes via eBPF
+curation:
+  unconfined_reason: Requires compiling and injecting eBPF bytecode into host kernel
+  required_host_capabilities:
+  - bpf
+  - kernel-trace
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-bcc-tools
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/execsnoop "${DESTDIR}/bin/execsnoop" 2>/dev/null || which execsnoop
+      >/dev/null 2>&1 && cp -a $(which execsnoop) "${DESTDIR}/bin/execsnoop" || true
+
+      chmod +x "${DESTDIR}/bin/execsnoop" 2>/dev/null || true'

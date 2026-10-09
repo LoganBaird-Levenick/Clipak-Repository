@@ -1,0 +1,26 @@
+id: org.kernel.pciutils
+name: pciutils
+version: 3.13.0
+summary: Inspect host PCI bus topology and expansion devices
+description: pciutils contains lspci and utilities for inspecting and manipulating
+  configuration of PCI devices on the host motherboard.
+license: GPL-2.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: lspci
+  summary: PCI bus inspection tool
+curation:
+  unconfined_reason: Requires reading /sys/bus/pci and host PCI configuration space
+  required_host_capabilities:
+  - raw-devices
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-pciutils
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/lspci "${DESTDIR}/bin/lspci" 2>/dev/null || which lspci >/dev/null
+      2>&1 && cp -a $(which lspci) "${DESTDIR}/bin/lspci" || true
+
+      chmod +x "${DESTDIR}/bin/lspci" 2>/dev/null || true'

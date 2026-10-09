@@ -1,0 +1,27 @@
+id: org.github.go-task.task
+name: task
+version: 3.39.2
+summary: Task runner and build tool with YAML configuration
+description: Task is a task runner / build tool that aims to be simpler and easier
+  to use than GNU Make, configured using clean YAML files.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: task
+  summary: Task runner and build tool
+curation:
+  unconfined_reason: Requires spawning build recipes on host OS
+  required_host_capabilities:
+  - host-filesystem
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-task
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/task "${DESTDIR}/bin/task" 2>/dev/null || which task >/dev/null
+      2>&1 && cp -a $(which task) "${DESTDIR}/bin/task" || true
+
+      chmod +x "${DESTDIR}/bin/task" 2>/dev/null || true'

@@ -1,0 +1,27 @@
+id: org.kernel.ethtool
+name: ethtool
+version: '6.10'
+summary: Query and control host Ethernet network drivers and hardware settings
+description: ethtool is a utility for examining and tuning network device drivers
+  and hardware settings (especially for wired Ethernet devices).
+license: GPL-2.0-only
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: ethtool
+  summary: Network driver controller
+curation:
+  unconfined_reason: Requires SIOCETHTOOL ioctl calls to host kernel network interfaces
+  required_host_capabilities:
+  - raw-network
+  - raw-devices
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-ethtool
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/ethtool "${DESTDIR}/bin/ethtool" 2>/dev/null || which ethtool
+      >/dev/null 2>&1 && cp -a $(which ethtool) "${DESTDIR}/bin/ethtool" || true
+
+      chmod +x "${DESTDIR}/bin/ethtool" 2>/dev/null || true'

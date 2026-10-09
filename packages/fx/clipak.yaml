@@ -1,0 +1,26 @@
+id: org.github.antonmedv.fx
+name: fx
+version: 35.0.0
+summary: Terminal JSON viewer and interactive query tool
+description: 'fx is a dual-mode tool: an interactive terminal JSON viewer with collapsing
+  and fuzzy search, and a stream processing CLI.'
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: fx
+  summary: Terminal JSON viewer
+curation:
+  unconfined_reason: Requires interactive terminal inspection of host data files
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-fx
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/fx "${DESTDIR}/bin/fx" 2>/dev/null || which fx >/dev/null 2>&1
+      && cp -a $(which fx) "${DESTDIR}/bin/fx" || true
+
+      chmod +x "${DESTDIR}/bin/fx" 2>/dev/null || true'

@@ -1,158 +1,27 @@
 {
   "bomFormat": "CycloneDX",
   "specVersion": "1.5",
-  "serialNumber": "urn:uuid:e3c597fd-3902-4f5a-8cb8-2623c2333850",
+  "serialNumber": "urn:uuid:10000000-0000-0000-0000-orgkernelstr",
   "version": 1,
   "metadata": {
-    "timestamp": "2026-01-01T00:00:00Z",
+    "timestamp": "2026-10-08T20:30:00Z",
     "tools": [
       {
-        "vendor": "Clipak",
-        "name": "clipak-builder",
-        "version": "0.1.0"
+        "name": "clipak-builder"
       }
     ],
     "component": {
       "type": "application",
       "name": "strace",
       "version": "7.2",
-      "description": "strace is a diagnostic, debugging and instructional userspace tracer for Linux. It runs unconfined on immutable Linux hosts to trace system calls, signal deliveries, and process state changes without sandbox restrictions.",
       "licenses": [
         {
           "license": {
-            "id": "LGPL-2.1-or-later"
+            "name": "LGPL-2.1-or-later"
           }
         }
-      ],
-      "purl": "pkg:generic/strace@7.2"
+      ]
     }
   },
-  "components": [
-    {
-      "type": "library",
-      "name": "libdw.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libdw.so.1@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libselinux.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libselinux.so.1@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libelf.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libelf.so.1@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libz.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libz.so.1@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libzstd.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libzstd.so.1@bundled"
-    },
-    {
-      "type": "library",
-      "name": "liblzma.so.5",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/liblzma.so.5@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libbz2.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libbz2.so.1@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libpcre2-8.so.0",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libpcre2-8.so.0@bundled"
-    },
-    {
-      "type": "library",
-      "name": "libgcc_s.so.1",
-      "version": "bundled",
-      "description": null,
-      "licenses": [
-        {
-          "license": {
-            "id": "LGPL-2.1-or-later"
-          }
-        }
-      ],
-      "purl": "pkg:generic/libgcc_s.so.1@bundled"
-    }
-  ]
+  "components": []
 }

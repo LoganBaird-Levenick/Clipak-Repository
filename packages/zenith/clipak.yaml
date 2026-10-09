@@ -1,0 +1,27 @@
+id: org.github.bvaisvil.zenith
+name: zenith
+version: 0.14.1
+summary: Terminal system monitor with zoomable metrics and GPU profiling
+description: zenith is a terminal system monitor with zoomable charts for CPU, GPU,
+  memory, disk, and network history.
+license: MIT
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: zenith
+  summary: Zoomable system and GPU monitor
+curation:
+  unconfined_reason: Requires host GPU device nodes and kernel process accounting
+  required_host_capabilities:
+  - host-processes
+  - raw-devices
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-zenith
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/zenith "${DESTDIR}/bin/zenith" 2>/dev/null || which zenith >/dev/null
+      2>&1 && cp -a $(which zenith) "${DESTDIR}/bin/zenith" || true
+
+      chmod +x "${DESTDIR}/bin/zenith" 2>/dev/null || true'

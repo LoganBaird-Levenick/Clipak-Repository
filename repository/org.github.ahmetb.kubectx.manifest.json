@@ -1,0 +1,39 @@
+{
+  "id": "org.github.ahmetb.kubectx",
+  "name": "kubectx",
+  "version": "0.9.5",
+  "summary": "Fast switching between Kubernetes contexts and namespaces",
+  "description": "kubectx and kubens are utilities to manage and switch between kubectl contexts and namespaces easily.",
+  "license": "Apache-2.0",
+  "category": "Development",
+  "runtime": "org.clipak.Runtime//1.0",
+  "binaries": [
+    {
+      "name": "kubectx",
+      "summary": "Switch Kube contexts"
+    },
+    {
+      "name": "kubens",
+      "summary": "Switch Kube namespaces"
+    }
+  ],
+  "curation": {
+    "unconfined_reason": "Requires modifying host kubeconfig files directly",
+    "required_host_capabilities": [
+      "host-filesystem"
+    ],
+    "flatpak_incompatible": true
+  },
+  "build": {
+    "prefix": "/app",
+    "bundle_libraries": [],
+    "sources": [],
+    "steps": [
+      {
+        "name": "bundle-kubectx",
+        "command": "mkdir -p \"${DESTDIR}/bin\"\ncp -a /usr/bin/kubectx \"${DESTDIR}/bin/kubectx\""
+      }
+    ],
+    "build_env": {}
+  }
+}

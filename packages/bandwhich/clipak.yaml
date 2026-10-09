@@ -1,0 +1,27 @@
+id: org.github.imsnif.bandwhich
+name: bandwhich
+version: 0.23.1
+summary: Terminal bandwidth utilization monitor displaying process usage
+description: bandwhich displays current network utilization by process, connection,
+  and remote IP/hostname in a responsive TUI.
+license: MIT
+category: Networking
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: bandwhich
+  summary: Process bandwidth monitor
+curation:
+  unconfined_reason: Requires kernel socket tracking and network interface sniffing
+  required_host_capabilities:
+  - raw-network
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-bandwhich
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/bandwhich "${DESTDIR}/bin/bandwhich" 2>/dev/null || which bandwhich
+      >/dev/null 2>&1 && cp -a $(which bandwhich) "${DESTDIR}/bin/bandwhich" || true
+
+      chmod +x "${DESTDIR}/bin/bandwhich" 2>/dev/null || true'

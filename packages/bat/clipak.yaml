@@ -1,0 +1,27 @@
+id: org.github.sharkdp.bat
+name: bat
+version: 0.24.0
+summary: Cat clone with syntax highlighting and Git integration
+description: bat is a cat clone with syntax highlighting and Git integration. It integrates
+  directly with host terminal pagers and reads arbitrary host project files.
+license: Apache-2.0 OR MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: bat
+  summary: Cat clone with syntax highlighting
+curation:
+  unconfined_reason: Requires unconfined read access across host filesystem trees
+    and terminal paging
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-bat
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/bat "${DESTDIR}/bin/bat" 2>/dev/null || which bat >/dev/null
+      2>&1 && cp -a $(which bat) "${DESTDIR}/bin/bat" || true
+
+      chmod +x "${DESTDIR}/bin/bat" 2>/dev/null || true'

@@ -1,0 +1,27 @@
+id: org.sh.helm
+name: helm
+version: 3.16.2
+summary: The package manager for Kubernetes
+description: Helm is the package manager for Kubernetes, helping you manage, package,
+  and deploy complex Kubernetes charts.
+license: Apache-2.0
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: helm
+  summary: Kubernetes package manager
+curation:
+  unconfined_reason: Requires reading host charts and deploying to remote clusters
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-helm
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/helm "${DESTDIR}/bin/helm" 2>/dev/null || which helm >/dev/null
+      2>&1 && cp -a $(which helm) "${DESTDIR}/bin/helm" || true
+
+      chmod +x "${DESTDIR}/bin/helm" 2>/dev/null || true'

@@ -1,0 +1,26 @@
+id: org.github.dandavison.delta
+name: delta
+version: 0.18.2
+summary: Syntax-highlighting pager for git, diff, and grep output
+description: delta is a syntax-highlighting pager for git, diff, and grep output with
+  side-by-side view and line numbers.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: delta
+  summary: Syntax-highlighting diff pager
+curation:
+  unconfined_reason: Requires host git pager integration and terminal terminal styling
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-delta
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/delta "${DESTDIR}/bin/delta" 2>/dev/null || which delta >/dev/null
+      2>&1 && cp -a $(which delta) "${DESTDIR}/bin/delta" || true
+
+      chmod +x "${DESTDIR}/bin/delta" 2>/dev/null || true'

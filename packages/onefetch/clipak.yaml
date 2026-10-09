@@ -1,0 +1,26 @@
+id: org.github.o2sh.onefetch
+name: onefetch
+version: 2.22.0
+summary: Git repository summary tool directly in your terminal
+description: onefetch is a command-line Git information tool written in Rust that
+  displays information about your Git project directly in your terminal.
+license: MIT
+category: Development
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: onefetch
+  summary: Git repository information tool
+curation:
+  unconfined_reason: Requires parsing host repository metadata and commit history
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-onefetch
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/onefetch "${DESTDIR}/bin/onefetch" 2>/dev/null || which onefetch
+      >/dev/null 2>&1 && cp -a $(which onefetch) "${DESTDIR}/bin/onefetch" || true
+
+      chmod +x "${DESTDIR}/bin/onefetch" 2>/dev/null || true'

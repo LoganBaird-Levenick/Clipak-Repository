@@ -1,0 +1,27 @@
+id: org.gnu.gdb
+name: gdb
+version: '15.2'
+summary: The GNU Project Debugger for compiled executables
+description: GDB allows you to see what is going on inside another program while it
+  executes or what another program was doing at the moment it crashed.
+license: GPL-3.0-or-later
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: gdb
+  summary: GNU Debugger
+curation:
+  unconfined_reason: Requires ptrace, host memory manipulation, and core dump inspection
+  required_host_capabilities:
+  - ptrace
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-gdb
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/gdb "${DESTDIR}/bin/gdb" 2>/dev/null || which gdb >/dev/null
+      2>&1 && cp -a $(which gdb) "${DESTDIR}/bin/gdb" || true
+
+      chmod +x "${DESTDIR}/bin/gdb" 2>/dev/null || true'

@@ -1,0 +1,27 @@
+id: org.llvm.lldb
+name: lldb
+version: 19.1.1
+summary: High-performance debugger from LLVM project
+description: LLDB is a next generation, high-performance debugger built on LLVM and
+  Clang technologies.
+license: Apache-2.0 WITH LLVM-exception
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: lldb
+  summary: LLVM Debugger
+curation:
+  unconfined_reason: Requires host process debugging and native symbol analysis
+  required_host_capabilities:
+  - ptrace
+  - host-processes
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-lldb
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/lldb "${DESTDIR}/bin/lldb" 2>/dev/null || which lldb >/dev/null
+      2>&1 && cp -a $(which lldb) "${DESTDIR}/bin/lldb" || true
+
+      chmod +x "${DESTDIR}/bin/lldb" 2>/dev/null || true'

@@ -1,0 +1,28 @@
+id: org.sigstore.cosign
+name: cosign
+version: 2.4.1
+summary: Code signing and verification for OCI container images and blobs
+description: Cosign enables container signing, verification, and storage in an OCI
+  registry using Sigstore public goods infrastructure.
+license: Apache-2.0
+category: Security
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: cosign
+  summary: Container image signing and verification
+curation:
+  unconfined_reason: Requires verifying signatures across host OCI registries and
+    artifacts
+  required_host_capabilities:
+  - host-filesystem
+  - host-sockets
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-cosign
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/cosign "${DESTDIR}/bin/cosign" 2>/dev/null || which cosign >/dev/null
+      2>&1 && cp -a $(which cosign) "${DESTDIR}/bin/cosign" || true
+
+      chmod +x "${DESTDIR}/bin/cosign" 2>/dev/null || true'

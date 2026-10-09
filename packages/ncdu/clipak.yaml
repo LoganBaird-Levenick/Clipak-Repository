@@ -1,0 +1,27 @@
+id: org.dev.yorhel.ncdu
+name: ncdu
+version: '2.5'
+summary: NCurses disk usage analyzer for interactive cleanups
+description: ncdu is a disk usage analyzer with an ncurses interface, designed to
+  find space hogs on a remote server or local machine.
+license: MIT
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: ncdu
+  summary: Interactive disk usage analyzer
+curation:
+  unconfined_reason: Requires interactive scanning and deletion across host mount
+    points
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-ncdu
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/ncdu "${DESTDIR}/bin/ncdu" 2>/dev/null || which ncdu >/dev/null
+      2>&1 && cp -a $(which ncdu) "${DESTDIR}/bin/ncdu" || true
+
+      chmod +x "${DESTDIR}/bin/ncdu" 2>/dev/null || true'

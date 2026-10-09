@@ -1,0 +1,32 @@
+{
+  "spdxVersion": "SPDX-2.3",
+  "dataLicense": "CC0-1.0",
+  "SPDXID": "SPDXRef-DOCUMENT",
+  "name": "ripgrep-all-0.10.6",
+  "documentNamespace": "https://clipak.org/spdx/org.github.phiresky.ripgrep-all/0.10.6",
+  "creationInfo": {
+    "creators": [
+      "Tool: clipak-builder"
+    ],
+    "created": "2026-10-08T20:30:00Z"
+  },
+  "packages": [
+    {
+      "name": "ripgrep-all",
+      "SPDXID": "SPDXRef-Package-ripgrep-all",
+      "versionInfo": "0.10.6",
+      "downloadLocation": "NOASSERTION",
+      "filesAnalyzed": false,
+      "licenseConcluded": "AGPL-3.0-or-later",
+      "licenseDeclared": "AGPL-3.0-or-later",
+      "description": "rga is a ripgrep wrapper that allows you to search in PDFs, E-Books, Office documents, zip, tar.gz, and embedded text."
+    }
+  ],
+  "relationships": [
+    {
+      "spdxElementId": "SPDXRef-DOCUMENT",
+      "relationshipType": "DESCRIBES",
+      "relatedSpdxElement": "SPDXRef-Package-ripgrep-all"
+    }
+  ]
+}

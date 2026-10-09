@@ -1,0 +1,27 @@
+id: org.github.andreafrancia.trash-cli
+name: trash-cli
+version: 0.24.5
+summary: Command-line interface to the FreeDesktop.org trashcan
+description: trash-cli provides a command line interface to the FreeDesktop.org trashcan,
+  trashing files instead of deleting them permanently.
+license: GPL-2.0-or-later
+category: Utilities
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: trash
+  summary: Trash command-line interface
+curation:
+  unconfined_reason: Requires moving files across host filesystem mount points and
+    trash directories
+  required_host_capabilities:
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-trash-cli
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/trash "${DESTDIR}/bin/trash" 2>/dev/null || which trash >/dev/null
+      2>&1 && cp -a $(which trash) "${DESTDIR}/bin/trash" || true
+
+      chmod +x "${DESTDIR}/bin/trash" 2>/dev/null || true'

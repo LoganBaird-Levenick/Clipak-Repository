@@ -1,0 +1,28 @@
+id: org.ezix.lshw
+name: lshw
+version: '02.20'
+summary: Detailed hardware configuration report generator
+description: lshw is a small tool to provide detailed information on the hardware
+  configuration of the machine by querying memory configuration, firmware, and bus
+  details.
+license: GPL-2.0-only
+category: Diagnostics
+runtime: org.clipak.Runtime//1.0
+binaries:
+- name: lshw
+  summary: Hardware information extractor
+curation:
+  unconfined_reason: Requires reading /proc/device-tree, DMI tables, and kernel memory
+  required_host_capabilities:
+  - raw-devices
+  - host-filesystem
+  flatpak_incompatible: true
+build:
+  steps:
+  - name: bundle-lshw
+    command: 'mkdir -p "${DESTDIR}/bin"
+
+      cp -a /usr/bin/lshw "${DESTDIR}/bin/lshw" 2>/dev/null || which lshw >/dev/null
+      2>&1 && cp -a $(which lshw) "${DESTDIR}/bin/lshw" || true
+
+      chmod +x "${DESTDIR}/bin/lshw" 2>/dev/null || true'
