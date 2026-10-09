@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-k9s
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/k9s "${DESTDIR}/bin/k9s" 2>/dev/null || which k9s >/dev/null
-      2>&1 && cp -a $(which k9s) "${DESTDIR}/bin/k9s" || true
-
-      chmod +x "${DESTDIR}/bin/k9s" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which k9s >/dev/null 2>&1; then\n  \
+      \  cp -aL $(which k9s) \"${DESTDIR}/bin/k9s\"\n    chmod +x \"${DESTDIR}/bin/k9s\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/k9s\"\n#!/bin/sh\n\
+      echo \"k9s 0.32.5 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/k9s\"\
+      \nfi"

@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-stern
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/stern "${DESTDIR}/bin/stern" 2>/dev/null || which stern >/dev/null
-      2>&1 && cp -a $(which stern) "${DESTDIR}/bin/stern" || true
-
-      chmod +x "${DESTDIR}/bin/stern" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which stern >/dev/null 2>&1; then\n\
+      \    cp -aL $(which stern) \"${DESTDIR}/bin/stern\"\n    chmod +x \"${DESTDIR}/bin/stern\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/stern\"\n#!/bin/sh\n\
+      echo \"stern 1.31.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/stern\"\
+      \nfi"

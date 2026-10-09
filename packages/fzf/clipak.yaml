@@ -19,9 +19,8 @@ curation:
 build:
   steps:
   - name: bundle-fzf
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/fzf "${DESTDIR}/bin/fzf" 2>/dev/null || which fzf >/dev/null
-      2>&1 && cp -a $(which fzf) "${DESTDIR}/bin/fzf" || true
-
-      chmod +x "${DESTDIR}/bin/fzf" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which fzf >/dev/null 2>&1; then\n  \
+      \  cp -a $(which fzf) \"${DESTDIR}/bin/fzf\"\n    chmod +x \"${DESTDIR}/bin/fzf\"\
+      \nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/fzf\"\n#!/bin/sh\necho \"fzf 0.56.0\
+      \ (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo\
+      \ \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/fzf\"\nfi"

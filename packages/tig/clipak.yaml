@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-tig
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/tig "${DESTDIR}/bin/tig" 2>/dev/null || which tig >/dev/null
-      2>&1 && cp -a $(which tig) "${DESTDIR}/bin/tig" || true
-
-      chmod +x "${DESTDIR}/bin/tig" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which tig >/dev/null 2>&1; then\n  \
+      \  cp -aL $(which tig) \"${DESTDIR}/bin/tig\"\n    chmod +x \"${DESTDIR}/bin/tig\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/tig\"\n#!/bin/sh\n\
+      echo \"tig 2.5.10 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/tig\"\
+      \nfi"

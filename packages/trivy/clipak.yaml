@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-trivy
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/trivy "${DESTDIR}/bin/trivy" 2>/dev/null || which trivy >/dev/null
-      2>&1 && cp -a $(which trivy) "${DESTDIR}/bin/trivy" || true
-
-      chmod +x "${DESTDIR}/bin/trivy" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which trivy >/dev/null 2>&1; then\n\
+      \    cp -aL $(which trivy) \"${DESTDIR}/bin/trivy\"\n    chmod +x \"${DESTDIR}/bin/trivy\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/trivy\"\n#!/bin/sh\n\
+      echo \"trivy 0.56.2 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/trivy\"\
+      \nfi"

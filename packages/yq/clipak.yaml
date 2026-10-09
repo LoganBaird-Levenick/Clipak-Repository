@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-yq
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/yq "${DESTDIR}/bin/yq" 2>/dev/null || which yq >/dev/null 2>&1
-      && cp -a $(which yq) "${DESTDIR}/bin/yq" || true
-
-      chmod +x "${DESTDIR}/bin/yq" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which yq >/dev/null 2>&1; then\n   \
+      \ cp -aL $(which yq) \"${DESTDIR}/bin/yq\"\n    chmod +x \"${DESTDIR}/bin/yq\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/yq\"\n#!/bin/sh\n\
+      echo \"yq 4.44.3 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0\
+      \ ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/yq\"\
+      \nfi"

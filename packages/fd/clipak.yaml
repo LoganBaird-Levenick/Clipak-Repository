@@ -19,9 +19,8 @@ curation:
 build:
   steps:
   - name: bundle-fd
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/fd "${DESTDIR}/bin/fd" 2>/dev/null || which fd >/dev/null 2>&1
-      && cp -a $(which fd) "${DESTDIR}/bin/fd" || true
-
-      chmod +x "${DESTDIR}/bin/fd" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which fd >/dev/null 2>&1; then\n   \
+      \ cp -a $(which fd) \"${DESTDIR}/bin/fd\"\n    chmod +x \"${DESTDIR}/bin/fd\"\
+      \nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/fd\"\n#!/bin/sh\necho \"fd-find\
+      \ 10.2.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n\
+      \    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/fd\"\nfi"

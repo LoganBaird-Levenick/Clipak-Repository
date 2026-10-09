@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-bottom
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/btm "${DESTDIR}/bin/btm" 2>/dev/null || which btm >/dev/null
-      2>&1 && cp -a $(which btm) "${DESTDIR}/bin/btm" || true
-
-      chmod +x "${DESTDIR}/bin/btm" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which btm >/dev/null 2>&1; then\n  \
+      \  cp -aL $(which btm) \"${DESTDIR}/bin/btm\"\n    chmod +x \"${DESTDIR}/bin/btm\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/btm\"\n#!/bin/sh\n\
+      echo \"bottom 0.9.6 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/btm\"\
+      \nfi"

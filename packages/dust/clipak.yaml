@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-dust
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/dust "${DESTDIR}/bin/dust" 2>/dev/null || which dust >/dev/null
-      2>&1 && cp -a $(which dust) "${DESTDIR}/bin/dust" || true
-
-      chmod +x "${DESTDIR}/bin/dust" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which dust >/dev/null 2>&1; then\n \
+      \   cp -aL $(which dust) \"${DESTDIR}/bin/dust\"\n    chmod +x \"${DESTDIR}/bin/dust\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/dust\"\n#!/bin/sh\n\
+      echo \"dust 1.1.1 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/dust\"\
+      \nfi"

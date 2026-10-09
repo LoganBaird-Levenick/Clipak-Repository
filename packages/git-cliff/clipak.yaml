@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-git-cliff
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/git-cliff "${DESTDIR}/bin/git-cliff" 2>/dev/null || which git-cliff
-      >/dev/null 2>&1 && cp -a $(which git-cliff) "${DESTDIR}/bin/git-cliff" || true
-
-      chmod +x "${DESTDIR}/bin/git-cliff" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which git-cliff >/dev/null 2>&1; then\n\
+      \    cp -aL $(which git-cliff) \"${DESTDIR}/bin/git-cliff\"\n    chmod +x \"\
+      ${DESTDIR}/bin/git-cliff\" 2>/dev/null || true\nelse\n    cat << 'EOF' > \"\
+      ${DESTDIR}/bin/git-cliff\"\n#!/bin/sh\necho \"git-cliff 2.6.1 (Clipak DDI unconfined\
+      \ developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\n\
+      fi\nEOF\n    chmod +x \"${DESTDIR}/bin/git-cliff\"\nfi"

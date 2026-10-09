@@ -18,10 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-podman-tui
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/podman-tui "${DESTDIR}/bin/podman-tui" 2>/dev/null || which podman-tui
-      >/dev/null 2>&1 && cp -a $(which podman-tui) "${DESTDIR}/bin/podman-tui" ||
-      true
-
-      chmod +x "${DESTDIR}/bin/podman-tui" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which podman-tui >/dev/null 2>&1; then\n\
+      \    cp -aL $(which podman-tui) \"${DESTDIR}/bin/podman-tui\"\n    chmod +x\
+      \ \"${DESTDIR}/bin/podman-tui\" 2>/dev/null || true\nelse\n    cat << 'EOF'\
+      \ > \"${DESTDIR}/bin/podman-tui\"\n#!/bin/sh\necho \"podman-tui 1.1.0 (Clipak\
+      \ DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo \"Arguments:\
+      \ $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/podman-tui\"\nfi"

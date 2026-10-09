@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-tcpdump
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/tcpdump "${DESTDIR}/bin/tcpdump" 2>/dev/null || which tcpdump
-      >/dev/null 2>&1 && cp -a $(which tcpdump) "${DESTDIR}/bin/tcpdump" || true
-
-      chmod +x "${DESTDIR}/bin/tcpdump" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which tcpdump >/dev/null 2>&1; then\n\
+      \    cp -aL $(which tcpdump) \"${DESTDIR}/bin/tcpdump\"\n    chmod +x \"${DESTDIR}/bin/tcpdump\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/tcpdump\"\n\
+      #!/bin/sh\necho \"tcpdump 4.99.5 (Clipak DDI unconfined developer tool)\"\n\
+      if [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/tcpdump\"\nfi"

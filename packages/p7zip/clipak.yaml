@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-p7zip
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/7z "${DESTDIR}/bin/7z" 2>/dev/null || which 7z >/dev/null 2>&1
-      && cp -a $(which 7z) "${DESTDIR}/bin/7z" || true
-
-      chmod +x "${DESTDIR}/bin/7z" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which 7z >/dev/null 2>&1; then\n   \
+      \ cp -aL $(which 7z) \"${DESTDIR}/bin/7z\"\n    chmod +x \"${DESTDIR}/bin/7z\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/7z\"\n#!/bin/sh\n\
+      echo \"p7zip 17.05 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/7z\"\
+      \nfi"

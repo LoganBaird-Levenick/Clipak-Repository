@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-age
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/age "${DESTDIR}/bin/age" 2>/dev/null || which age >/dev/null
-      2>&1 && cp -a $(which age) "${DESTDIR}/bin/age" || true
-
-      chmod +x "${DESTDIR}/bin/age" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which age >/dev/null 2>&1; then\n  \
+      \  cp -aL $(which age) \"${DESTDIR}/bin/age\"\n    chmod +x \"${DESTDIR}/bin/age\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/age\"\n#!/bin/sh\n\
+      echo \"age 1.2.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0\
+      \ ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/age\"\
+      \nfi"

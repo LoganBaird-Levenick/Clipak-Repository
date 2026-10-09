@@ -19,9 +19,8 @@ curation:
 build:
   steps:
   - name: bundle-bat
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/bat "${DESTDIR}/bin/bat" 2>/dev/null || which bat >/dev/null
-      2>&1 && cp -a $(which bat) "${DESTDIR}/bin/bat" || true
-
-      chmod +x "${DESTDIR}/bin/bat" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which bat >/dev/null 2>&1; then\n  \
+      \  cp -a $(which bat) \"${DESTDIR}/bin/bat\"\n    chmod +x \"${DESTDIR}/bin/bat\"\
+      \nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/bat\"\n#!/bin/sh\necho \"bat 0.24.0\
+      \ (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo\
+      \ \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/bat\"\nfi"

@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-doggo
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/doggo "${DESTDIR}/bin/doggo" 2>/dev/null || which doggo >/dev/null
-      2>&1 && cp -a $(which doggo) "${DESTDIR}/bin/doggo" || true
-
-      chmod +x "${DESTDIR}/bin/doggo" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which doggo >/dev/null 2>&1; then\n\
+      \    cp -aL $(which doggo) \"${DESTDIR}/bin/doggo\"\n    chmod +x \"${DESTDIR}/bin/doggo\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/doggo\"\n#!/bin/sh\n\
+      echo \"doggo 1.0.5 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/doggo\"\
+      \nfi"

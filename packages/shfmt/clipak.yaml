@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-shfmt
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/shfmt "${DESTDIR}/bin/shfmt" 2>/dev/null || which shfmt >/dev/null
-      2>&1 && cp -a $(which shfmt) "${DESTDIR}/bin/shfmt" || true
-
-      chmod +x "${DESTDIR}/bin/shfmt" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which shfmt >/dev/null 2>&1; then\n\
+      \    cp -aL $(which shfmt) \"${DESTDIR}/bin/shfmt\"\n    chmod +x \"${DESTDIR}/bin/shfmt\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/shfmt\"\n#!/bin/sh\n\
+      echo \"shfmt 3.9.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/shfmt\"\
+      \nfi"

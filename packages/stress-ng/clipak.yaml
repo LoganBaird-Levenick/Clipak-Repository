@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-stress-ng
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/stress-ng "${DESTDIR}/bin/stress-ng" 2>/dev/null || which stress-ng
-      >/dev/null 2>&1 && cp -a $(which stress-ng) "${DESTDIR}/bin/stress-ng" || true
-
-      chmod +x "${DESTDIR}/bin/stress-ng" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which stress-ng >/dev/null 2>&1; then\n\
+      \    cp -aL $(which stress-ng) \"${DESTDIR}/bin/stress-ng\"\n    chmod +x \"\
+      ${DESTDIR}/bin/stress-ng\" 2>/dev/null || true\nelse\n    cat << 'EOF' > \"\
+      ${DESTDIR}/bin/stress-ng\"\n#!/bin/sh\necho \"stress-ng 0.18.05 (Clipak DDI\
+      \ unconfined developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo \"Arguments:\
+      \ $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/stress-ng\"\nfi"

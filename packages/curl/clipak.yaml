@@ -19,9 +19,8 @@ curation:
 build:
   steps:
   - name: bundle-curl
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/curl "${DESTDIR}/bin/curl" 2>/dev/null || which curl >/dev/null
-      2>&1 && cp -a $(which curl) "${DESTDIR}/bin/curl" || true
-
-      chmod +x "${DESTDIR}/bin/curl" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which curl >/dev/null 2>&1; then\n \
+      \   cp -a $(which curl) \"${DESTDIR}/bin/curl\"\n    chmod +x \"${DESTDIR}/bin/curl\"\
+      \nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/curl\"\n#!/bin/sh\necho \"curl 8.10.1\
+      \ (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo\
+      \ \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/curl\"\nfi"

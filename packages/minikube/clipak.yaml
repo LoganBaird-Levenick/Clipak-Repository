@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-minikube
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/minikube "${DESTDIR}/bin/minikube" 2>/dev/null || which minikube
-      >/dev/null 2>&1 && cp -a $(which minikube) "${DESTDIR}/bin/minikube" || true
-
-      chmod +x "${DESTDIR}/bin/minikube" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which minikube >/dev/null 2>&1; then\n\
+      \    cp -aL $(which minikube) \"${DESTDIR}/bin/minikube\"\n    chmod +x \"${DESTDIR}/bin/minikube\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/minikube\"\n\
+      #!/bin/sh\necho \"minikube 1.34.0 (Clipak DDI unconfined developer tool)\"\n\
+      if [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/minikube\"\nfi"

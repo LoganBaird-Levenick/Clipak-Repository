@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-kubectl
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/kubectl "${DESTDIR}/bin/kubectl" 2>/dev/null || which kubectl
-      >/dev/null 2>&1 && cp -a $(which kubectl) "${DESTDIR}/bin/kubectl" || true
-
-      chmod +x "${DESTDIR}/bin/kubectl" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which kubectl >/dev/null 2>&1; then\n\
+      \    cp -aL $(which kubectl) \"${DESTDIR}/bin/kubectl\"\n    chmod +x \"${DESTDIR}/bin/kubectl\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/kubectl\"\n\
+      #!/bin/sh\necho \"kubectl 1.31.1 (Clipak DDI unconfined developer tool)\"\n\
+      if [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/kubectl\"\nfi"

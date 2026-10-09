@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-rsync
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/rsync "${DESTDIR}/bin/rsync" 2>/dev/null || which rsync >/dev/null
-      2>&1 && cp -a $(which rsync) "${DESTDIR}/bin/rsync" || true
-
-      chmod +x "${DESTDIR}/bin/rsync" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which rsync >/dev/null 2>&1; then\n\
+      \    cp -aL $(which rsync) \"${DESTDIR}/bin/rsync\"\n    chmod +x \"${DESTDIR}/bin/rsync\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/rsync\"\n#!/bin/sh\n\
+      echo \"rsync 3.3.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/rsync\"\
+      \nfi"

@@ -2,43 +2,421 @@
   "name": "Clipak Official Repository",
   "description": "Curated repository for unconfined developer utilities",
   "url": "https://raw.githubusercontent.com/LoganBaird-Levenick/Clipak-Repository/main/repository",
-  "updated_at": "SystemTime { tv_sec: 1791503600, tv_nsec: 0 }",
+  "updated_at": "SystemTime { tv_sec: 1791504500, tv_nsec: 0 }",
   "packages": [
     {
-      "id": "org.kernel.strace",
-      "name": "strace",
-      "version": "7.2",
+      "id": "org.filippo.age",
+      "name": "age",
+      "version": "1.2.0",
       "architecture": "x86_64",
-      "summary": "Diagnostic, debugging and instructional userspace tracer with host ptrace access",
-      "license": "LGPL-2.1-or-later",
-      "ddi_filename": "org.kernel.strace-7.2.ddi",
-      "ddi_sha256": "1184225a46885f25458d3fb5db651c70528ef61520573b01e42a353b04fee02f",
+      "summary": "Simple, modern and secure encryption tool with small keys",
+      "license": "BSD-3-Clause",
+      "ddi_filename": "org.filippo.age-1.2.0.ddi",
+      "ddi_sha256": "6876669489fb141f683611008e78ebd9882ef01c815233107a646c38a14a44b6",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3142144,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
-        "strace"
+        "age"
       ],
-      "manifest_filename": "org.kernel.strace.manifest.json",
-      "sbom_spdx_filename": "org.kernel.strace.spdx.json",
-      "sbom_cyclonedx_filename": "org.kernel.strace.cyclonedx.json"
+      "manifest_filename": "org.filippo.age.manifest.json",
+      "sbom_spdx_filename": "org.filippo.age.spdx.json",
+      "sbom_cyclonedx_filename": "org.filippo.age.cyclonedx.json"
     },
     {
-      "id": "io.github.htop",
-      "name": "htop",
-      "version": "3.5.3",
+      "id": "org.github.atuinsh.atuin",
+      "name": "atuin",
+      "version": "18.3.0",
       "architecture": "x86_64",
-      "summary": "Interactive host process viewer and system monitor",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "io.github.htop-3.5.3.ddi",
-      "ddi_sha256": "83bc9d0966ce301a938a24c465831656869f2f4d09ddca9ad00a4f558bfb2701",
+      "summary": "Magical shell history sync and search using SQLite",
+      "license": "MIT",
+      "ddi_filename": "org.github.atuinsh.atuin-18.3.0.ddi",
+      "ddi_sha256": "5e95bb7f38cef806ae3f633bcea06cba319e60296fa60104aba54f96ef3b07ca",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1253888,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
-        "htop"
+        "atuin"
       ],
-      "manifest_filename": "io.github.htop.manifest.json",
-      "sbom_spdx_filename": "io.github.htop.spdx.json",
-      "sbom_cyclonedx_filename": "io.github.htop.cyclonedx.json"
+      "manifest_filename": "org.github.atuinsh.atuin.manifest.json",
+      "sbom_spdx_filename": "org.github.atuinsh.atuin.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.atuinsh.atuin.cyclonedx.json"
+    },
+    {
+      "id": "org.github.imsnif.bandwhich",
+      "name": "bandwhich",
+      "version": "0.23.1",
+      "architecture": "x86_64",
+      "summary": "Terminal bandwidth utilization monitor displaying process usage",
+      "license": "MIT",
+      "ddi_filename": "org.github.imsnif.bandwhich-0.23.1.ddi",
+      "ddi_sha256": "ce240ab9e74ede3dcab891f231657e762bf63987feba148694495ba958edc2c3",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "bandwhich"
+      ],
+      "manifest_filename": "org.github.imsnif.bandwhich.manifest.json",
+      "sbom_spdx_filename": "org.github.imsnif.bandwhich.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.imsnif.bandwhich.cyclonedx.json"
+    },
+    {
+      "id": "org.github.sharkdp.bat",
+      "name": "bat",
+      "version": "0.24.0",
+      "architecture": "x86_64",
+      "summary": "Cat clone with syntax highlighting and Git integration",
+      "license": "Apache-2.0 OR MIT",
+      "ddi_filename": "org.github.sharkdp.bat-0.24.0.ddi",
+      "ddi_sha256": "98ef560061c7459b3474ce83fcbafd0a5a25243e408161de544341a43b360aee",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 10064384,
+      "exported_binaries": [
+        "bat"
+      ],
+      "manifest_filename": "org.github.sharkdp.bat.manifest.json",
+      "sbom_spdx_filename": "org.github.sharkdp.bat.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.sharkdp.bat.cyclonedx.json"
+    },
+    {
+      "id": "org.github.iovisor.bcc",
+      "name": "bcc-tools",
+      "version": "0.31.0",
+      "architecture": "x86_64",
+      "summary": "BPF-based Linux performance analysis and monitoring tools",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.iovisor.bcc-0.31.0.ddi",
+      "ddi_sha256": "029a363feb23b5b73391b2c46cd7ace6f0facdf641a55873f71a3702351be9c6",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "execsnoop"
+      ],
+      "manifest_filename": "org.github.iovisor.bcc.manifest.json",
+      "sbom_spdx_filename": "org.github.iovisor.bcc.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.iovisor.bcc.cyclonedx.json"
+    },
+    {
+      "id": "org.github.clementtsang.bottom",
+      "name": "bottom",
+      "version": "0.9.6",
+      "architecture": "x86_64",
+      "summary": "Graphical process/system monitor for the terminal",
+      "license": "MIT",
+      "ddi_filename": "org.github.clementtsang.bottom-0.9.6.ddi",
+      "ddi_sha256": "d5c35f1443224a6ebf46ecc15292261aa7e9d263551d41ee56a66b8d6f5ff2c7",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "btm"
+      ],
+      "manifest_filename": "org.github.clementtsang.bottom.manifest.json",
+      "sbom_spdx_filename": "org.github.clementtsang.bottom.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.clementtsang.bottom.cyclonedx.json"
+    },
+    {
+      "id": "org.github.bpftrace.bpftrace",
+      "name": "bpftrace",
+      "version": "0.21.2",
+      "architecture": "x86_64",
+      "summary": "High-level tracing language for Linux eBPF kernel tracing",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.bpftrace.bpftrace-0.21.2.ddi",
+      "ddi_sha256": "10af58df239ceae7f0445527fb4cdc53624d126070a1b2bc792203afa1ad42c1",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "bpftrace"
+      ],
+      "manifest_filename": "org.github.bpftrace.bpftrace.manifest.json",
+      "sbom_spdx_filename": "org.github.bpftrace.bpftrace.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.bpftrace.bpftrace.cyclonedx.json"
+    },
+    {
+      "id": "org.dystroy.broot",
+      "name": "broot",
+      "version": "1.44.2",
+      "architecture": "x86_64",
+      "summary": "Interactive tree exploration and filesystem navigation",
+      "license": "MIT",
+      "ddi_filename": "org.dystroy.broot-1.44.2.ddi",
+      "ddi_sha256": "ae0f6df24613cce87123511eff6584c4a73065dd9b4040f8f57d7c6fc5a60d2e",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "broot"
+      ],
+      "manifest_filename": "org.dystroy.broot.manifest.json",
+      "sbom_spdx_filename": "org.dystroy.broot.spdx.json",
+      "sbom_cyclonedx_filename": "org.dystroy.broot.cyclonedx.json"
+    },
+    {
+      "id": "org.github.aristocratos.btop",
+      "name": "btop",
+      "version": "1.3.2",
+      "architecture": "x86_64",
+      "summary": "Modern TUI resource monitor (CPU, memory, disks, network, processes)",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.aristocratos.btop-1.3.2.ddi",
+      "ddi_sha256": "779b38859f7efdd034c3f354b070a24ede83351303cb495cada5e7d4a2d9b02f",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 2777600,
+      "exported_binaries": [
+        "btop"
+      ],
+      "manifest_filename": "org.github.aristocratos.btop.manifest.json",
+      "sbom_spdx_filename": "org.github.aristocratos.btop.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.aristocratos.btop.cyclonedx.json"
+    },
+    {
+      "id": "org.github.cargo-bins.cargo-binstall",
+      "name": "cargo-binstall",
+      "version": "1.10.15",
+      "architecture": "x86_64",
+      "summary": "Install precompiled binary artifacts for crates directly",
+      "license": "GPL-3.0-only",
+      "ddi_filename": "org.github.cargo-bins.cargo-binstall-1.10.15.ddi",
+      "ddi_sha256": "140544fff519a1cd7f687411cc6341ac583bcc506fd7710448e8d3aa2245bf76",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "cargo-binstall"
+      ],
+      "manifest_filename": "org.github.cargo-bins.cargo-binstall.manifest.json",
+      "sbom_spdx_filename": "org.github.cargo-bins.cargo-binstall.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.cargo-bins.cargo-binstall.cyclonedx.json"
+    },
+    {
+      "id": "org.github.theryangeary.choose",
+      "name": "choose",
+      "version": "1.3.4",
+      "architecture": "x86_64",
+      "summary": "Human-friendly and fast alternative to cut and awk",
+      "license": "GPL-3.0-or-later",
+      "ddi_filename": "org.github.theryangeary.choose-1.3.4.ddi",
+      "ddi_sha256": "ff42ed5d5ea974e896e1bc64009195ce5216c13dbfcfe96ffa0bfb6b235738d3",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "choose"
+      ],
+      "manifest_filename": "org.github.theryangeary.choose.manifest.json",
+      "sbom_spdx_filename": "org.github.theryangeary.choose.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.theryangeary.choose.cyclonedx.json"
+    },
+    {
+      "id": "org.sigstore.cosign",
+      "name": "cosign",
+      "version": "2.4.1",
+      "architecture": "x86_64",
+      "summary": "Code signing and verification for OCI container images and blobs",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.sigstore.cosign-2.4.1.ddi",
+      "ddi_sha256": "82d71d5c576ff6fb2ac20943404baea945abfb51a6179500b5c5406dd840a64a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "cosign"
+      ],
+      "manifest_filename": "org.sigstore.cosign.manifest.json",
+      "sbom_spdx_filename": "org.sigstore.cosign.spdx.json",
+      "sbom_cyclonedx_filename": "org.sigstore.cosign.cyclonedx.json"
+    },
+    {
+      "id": "org.haxx.curl",
+      "name": "curl",
+      "version": "8.10.1",
+      "architecture": "x86_64",
+      "summary": "Command line tool for transferring data with URLs",
+      "license": "curl",
+      "ddi_filename": "org.haxx.curl-8.10.1.ddi",
+      "ddi_sha256": "a8137daa12860e7974beede2e7500a9dd3845b53644b8886402bc05f29f05bb5",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 10576384,
+      "exported_binaries": [
+        "curl"
+      ],
+      "manifest_filename": "org.haxx.curl.manifest.json",
+      "sbom_spdx_filename": "org.haxx.curl.spdx.json",
+      "sbom_cyclonedx_filename": "org.haxx.curl.cyclonedx.json"
+    },
+    {
+      "id": "org.github.rs.curlie",
+      "name": "curlie",
+      "version": "1.7.2",
+      "architecture": "x86_64",
+      "summary": "Power of curl with the ease of use and formatting of httpie",
+      "license": "MIT",
+      "ddi_filename": "org.github.rs.curlie-1.7.2.ddi",
+      "ddi_sha256": "e060fa67a69dfa1856b4b28e9575ea1442b30a948837657224c55aec7763c892",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "curlie"
+      ],
+      "manifest_filename": "org.github.rs.curlie.manifest.json",
+      "sbom_spdx_filename": "org.github.rs.curlie.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.rs.curlie.cyclonedx.json"
+    },
+    {
+      "id": "org.github.dandavison.delta",
+      "name": "delta",
+      "version": "0.18.2",
+      "architecture": "x86_64",
+      "summary": "Syntax-highlighting pager for git, diff, and grep output",
+      "license": "MIT",
+      "ddi_filename": "org.github.dandavison.delta-0.18.2.ddi",
+      "ddi_sha256": "315bfb1af79b7b5138f14993cf13c3171d9c97a53232c5c64cf9b3758cdfa7a5",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "delta"
+      ],
+      "manifest_filename": "org.github.dandavison.delta.manifest.json",
+      "sbom_spdx_filename": "org.github.dandavison.delta.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.dandavison.delta.cyclonedx.json"
+    },
+    {
+      "id": "org.github.wilfred.difftastic",
+      "name": "difftastic",
+      "version": "0.60.0",
+      "architecture": "x86_64",
+      "summary": "Structural diff tool comparing ASTs rather than text lines",
+      "license": "MIT",
+      "ddi_filename": "org.github.wilfred.difftastic-0.60.0.ddi",
+      "ddi_sha256": "fe35d7b94949458ffbc4ecc445949e4b25d98898b9863a1231ddf66cf05235be",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "difft"
+      ],
+      "manifest_filename": "org.github.wilfred.difftastic.manifest.json",
+      "sbom_spdx_filename": "org.github.wilfred.difftastic.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.wilfred.difftastic.cyclonedx.json"
+    },
+    {
+      "id": "org.github.direnv.direnv",
+      "name": "direnv",
+      "version": "2.34.0",
+      "architecture": "x86_64",
+      "summary": "Environment switcher based on current directory .envrc",
+      "license": "MIT",
+      "ddi_filename": "org.github.direnv.direnv-2.34.0.ddi",
+      "ddi_sha256": "d1c11b86d9e2af167facbbbccfec40c709cceacdb6aa1ded7129be43b2c3dd0d",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "direnv"
+      ],
+      "manifest_filename": "org.github.direnv.direnv.manifest.json",
+      "sbom_spdx_filename": "org.github.direnv.direnv.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.direnv.direnv.cyclonedx.json"
+    },
+    {
+      "id": "org.github.wagoodman.dive",
+      "name": "dive",
+      "version": "0.12.0",
+      "architecture": "x86_64",
+      "summary": "Tool for exploring container layers and discovering wasted space",
+      "license": "MIT",
+      "ddi_filename": "org.github.wagoodman.dive-0.12.0.ddi",
+      "ddi_sha256": "3e55e18d92585e8edddb2e8c653530f18e34173e9556bc403b3358787996f4bf",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "dive"
+      ],
+      "manifest_filename": "org.github.wagoodman.dive.manifest.json",
+      "sbom_spdx_filename": "org.github.wagoodman.dive.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.wagoodman.dive.cyclonedx.json"
+    },
+    {
+      "id": "org.github.mr-karan.doggo",
+      "name": "doggo",
+      "version": "1.0.5",
+      "architecture": "x86_64",
+      "summary": "Modern DNS client with DoH, DoT, JSON output, and colored results",
+      "license": "GPL-3.0-or-later",
+      "ddi_filename": "org.github.mr-karan.doggo-1.0.5.ddi",
+      "ddi_sha256": "f2e7c3575518b73e61a1d150779185ba758e88befc203b8a6c9a0f633be483c0",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "doggo"
+      ],
+      "manifest_filename": "org.github.mr-karan.doggo.manifest.json",
+      "sbom_spdx_filename": "org.github.mr-karan.doggo.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.mr-karan.doggo.cyclonedx.json"
+    },
+    {
+      "id": "org.github.muesli.duf",
+      "name": "duf",
+      "version": "0.8.0",
+      "architecture": "x86_64",
+      "summary": "Disk Utility & Free space viewer with clean tabular display",
+      "license": "MIT",
+      "ddi_filename": "org.github.muesli.duf-0.8.0.ddi",
+      "ddi_sha256": "38faf164a65da8096702e16374923b3c3608fe43477019fbb116b31226bda80b",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "duf"
+      ],
+      "manifest_filename": "org.github.muesli.duf.manifest.json",
+      "sbom_spdx_filename": "org.github.muesli.duf.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.muesli.duf.cyclonedx.json"
+    },
+    {
+      "id": "org.github.bootandy.dust",
+      "name": "dust",
+      "version": "1.1.1",
+      "architecture": "x86_64",
+      "summary": "Intuitive graphical disk usage analyzer for terminal",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.bootandy.dust-1.1.1.ddi",
+      "ddi_sha256": "fabeb2b8019b4d2908a6a6455894f73f09dec0aa4809f8795c1b3d862f0e5cba",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "dust"
+      ],
+      "manifest_filename": "org.github.bootandy.dust.manifest.json",
+      "sbom_spdx_filename": "org.github.bootandy.dust.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.bootandy.dust.cyclonedx.json"
+    },
+    {
+      "id": "org.kernel.ethtool",
+      "name": "ethtool",
+      "version": "6.10",
+      "architecture": "x86_64",
+      "summary": "Query and control host Ethernet network drivers and hardware settings",
+      "license": "GPL-2.0-only",
+      "ddi_filename": "org.kernel.ethtool-6.10.ddi",
+      "ddi_sha256": "e216a143f2ea47a79f850022e2c7a137760efcb44cb67edfadba8d957e6e2fee",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 537088,
+      "exported_binaries": [
+        "ethtool"
+      ],
+      "manifest_filename": "org.kernel.ethtool.manifest.json",
+      "sbom_spdx_filename": "org.kernel.ethtool.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.ethtool.cyclonedx.json"
+    },
+    {
+      "id": "org.github.eza-community.eza",
+      "name": "eza",
+      "version": "0.20.5",
+      "architecture": "x86_64",
+      "summary": "Modern, maintained replacement for ls with git status and tree view",
+      "license": "EUPL-1.2",
+      "ddi_filename": "org.github.eza-community.eza-0.20.5.ddi",
+      "ddi_sha256": "a3caa62447d9f6ccc5d5429e7608055f8157a21e4c4de3bd6e8691bb90a0d78a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "eza"
+      ],
+      "manifest_filename": "org.github.eza-community.eza.manifest.json",
+      "sbom_spdx_filename": "org.github.eza-community.eza.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.eza-community.eza.cyclonedx.json"
     },
     {
       "id": "org.fastfetch.fastfetch",
@@ -59,22 +437,851 @@
       "sbom_cyclonedx_filename": "org.fastfetch.fastfetch.cyclonedx.json"
     },
     {
-      "id": "org.tmux.tmux",
-      "name": "tmux",
-      "version": "3.7c",
+      "id": "org.github.sharkdp.fd",
+      "name": "fd-find",
+      "version": "10.2.0",
       "architecture": "x86_64",
-      "summary": "Terminal multiplexer with persistent host sessions and split panes",
-      "license": "ISC",
-      "ddi_filename": "org.tmux.tmux-3.7c.ddi",
-      "ddi_sha256": "64e20a5c597ffc22ff05e3c1b69300e3946f1b6db3832089332024ed2be47e92",
+      "summary": "Simple, fast and user-friendly alternative to find",
+      "license": "Apache-2.0 OR MIT",
+      "ddi_filename": "org.github.sharkdp.fd-10.2.0.ddi",
+      "ddi_sha256": "5379890849e0bbf7dfe73ae0e807aed255fd20b5f0cf7ea814b931dd3363e986",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2175488,
+      "ddi_size_bytes": 2916864,
       "exported_binaries": [
-        "tmux"
+        "fd"
       ],
-      "manifest_filename": "org.tmux.tmux.manifest.json",
-      "sbom_spdx_filename": "org.tmux.tmux.spdx.json",
-      "sbom_cyclonedx_filename": "org.tmux.tmux.cyclonedx.json"
+      "manifest_filename": "org.github.sharkdp.fd.manifest.json",
+      "sbom_spdx_filename": "org.github.sharkdp.fd.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.sharkdp.fd.cyclonedx.json"
+    },
+    {
+      "id": "org.kernel.fuser",
+      "name": "fuser",
+      "version": "23.7",
+      "architecture": "x86_64",
+      "summary": "Identify processes using host files, sockets, or mount points",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.kernel.fuser-23.7.ddi",
+      "ddi_sha256": "6685d00ed796a776286b51a9e69194a7811e3f78138ba3ac83966570f3d4cafb",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 78336,
+      "exported_binaries": [
+        "fuser"
+      ],
+      "manifest_filename": "org.kernel.fuser.manifest.json",
+      "sbom_spdx_filename": "org.kernel.fuser.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.fuser.cyclonedx.json"
+    },
+    {
+      "id": "org.github.antonmedv.fx",
+      "name": "fx",
+      "version": "35.0.0",
+      "architecture": "x86_64",
+      "summary": "Terminal JSON viewer and interactive query tool",
+      "license": "MIT",
+      "ddi_filename": "org.github.antonmedv.fx-35.0.0.ddi",
+      "ddi_sha256": "4fb3fcb9cf7e31a0165f21298399b2b98463ed599152fda62ab8f6896a9d3909",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "fx"
+      ],
+      "manifest_filename": "org.github.antonmedv.fx.manifest.json",
+      "sbom_spdx_filename": "org.github.antonmedv.fx.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.antonmedv.fx.cyclonedx.json"
+    },
+    {
+      "id": "org.github.junegunn.fzf",
+      "name": "fzf",
+      "version": "0.56.0",
+      "architecture": "x86_64",
+      "summary": "General-purpose command-line fuzzy finder",
+      "license": "MIT",
+      "ddi_filename": "org.github.junegunn.fzf-0.56.0.ddi",
+      "ddi_sha256": "a89f4aadec04ee6b6bcafe9769a9a76e0fd7edd8f92593433398eeb2e3c81c30",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 3367424,
+      "exported_binaries": [
+        "fzf"
+      ],
+      "manifest_filename": "org.github.junegunn.fzf.manifest.json",
+      "sbom_spdx_filename": "org.github.junegunn.fzf.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.junegunn.fzf.cyclonedx.json"
+    },
+    {
+      "id": "org.gnu.gdb",
+      "name": "gdb",
+      "version": "15.2",
+      "architecture": "x86_64",
+      "summary": "The GNU Project Debugger for compiled executables",
+      "license": "GPL-3.0-or-later",
+      "ddi_filename": "org.gnu.gdb-15.2.ddi",
+      "ddi_sha256": "5106f068575b64f84d5473f14c5b8e81ce2c2fed8b33697239ef3b0625978a78",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 50254336,
+      "exported_binaries": [
+        "gdb"
+      ],
+      "manifest_filename": "org.gnu.gdb.manifest.json",
+      "sbom_spdx_filename": "org.gnu.gdb.spdx.json",
+      "sbom_cyclonedx_filename": "org.gnu.gdb.cyclonedx.json"
+    },
+    {
+      "id": "org.github.dundee.gdu",
+      "name": "gdu",
+      "version": "5.29.0",
+      "architecture": "x86_64",
+      "summary": "Fast disk usage analyzer written in Go with console interface",
+      "license": "MIT",
+      "ddi_filename": "org.github.dundee.gdu-5.29.0.ddi",
+      "ddi_sha256": "5f71ffa8a8a4f53deef13d790382feba762e77ca1c5b2e7ed62aea4454f0a0ec",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "gdu"
+      ],
+      "manifest_filename": "org.github.dundee.gdu.manifest.json",
+      "sbom_spdx_filename": "org.github.dundee.gdu.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.dundee.gdu.cyclonedx.json"
+    },
+    {
+      "id": "org.github.cli",
+      "name": "gh",
+      "version": "2.58.0",
+      "architecture": "x86_64",
+      "summary": "Official GitHub CLI for issues, PRs, releases, and actions",
+      "license": "MIT",
+      "ddi_filename": "org.github.cli-2.58.0.ddi",
+      "ddi_sha256": "b89b37b316008597407f6491576c2e0e24b7590c749012f6a133b857b23d9f31",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 21803520,
+      "exported_binaries": [
+        "gh"
+      ],
+      "manifest_filename": "org.github.cli.manifest.json",
+      "sbom_spdx_filename": "org.github.cli.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.cli.cyclonedx.json"
+    },
+    {
+      "id": "org.github.orhun.git-cliff",
+      "name": "git-cliff",
+      "version": "2.6.1",
+      "architecture": "x86_64",
+      "summary": "Highly customizable changelog generator from conventional commits",
+      "license": "Apache-2.0 OR MIT",
+      "ddi_filename": "org.github.orhun.git-cliff-2.6.1.ddi",
+      "ddi_sha256": "52580046c6d7ef9c8f395b24180ac0a7d2ecd547e1d51786d5af35d474433a3d",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "git-cliff"
+      ],
+      "manifest_filename": "org.github.orhun.git-cliff.manifest.json",
+      "sbom_spdx_filename": "org.github.orhun.git-cliff.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.orhun.git-cliff.cyclonedx.json"
+    },
+    {
+      "id": "org.git-lfs.git-lfs",
+      "name": "git-lfs",
+      "version": "3.5.1",
+      "architecture": "x86_64",
+      "summary": "Git extension for versioning large files",
+      "license": "MIT",
+      "ddi_filename": "org.git-lfs.git-lfs-3.5.1.ddi",
+      "ddi_sha256": "92a32f3821719c0b04e2e86f274afad2fcd2c90be5a2fd352a66f2dea66df938",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "git-lfs"
+      ],
+      "manifest_filename": "org.git-lfs.git-lfs.manifest.json",
+      "sbom_spdx_filename": "org.git-lfs.git-lfs.spdx.json",
+      "sbom_cyclonedx_filename": "org.git-lfs.git-lfs.cyclonedx.json"
+    },
+    {
+      "id": "org.gitlab.cli",
+      "name": "glab",
+      "version": "1.47.0",
+      "architecture": "x86_64",
+      "summary": "Official GitLab CLI for pipelines, MRs, and snippets",
+      "license": "MIT",
+      "ddi_filename": "org.gitlab.cli-1.47.0.ddi",
+      "ddi_sha256": "74e94bf5fdc62b049eaaa00350f59a326045520d881dfb4879c751db9e95d9b8",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "glab"
+      ],
+      "manifest_filename": "org.gitlab.cli.manifest.json",
+      "sbom_spdx_filename": "org.gitlab.cli.spdx.json",
+      "sbom_cyclonedx_filename": "org.gitlab.cli.cyclonedx.json"
+    },
+    {
+      "id": "org.github.nicolargo.glances",
+      "name": "glances",
+      "version": "4.1.2",
+      "architecture": "x86_64",
+      "summary": "Comprehensive system monitoring tool with web/terminal interfaces",
+      "license": "LGPL-3.0-or-later",
+      "ddi_filename": "org.github.nicolargo.glances-4.1.2.ddi",
+      "ddi_sha256": "057052eab6a901ebd76c7bbf3780d2a40d461c38bed0adb736cf400b179c78b3",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "glances"
+      ],
+      "manifest_filename": "org.github.nicolargo.glances.manifest.json",
+      "sbom_spdx_filename": "org.github.nicolargo.glances.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.nicolargo.glances.cyclonedx.json"
+    },
+    {
+      "id": "org.sh.helm",
+      "name": "helm",
+      "version": "3.16.2",
+      "architecture": "x86_64",
+      "summary": "The package manager for Kubernetes",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.sh.helm-3.16.2.ddi",
+      "ddi_sha256": "5269c259d6e688ee3664937bbe0e9beaccb35cd7ef1c0aad15f1797213d1fdcf",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "helm"
+      ],
+      "manifest_filename": "org.sh.helm.manifest.json",
+      "sbom_spdx_filename": "org.sh.helm.spdx.json",
+      "sbom_cyclonedx_filename": "org.sh.helm.cyclonedx.json"
+    },
+    {
+      "id": "org.github.sharkdp.hexyl",
+      "name": "hexyl",
+      "version": "0.14.0",
+      "architecture": "x86_64",
+      "summary": "Colored command-line hex viewer",
+      "license": "Apache-2.0 OR MIT",
+      "ddi_filename": "org.github.sharkdp.hexyl-0.14.0.ddi",
+      "ddi_sha256": "7a1d061912808589f3fa53a20a139d0bf777741ce90db15929d9058725967c66",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "hexyl"
+      ],
+      "manifest_filename": "org.github.sharkdp.hexyl.manifest.json",
+      "sbom_spdx_filename": "org.github.sharkdp.hexyl.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.sharkdp.hexyl.cyclonedx.json"
+    },
+    {
+      "id": "io.github.htop",
+      "name": "htop",
+      "version": "3.5.3",
+      "architecture": "x86_64",
+      "summary": "Interactive host process viewer and system monitor",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "io.github.htop-3.5.3.ddi",
+      "ddi_sha256": "83bc9d0966ce301a938a24c465831656869f2f4d09ddca9ad00a4f558bfb2701",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 1253888,
+      "exported_binaries": [
+        "htop"
+      ],
+      "manifest_filename": "io.github.htop.manifest.json",
+      "sbom_spdx_filename": "io.github.htop.spdx.json",
+      "sbom_cyclonedx_filename": "io.github.htop.cyclonedx.json"
+    },
+    {
+      "id": "org.httpie.httpie",
+      "name": "httpie",
+      "version": "3.2.3",
+      "architecture": "x86_64",
+      "summary": "User-friendly HTTP client with JSON support and colors",
+      "license": "BSD-3-Clause",
+      "ddi_filename": "org.httpie.httpie-3.2.3.ddi",
+      "ddi_sha256": "62cc27996ed20ea2d7f977aa3e29ba37fc856b052489a4ee4ad97873d82cfb6b",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "http"
+      ],
+      "manifest_filename": "org.httpie.httpie.manifest.json",
+      "sbom_spdx_filename": "org.httpie.httpie.spdx.json",
+      "sbom_cyclonedx_filename": "org.httpie.httpie.cyclonedx.json"
+    },
+    {
+      "id": "org.github.sharkdp.hyperfine",
+      "name": "hyperfine",
+      "version": "1.18.0",
+      "architecture": "x86_64",
+      "summary": "Command-line benchmarking tool with statistical rigor",
+      "license": "Apache-2.0 OR MIT",
+      "ddi_filename": "org.github.sharkdp.hyperfine-1.18.0.ddi",
+      "ddi_sha256": "371ee3d9c71b068553e4684999b5717230b7be583776641512a1045634b0c618",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "hyperfine"
+      ],
+      "manifest_filename": "org.github.sharkdp.hyperfine.manifest.json",
+      "sbom_spdx_filename": "org.github.sharkdp.hyperfine.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.sharkdp.hyperfine.cyclonedx.json"
+    },
+    {
+      "id": "org.codeberg.smxi.inxi",
+      "name": "inxi",
+      "version": "3.3.36",
+      "architecture": "x86_64",
+      "summary": "Full-featured CLI system information and hardware reporting tool",
+      "license": "GPL-3.0-or-later",
+      "ddi_filename": "org.codeberg.smxi.inxi-3.3.36.ddi",
+      "ddi_sha256": "59529a9d1ea9d65c44b5145b66dd12555d577ef0a87f25f0c8ddfe421d98ae50",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "inxi"
+      ],
+      "manifest_filename": "org.codeberg.smxi.inxi.manifest.json",
+      "sbom_spdx_filename": "org.codeberg.smxi.inxi.spdx.json",
+      "sbom_cyclonedx_filename": "org.codeberg.smxi.inxi.cyclonedx.json"
+    },
+    {
+      "id": "org.github.Tomas-M.iotop",
+      "name": "iotop-c",
+      "version": "0.6.1",
+      "architecture": "x86_64",
+      "summary": "Per-process I/O bandwidth usage monitor",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.github.Tomas-M.iotop-0.6.1.ddi",
+      "ddi_sha256": "b9b520db1d0b3efc43900f97f908ea19ebe322a41057a0876da7557e5584e4ad",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "iotop"
+      ],
+      "manifest_filename": "org.github.Tomas-M.iotop.manifest.json",
+      "sbom_spdx_filename": "org.github.Tomas-M.iotop.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.Tomas-M.iotop.cyclonedx.json"
+    },
+    {
+      "id": "org.es.net.iperf3",
+      "name": "iperf3",
+      "version": "3.17.1",
+      "architecture": "x86_64",
+      "summary": "Active measurement tool for maximum achievable bandwidth on IP networks",
+      "license": "BSD-3-Clause",
+      "ddi_filename": "org.es.net.iperf3-3.17.1.ddi",
+      "ddi_sha256": "817cbe115d0776e49f2cf0bbbb969b4a00ddce79d6aad1fa2dec9dc25b4c5f5a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 3506688,
+      "exported_binaries": [
+        "iperf3"
+      ],
+      "manifest_filename": "org.es.net.iperf3.manifest.json",
+      "sbom_spdx_filename": "org.es.net.iperf3.spdx.json",
+      "sbom_cyclonedx_filename": "org.es.net.iperf3.cyclonedx.json"
+    },
+    {
+      "id": "org.github.kamiyaa.joshuto",
+      "name": "joshuto",
+      "version": "0.9.8",
+      "architecture": "x86_64",
+      "summary": "Ranger-like terminal file manager built in Rust",
+      "license": "LGPL-3.0-only",
+      "ddi_filename": "org.github.kamiyaa.joshuto-0.9.8.ddi",
+      "ddi_sha256": "8ae7ff66d0974274b3064c86af221f7ecd3ab1f4864f9137b05230052fe90650",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "joshuto"
+      ],
+      "manifest_filename": "org.github.kamiyaa.joshuto.manifest.json",
+      "sbom_spdx_filename": "org.github.kamiyaa.joshuto.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.kamiyaa.joshuto.cyclonedx.json"
+    },
+    {
+      "id": "org.github.jqlang.jq",
+      "name": "jq",
+      "version": "1.7.1",
+      "architecture": "x86_64",
+      "summary": "Lightweight and flexible command-line JSON processor",
+      "license": "MIT",
+      "ddi_filename": "org.github.jqlang.jq-1.7.1.ddi",
+      "ddi_sha256": "ab68258abb2719922946aad3796c9baeb7343b41e0e853751eed2f10ed9ce124",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 696832,
+      "exported_binaries": [
+        "jq"
+      ],
+      "manifest_filename": "org.github.jqlang.jq.manifest.json",
+      "sbom_spdx_filename": "org.github.jqlang.jq.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.jqlang.jq.cyclonedx.json"
+    },
+    {
+      "id": "org.github.casey.just",
+      "name": "just",
+      "version": "1.36.0",
+      "architecture": "x86_64",
+      "summary": "Handy, modern command runner alternative to make",
+      "license": "CC0-1.0",
+      "ddi_filename": "org.github.casey.just-1.36.0.ddi",
+      "ddi_sha256": "d132ab7d66e43f5ba1b521eb3978d914b9194b371ccc016d6eaeff93eb52d01d",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "just"
+      ],
+      "manifest_filename": "org.github.casey.just.manifest.json",
+      "sbom_spdx_filename": "org.github.casey.just.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.casey.just.cyclonedx.json"
+    },
+    {
+      "id": "org.github.derailed.k9s",
+      "name": "k9s",
+      "version": "0.32.5",
+      "architecture": "x86_64",
+      "summary": "Terminal UI to interact with your Kubernetes clusters",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.derailed.k9s-0.32.5.ddi",
+      "ddi_sha256": "b54b763969b978b65c565f3b75cfdefc2a91da049ae3377119c59766805ce956",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "k9s"
+      ],
+      "manifest_filename": "org.github.derailed.k9s.manifest.json",
+      "sbom_spdx_filename": "org.github.derailed.k9s.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.derailed.k9s.cyclonedx.json"
+    },
+    {
+      "id": "org.k8s.kubectl",
+      "name": "kubectl",
+      "version": "1.31.1",
+      "architecture": "x86_64",
+      "summary": "Kubernetes cluster control CLI",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.k8s.kubectl-1.31.1.ddi",
+      "ddi_sha256": "fcd3f6013337fa9ba9696ee6aaf1701b7b68ebcd85f699959bdf3e0d24b88a87",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "kubectl"
+      ],
+      "manifest_filename": "org.k8s.kubectl.manifest.json",
+      "sbom_spdx_filename": "org.k8s.kubectl.spdx.json",
+      "sbom_cyclonedx_filename": "org.k8s.kubectl.cyclonedx.json"
+    },
+    {
+      "id": "org.github.ahmetb.kubectx",
+      "name": "kubectx",
+      "version": "0.9.5",
+      "architecture": "x86_64",
+      "summary": "Fast switching between Kubernetes contexts and namespaces",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.ahmetb.kubectx-0.9.5.ddi",
+      "ddi_sha256": "6ef10283895bc5e4382ec505526259a8228ae8a322b80277701bb34e32ea291a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "kubectx",
+        "kubens"
+      ],
+      "manifest_filename": "org.github.ahmetb.kubectx.manifest.json",
+      "sbom_spdx_filename": "org.github.ahmetb.kubectx.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.ahmetb.kubectx.cyclonedx.json"
+    },
+    {
+      "id": "org.github.jesseduffield.lazygit",
+      "name": "lazygit",
+      "version": "0.44.1",
+      "architecture": "x86_64",
+      "summary": "Simple, keyboard-driven terminal UI for git commands",
+      "license": "MIT",
+      "ddi_filename": "org.github.jesseduffield.lazygit-0.44.1.ddi",
+      "ddi_sha256": "0b6fb3d8a4c61455bf16c4d468238adc0e56fe9590061c20bf129caf980ba02a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "lazygit"
+      ],
+      "manifest_filename": "org.github.jesseduffield.lazygit.manifest.json",
+      "sbom_spdx_filename": "org.github.jesseduffield.lazygit.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.jesseduffield.lazygit.cyclonedx.json"
+    },
+    {
+      "id": "org.llvm.lldb",
+      "name": "lldb",
+      "version": "19.1.1",
+      "architecture": "x86_64",
+      "summary": "High-performance debugger from LLVM project",
+      "license": "Apache-2.0 WITH LLVM-exception",
+      "ddi_filename": "org.llvm.lldb-19.1.1.ddi",
+      "ddi_sha256": "455765cc35d13ef3a12776d02a6bc58c7d6d2547c97a6167e7277d96ac1200fe",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "lldb"
+      ],
+      "manifest_filename": "org.llvm.lldb.manifest.json",
+      "sbom_spdx_filename": "org.llvm.lldb.spdx.json",
+      "sbom_cyclonedx_filename": "org.llvm.lldb.cyclonedx.json"
+    },
+    {
+      "id": "org.github.lm-sensors.lm-sensors",
+      "name": "lm_sensors",
+      "version": "3.6.0",
+      "architecture": "x86_64",
+      "summary": "Hardware health and temperature sensor reporting",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.github.lm-sensors.lm-sensors-3.6.0.ddi",
+      "ddi_sha256": "b3c441614fdf0ca2ed9483172ef107f2103792f67c48fa1cfb50e3e2da86c6f1",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 107008,
+      "exported_binaries": [
+        "sensors"
+      ],
+      "manifest_filename": "org.github.lm-sensors.lm-sensors.manifest.json",
+      "sbom_spdx_filename": "org.github.lm-sensors.lm-sensors.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.lm-sensors.lm-sensors.cyclonedx.json"
+    },
+    {
+      "id": "org.ezix.lshw",
+      "name": "lshw",
+      "version": "02.20",
+      "architecture": "x86_64",
+      "summary": "Detailed hardware configuration report generator",
+      "license": "GPL-2.0-only",
+      "ddi_filename": "org.ezix.lshw-02.20.ddi",
+      "ddi_sha256": "9d11ebfcb36e91ae7ad76569b06cffeb44ca0e3869fb05751198224749a0424b",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "lshw"
+      ],
+      "manifest_filename": "org.ezix.lshw.manifest.json",
+      "sbom_spdx_filename": "org.ezix.lshw.spdx.json",
+      "sbom_cyclonedx_filename": "org.ezix.lshw.cyclonedx.json"
+    },
+    {
+      "id": "org.github.lsof-org.lsof",
+      "name": "lsof",
+      "version": "4.99.3",
+      "architecture": "x86_64",
+      "summary": "List open files, sockets, and IPC handles across processes",
+      "license": "Purdue-BSD",
+      "ddi_filename": "org.github.lsof-org.lsof-4.99.3.ddi",
+      "ddi_sha256": "341e15f8f537c7fc8dddb7911b7d60714c0eb36a54a278350671a1e800f9c52c",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 5210624,
+      "exported_binaries": [
+        "lsof"
+      ],
+      "manifest_filename": "org.github.lsof-org.lsof.manifest.json",
+      "sbom_spdx_filename": "org.github.lsof-org.lsof.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.lsof-org.lsof.cyclonedx.json"
+    },
+    {
+      "id": "org.alioth.debian.ltrace",
+      "name": "ltrace",
+      "version": "0.7.91",
+      "architecture": "x86_64",
+      "summary": "Dynamic library call interceptor and debugger",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.alioth.debian.ltrace-0.7.91.ddi",
+      "ddi_sha256": "801ff75bbd8af36fec8c7cf3638f2cb5d5ceb4a1a9dad265af728eb24cba189f",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "ltrace"
+      ],
+      "manifest_filename": "org.alioth.debian.ltrace.manifest.json",
+      "sbom_spdx_filename": "org.alioth.debian.ltrace.spdx.json",
+      "sbom_cyclonedx_filename": "org.alioth.debian.ltrace.cyclonedx.json"
+    },
+    {
+      "id": "org.github.johnkerl.miller",
+      "name": "miller",
+      "version": "6.12.0",
+      "architecture": "x86_64",
+      "summary": "Name-indexed tabular data processor for CSV, TSV, and JSON",
+      "license": "BSD-2-Clause",
+      "ddi_filename": "org.github.johnkerl.miller-6.12.0.ddi",
+      "ddi_sha256": "906ea7a55cffd9071469f62818a1cef29608823222824f85c4e31ee588d29d96",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "mlr"
+      ],
+      "manifest_filename": "org.github.johnkerl.miller.manifest.json",
+      "sbom_spdx_filename": "org.github.johnkerl.miller.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.johnkerl.miller.cyclonedx.json"
+    },
+    {
+      "id": "org.k8s.minikube",
+      "name": "minikube",
+      "version": "1.34.0",
+      "architecture": "x86_64",
+      "summary": "Local Kubernetes cluster orchestrator for developer workstations",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.k8s.minikube-1.34.0.ddi",
+      "ddi_sha256": "3901b4c592f0244c78eb97d7054ac735fa7220dcab980c5d807288af6764486e",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "minikube"
+      ],
+      "manifest_filename": "org.k8s.minikube.manifest.json",
+      "sbom_spdx_filename": "org.k8s.minikube.spdx.json",
+      "sbom_cyclonedx_filename": "org.k8s.minikube.cyclonedx.json"
+    },
+    {
+      "id": "org.github.jdx.mise",
+      "name": "mise",
+      "version": "2024.10.3",
+      "architecture": "x86_64",
+      "summary": "Polyglot tool version manager and environment manager",
+      "license": "MIT",
+      "ddi_filename": "org.github.jdx.mise-2024.10.3.ddi",
+      "ddi_sha256": "6a7dd9c6a1b41bf15658c226f8af148632e93786aa27d9fe297911e27f03da8a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "mise"
+      ],
+      "manifest_filename": "org.github.jdx.mise.manifest.json",
+      "sbom_spdx_filename": "org.github.jdx.mise.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.jdx.mise.cyclonedx.json"
+    },
+    {
+      "id": "org.bitwizard.mtr",
+      "name": "mtr",
+      "version": "0.95",
+      "architecture": "x86_64",
+      "summary": "Network diagnostic tool combining traceroute and ping functionality",
+      "license": "GPL-2.0-only",
+      "ddi_filename": "org.bitwizard.mtr-0.95.ddi",
+      "ddi_sha256": "597b81ac62a38636ab3d87959898a243af5db69b1d40e3514e5ee276e3347a42",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 438784,
+      "exported_binaries": [
+        "mtr"
+      ],
+      "manifest_filename": "org.bitwizard.mtr.manifest.json",
+      "sbom_spdx_filename": "org.bitwizard.mtr.spdx.json",
+      "sbom_cyclonedx_filename": "org.bitwizard.mtr.cyclonedx.json"
+    },
+    {
+      "id": "org.dev.yorhel.ncdu",
+      "name": "ncdu",
+      "version": "2.5",
+      "architecture": "x86_64",
+      "summary": "NCurses disk usage analyzer for interactive cleanups",
+      "license": "MIT",
+      "ddi_filename": "org.dev.yorhel.ncdu-2.5.ddi",
+      "ddi_sha256": "c5cd23385f889a7c5321f9045cd34e7e0bd25b0d710eaebc4cedd092de402976",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 1446400,
+      "exported_binaries": [
+        "ncdu"
+      ],
+      "manifest_filename": "org.dev.yorhel.ncdu.manifest.json",
+      "sbom_spdx_filename": "org.dev.yorhel.ncdu.spdx.json",
+      "sbom_cyclonedx_filename": "org.dev.yorhel.ncdu.cyclonedx.json"
+    },
+    {
+      "id": "org.nmap.nmap",
+      "name": "nmap",
+      "version": "7.95",
+      "architecture": "x86_64",
+      "summary": "Network exploration tool and security / port scanner",
+      "license": "Nmap-Public-Source-License",
+      "ddi_filename": "org.nmap.nmap-7.95.ddi",
+      "ddi_sha256": "1a7a9d0384033aeb9556564ba20811b0fabfa3c9ed1585e3959f831694c451dd",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 8536576,
+      "exported_binaries": [
+        "nmap"
+      ],
+      "manifest_filename": "org.nmap.nmap.manifest.json",
+      "sbom_spdx_filename": "org.nmap.nmap.spdx.json",
+      "sbom_cyclonedx_filename": "org.nmap.nmap.cyclonedx.json"
+    },
+    {
+      "id": "org.github.syllo.nvtop",
+      "name": "nvtop",
+      "version": "3.1.0",
+      "architecture": "x86_64",
+      "summary": "Task monitor for NVIDIA, AMD, and Intel GPUs",
+      "license": "GPL-3.0-or-later",
+      "ddi_filename": "org.github.syllo.nvtop-3.1.0.ddi",
+      "ddi_sha256": "4b309d82e5ed6890622018f2a6fb0971c7354b3ac06b936162a226650893907a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "nvtop"
+      ],
+      "manifest_filename": "org.github.syllo.nvtop.manifest.json",
+      "sbom_spdx_filename": "org.github.syllo.nvtop.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.syllo.nvtop.cyclonedx.json"
+    },
+    {
+      "id": "org.github.o2sh.onefetch",
+      "name": "onefetch",
+      "version": "2.22.0",
+      "architecture": "x86_64",
+      "summary": "Git repository summary tool directly in your terminal",
+      "license": "MIT",
+      "ddi_filename": "org.github.o2sh.onefetch-2.22.0.ddi",
+      "ddi_sha256": "c880bb070fa0058f0aa149724124d6048464394a6a4e1b9eb788f7d6c8b3ab8e",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "onefetch"
+      ],
+      "manifest_filename": "org.github.o2sh.onefetch.manifest.json",
+      "sbom_spdx_filename": "org.github.o2sh.onefetch.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.o2sh.onefetch.cyclonedx.json"
+    },
+    {
+      "id": "org.7-zip.7z",
+      "name": "p7zip",
+      "version": "17.05",
+      "architecture": "x86_64",
+      "summary": "High-compression multi-format file archiver",
+      "license": "LGPL-2.1-or-later",
+      "ddi_filename": "org.7-zip.7z-17.05.ddi",
+      "ddi_sha256": "c626b4a8338dbba91487af3a93fb7efd3c7cbca509baaa7903e28b8d0e2fa0c4",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 2236928,
+      "exported_binaries": [
+        "7z"
+      ],
+      "manifest_filename": "org.7-zip.7z.manifest.json",
+      "sbom_spdx_filename": "org.7-zip.7z.spdx.json",
+      "sbom_cyclonedx_filename": "org.7-zip.7z.cyclonedx.json"
+    },
+    {
+      "id": "org.kernel.pciutils",
+      "name": "pciutils",
+      "version": "3.13.0",
+      "architecture": "x86_64",
+      "summary": "Inspect host PCI bus topology and expansion devices",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.kernel.pciutils-3.13.0.ddi",
+      "ddi_sha256": "dfd7e47aa3456e9a399520c84a72c15cd8dcae742cdb235c8c7aba57c98a105b",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 4469248,
+      "exported_binaries": [
+        "lspci"
+      ],
+      "manifest_filename": "org.kernel.pciutils.manifest.json",
+      "sbom_spdx_filename": "org.kernel.pciutils.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.pciutils.cyclonedx.json"
+    },
+    {
+      "id": "org.kernel.perf",
+      "name": "perf",
+      "version": "6.11.0",
+      "architecture": "x86_64",
+      "summary": "Linux kernel performance counters and CPU profiling subsystem",
+      "license": "GPL-2.0-only",
+      "ddi_filename": "org.kernel.perf-6.11.0.ddi",
+      "ddi_sha256": "7abd6abb7d57f886b5e880e450485349729d25944bc2078deb894f89edb51c20",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 100426240,
+      "exported_binaries": [
+        "perf"
+      ],
+      "manifest_filename": "org.kernel.perf.manifest.json",
+      "sbom_spdx_filename": "org.kernel.perf.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.perf.cyclonedx.json"
+    },
+    {
+      "id": "org.zlib.pigz",
+      "name": "pigz",
+      "version": "2.8",
+      "architecture": "x86_64",
+      "summary": "Parallel implementation of gzip for multi-core CPUs",
+      "license": "Zlib",
+      "ddi_filename": "org.zlib.pigz-2.8.ddi",
+      "ddi_sha256": "274a2a83f04611af27a0d8bcf09a3af3586183d7ea560c9c115bbfca594f90fc",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 389632,
+      "exported_binaries": [
+        "pigz"
+      ],
+      "manifest_filename": "org.zlib.pigz.manifest.json",
+      "sbom_spdx_filename": "org.zlib.pigz.spdx.json",
+      "sbom_cyclonedx_filename": "org.zlib.pigz.cyclonedx.json"
+    },
+    {
+      "id": "org.github.containers.podman-tui",
+      "name": "podman-tui",
+      "version": "1.1.0",
+      "architecture": "x86_64",
+      "summary": "Terminal UI for Podman container and pod management",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.containers.podman-tui-1.1.0.ddi",
+      "ddi_sha256": "a5c33f766d4e3e8db1f1c1cca22254e4e1582e17e5cf4a1dd2aa3acceff84c31",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "podman-tui"
+      ],
+      "manifest_filename": "org.github.containers.podman-tui.manifest.json",
+      "sbom_spdx_filename": "org.github.containers.podman-tui.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.containers.podman-tui.cyclonedx.json"
+    },
+    {
+      "id": "org.github.dalance.procs",
+      "name": "procs",
+      "version": "0.14.8",
+      "architecture": "x86_64",
+      "summary": "Modern replacement for ps with color, paging, and tree view",
+      "license": "MIT",
+      "ddi_filename": "org.github.dalance.procs-0.14.8.ddi",
+      "ddi_sha256": "081b30ae8d04ea78bbf9a4ff71babc7cb1f1e02fde26dcf640e6315944a9587e",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "procs"
+      ],
+      "manifest_filename": "org.github.dalance.procs.manifest.json",
+      "sbom_spdx_filename": "org.github.dalance.procs.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.dalance.procs.cyclonedx.json"
+    },
+    {
+      "id": "org.rclone.rclone",
+      "name": "rclone",
+      "version": "1.68.1",
+      "architecture": "x86_64",
+      "summary": "Rsync for cloud storage with FUSE mounting",
+      "license": "MIT",
+      "ddi_filename": "org.rclone.rclone-1.68.1.ddi",
+      "ddi_sha256": "ef42da4b511561028ab1f080181b6263875bd797bb868576bee72b489e44dc4c",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "rclone"
+      ],
+      "manifest_filename": "org.rclone.rclone.manifest.json",
+      "sbom_spdx_filename": "org.rclone.rclone.spdx.json",
+      "sbom_cyclonedx_filename": "org.rclone.rclone.cyclonedx.json"
+    },
+    {
+      "id": "org.restic.restic",
+      "name": "restic",
+      "version": "0.17.1",
+      "architecture": "x86_64",
+      "summary": "Secure, deduplicated, encrypted backup program",
+      "license": "BSD-2-Clause",
+      "ddi_filename": "org.restic.restic-0.17.1.ddi",
+      "ddi_sha256": "6ffcb6481ba09a8f4153ba1c7d8ea1de5582d7f44ed13dbab1fc9c9feab0297a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "restic"
+      ],
+      "manifest_filename": "org.restic.restic.manifest.json",
+      "sbom_spdx_filename": "org.restic.restic.spdx.json",
+      "sbom_cyclonedx_filename": "org.restic.restic.cyclonedx.json"
     },
     {
       "id": "org.ripgrep.rg",
@@ -95,312 +1302,6 @@
       "sbom_cyclonedx_filename": "org.ripgrep.rg.cyclonedx.json"
     },
     {
-      "id": "org.github.sharkdp.fd",
-      "name": "fd-find",
-      "version": "10.2.0",
-      "architecture": "x86_64",
-      "summary": "Simple, fast and user-friendly alternative to find",
-      "license": "Apache-2.0 OR MIT",
-      "ddi_filename": "org.github.sharkdp.fd-10.2.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.sharkdp.fd-10.2.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2516582,
-      "exported_binaries": [
-        "fd"
-      ],
-      "manifest_filename": "org.github.sharkdp.fd.manifest.json",
-      "sbom_spdx_filename": "org.github.sharkdp.fd.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.sharkdp.fd.cyclonedx.json"
-    },
-    {
-      "id": "org.github.sharkdp.bat",
-      "name": "bat",
-      "version": "0.24.0",
-      "architecture": "x86_64",
-      "summary": "Cat clone with syntax highlighting and Git integration",
-      "license": "Apache-2.0 OR MIT",
-      "ddi_filename": "org.github.sharkdp.bat-0.24.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.sharkdp.bat-0.24.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4210688,
-      "exported_binaries": [
-        "bat"
-      ],
-      "manifest_filename": "org.github.sharkdp.bat.manifest.json",
-      "sbom_spdx_filename": "org.github.sharkdp.bat.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.sharkdp.bat.cyclonedx.json"
-    },
-    {
-      "id": "org.github.eza-community.eza",
-      "name": "eza",
-      "version": "0.20.5",
-      "architecture": "x86_64",
-      "summary": "Modern, maintained replacement for ls with git status and tree view",
-      "license": "EUPL-1.2",
-      "ddi_filename": "org.github.eza-community.eza-0.20.5.ddi",
-      "ddi_sha256": "sha256-verified-org.github.eza-community.eza-0.20.5",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2831155,
-      "exported_binaries": [
-        "eza"
-      ],
-      "manifest_filename": "org.github.eza-community.eza.manifest.json",
-      "sbom_spdx_filename": "org.github.eza-community.eza.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.eza-community.eza.cyclonedx.json"
-    },
-    {
-      "id": "org.github.junegunn.fzf",
-      "name": "fzf",
-      "version": "0.56.0",
-      "architecture": "x86_64",
-      "summary": "General-purpose command-line fuzzy finder",
-      "license": "MIT",
-      "ddi_filename": "org.github.junegunn.fzf-0.56.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.junegunn.fzf-0.56.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3145728,
-      "exported_binaries": [
-        "fzf"
-      ],
-      "manifest_filename": "org.github.junegunn.fzf.manifest.json",
-      "sbom_spdx_filename": "org.github.junegunn.fzf.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.junegunn.fzf.cyclonedx.json"
-    },
-    {
-      "id": "org.github.ajeetdsouza.zoxide",
-      "name": "zoxide",
-      "version": "0.9.6",
-      "architecture": "x86_64",
-      "summary": "Smarter cd command tracking directory usage frecency",
-      "license": "MIT",
-      "ddi_filename": "org.github.ajeetdsouza.zoxide-0.9.6.ddi",
-      "ddi_sha256": "sha256-verified-org.github.ajeetdsouza.zoxide-0.9.6",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1843200,
-      "exported_binaries": [
-        "zoxide"
-      ],
-      "manifest_filename": "org.github.ajeetdsouza.zoxide.manifest.json",
-      "sbom_spdx_filename": "org.github.ajeetdsouza.zoxide.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.ajeetdsouza.zoxide.cyclonedx.json"
-    },
-    {
-      "id": "org.dystroy.broot",
-      "name": "broot",
-      "version": "1.44.2",
-      "architecture": "x86_64",
-      "summary": "Interactive tree exploration and filesystem navigation",
-      "license": "MIT",
-      "ddi_filename": "org.dystroy.broot-1.44.2.ddi",
-      "ddi_sha256": "sha256-verified-org.dystroy.broot-1.44.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3932160,
-      "exported_binaries": [
-        "broot"
-      ],
-      "manifest_filename": "org.dystroy.broot.manifest.json",
-      "sbom_spdx_filename": "org.dystroy.broot.spdx.json",
-      "sbom_cyclonedx_filename": "org.dystroy.broot.cyclonedx.json"
-    },
-    {
-      "id": "org.github.sxyazi.yazi",
-      "name": "yazi",
-      "version": "0.4.1",
-      "architecture": "x86_64",
-      "summary": "Blazing-fast terminal file manager with async I/O",
-      "license": "MIT",
-      "ddi_filename": "org.github.sxyazi.yazi-0.4.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.sxyazi.yazi-0.4.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4718592,
-      "exported_binaries": [
-        "yazi"
-      ],
-      "manifest_filename": "org.github.sxyazi.yazi.manifest.json",
-      "sbom_spdx_filename": "org.github.sxyazi.yazi.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.sxyazi.yazi.cyclonedx.json"
-    },
-    {
-      "id": "org.github.bootandy.dust",
-      "name": "dust",
-      "version": "1.1.1",
-      "architecture": "x86_64",
-      "summary": "Intuitive graphical disk usage analyzer for terminal",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.bootandy.dust-1.1.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.bootandy.dust-1.1.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2228224,
-      "exported_binaries": [
-        "dust"
-      ],
-      "manifest_filename": "org.github.bootandy.dust.manifest.json",
-      "sbom_spdx_filename": "org.github.bootandy.dust.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.bootandy.dust.cyclonedx.json"
-    },
-    {
-      "id": "org.github.muesli.duf",
-      "name": "duf",
-      "version": "0.8.0",
-      "architecture": "x86_64",
-      "summary": "Disk Utility & Free space viewer with clean tabular display",
-      "license": "MIT",
-      "ddi_filename": "org.github.muesli.duf-0.8.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.muesli.duf-0.8.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2621440,
-      "exported_binaries": [
-        "duf"
-      ],
-      "manifest_filename": "org.github.muesli.duf.manifest.json",
-      "sbom_spdx_filename": "org.github.muesli.duf.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.muesli.duf.cyclonedx.json"
-    },
-    {
-      "id": "org.github.sharkdp.hyperfine",
-      "name": "hyperfine",
-      "version": "1.18.0",
-      "architecture": "x86_64",
-      "summary": "Command-line benchmarking tool with statistical rigor",
-      "license": "Apache-2.0 OR MIT",
-      "ddi_filename": "org.github.sharkdp.hyperfine-1.18.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.sharkdp.hyperfine-1.18.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2490368,
-      "exported_binaries": [
-        "hyperfine"
-      ],
-      "manifest_filename": "org.github.sharkdp.hyperfine.manifest.json",
-      "sbom_spdx_filename": "org.github.sharkdp.hyperfine.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.sharkdp.hyperfine.cyclonedx.json"
-    },
-    {
-      "id": "org.github.andreafrancia.trash-cli",
-      "name": "trash-cli",
-      "version": "0.24.5",
-      "architecture": "x86_64",
-      "summary": "Command-line interface to the FreeDesktop.org trashcan",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.github.andreafrancia.trash-cli-0.24.5.ddi",
-      "ddi_sha256": "sha256-verified-org.github.andreafrancia.trash-cli-0.24.5",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1572864,
-      "exported_binaries": [
-        "trash"
-      ],
-      "manifest_filename": "org.github.andreafrancia.trash-cli.manifest.json",
-      "sbom_spdx_filename": "org.github.andreafrancia.trash-cli.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.andreafrancia.trash-cli.cyclonedx.json"
-    },
-    {
-      "id": "org.github.jqlang.jq",
-      "name": "jq",
-      "version": "1.7.1",
-      "architecture": "x86_64",
-      "summary": "Lightweight and flexible command-line JSON processor",
-      "license": "MIT",
-      "ddi_filename": "org.github.jqlang.jq-1.7.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.jqlang.jq-1.7.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1703936,
-      "exported_binaries": [
-        "jq"
-      ],
-      "manifest_filename": "org.github.jqlang.jq.manifest.json",
-      "sbom_spdx_filename": "org.github.jqlang.jq.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.jqlang.jq.cyclonedx.json"
-    },
-    {
-      "id": "org.github.mikefarah.yq",
-      "name": "yq",
-      "version": "4.44.3",
-      "architecture": "x86_64",
-      "summary": "Portable command-line YAML, JSON, XML, and CSV processor",
-      "license": "MIT",
-      "ddi_filename": "org.github.mikefarah.yq-4.44.3.ddi",
-      "ddi_sha256": "sha256-verified-org.github.mikefarah.yq-4.44.3",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4980736,
-      "exported_binaries": [
-        "yq"
-      ],
-      "manifest_filename": "org.github.mikefarah.yq.manifest.json",
-      "sbom_spdx_filename": "org.github.mikefarah.yq.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.mikefarah.yq.cyclonedx.json"
-    },
-    {
-      "id": "org.github.antonmedv.fx",
-      "name": "fx",
-      "version": "35.0.0",
-      "architecture": "x86_64",
-      "summary": "Terminal JSON viewer and interactive query tool",
-      "license": "MIT",
-      "ddi_filename": "org.github.antonmedv.fx-35.0.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.antonmedv.fx-35.0.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3145728,
-      "exported_binaries": [
-        "fx"
-      ],
-      "manifest_filename": "org.github.antonmedv.fx.manifest.json",
-      "sbom_spdx_filename": "org.github.antonmedv.fx.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.antonmedv.fx.cyclonedx.json"
-    },
-    {
-      "id": "org.github.johnkerl.miller",
-      "name": "miller",
-      "version": "6.12.0",
-      "architecture": "x86_64",
-      "summary": "Name-indexed tabular data processor for CSV, TSV, and JSON",
-      "license": "BSD-2-Clause",
-      "ddi_filename": "org.github.johnkerl.miller-6.12.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.johnkerl.miller-6.12.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3801088,
-      "exported_binaries": [
-        "mlr"
-      ],
-      "manifest_filename": "org.github.johnkerl.miller.manifest.json",
-      "sbom_spdx_filename": "org.github.johnkerl.miller.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.johnkerl.miller.cyclonedx.json"
-    },
-    {
-      "id": "org.github.chmln.sd",
-      "name": "sd",
-      "version": "1.0.0",
-      "architecture": "x86_64",
-      "summary": "Intuitive find & replace CLI alternative to sed",
-      "license": "MIT",
-      "ddi_filename": "org.github.chmln.sd-1.0.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.chmln.sd-1.0.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1835008,
-      "exported_binaries": [
-        "sd"
-      ],
-      "manifest_filename": "org.github.chmln.sd.manifest.json",
-      "sbom_spdx_filename": "org.github.chmln.sd.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.chmln.sd.cyclonedx.json"
-    },
-    {
-      "id": "org.github.theryangeary.choose",
-      "name": "choose",
-      "version": "1.3.4",
-      "architecture": "x86_64",
-      "summary": "Human-friendly and fast alternative to cut and awk",
-      "license": "GPL-3.0-or-later",
-      "ddi_filename": "org.github.theryangeary.choose-1.3.4.ddi",
-      "ddi_sha256": "sha256-verified-org.github.theryangeary.choose-1.3.4",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1572864,
-      "exported_binaries": [
-        "choose"
-      ],
-      "manifest_filename": "org.github.theryangeary.choose.manifest.json",
-      "sbom_spdx_filename": "org.github.theryangeary.choose.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.theryangeary.choose.cyclonedx.json"
-    },
-    {
       "id": "org.github.phiresky.ripgrep-all",
       "name": "ripgrep-all",
       "version": "0.10.6",
@@ -408,1259 +1309,15 @@
       "summary": "Ripgrep wrapper searching PDFs, E-Books, Office docs, zip, tar",
       "license": "AGPL-3.0-or-later",
       "ddi_filename": "org.github.phiresky.ripgrep-all-0.10.6.ddi",
-      "ddi_sha256": "sha256-verified-org.github.phiresky.ripgrep-all-0.10.6",
+      "ddi_sha256": "7dc510ae7ac0efcb880e2ca5972398d24faf44ebb0a36e230d88a7660e650757",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3670016,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
         "rga"
       ],
       "manifest_filename": "org.github.phiresky.ripgrep-all.manifest.json",
       "sbom_spdx_filename": "org.github.phiresky.ripgrep-all.spdx.json",
       "sbom_cyclonedx_filename": "org.github.phiresky.ripgrep-all.cyclonedx.json"
-    },
-    {
-      "id": "org.github.dandavison.delta",
-      "name": "delta",
-      "version": "0.18.2",
-      "architecture": "x86_64",
-      "summary": "Syntax-highlighting pager for git, diff, and grep output",
-      "license": "MIT",
-      "ddi_filename": "org.github.dandavison.delta-0.18.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.dandavison.delta-0.18.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4718592,
-      "exported_binaries": [
-        "delta"
-      ],
-      "manifest_filename": "org.github.dandavison.delta.manifest.json",
-      "sbom_spdx_filename": "org.github.dandavison.delta.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.dandavison.delta.cyclonedx.json"
-    },
-    {
-      "id": "org.github.wilfred.difftastic",
-      "name": "difftastic",
-      "version": "0.60.0",
-      "architecture": "x86_64",
-      "summary": "Structural diff tool comparing ASTs rather than text lines",
-      "license": "MIT",
-      "ddi_filename": "org.github.wilfred.difftastic-0.60.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.wilfred.difftastic-0.60.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 6815744,
-      "exported_binaries": [
-        "difft"
-      ],
-      "manifest_filename": "org.github.wilfred.difftastic.manifest.json",
-      "sbom_spdx_filename": "org.github.wilfred.difftastic.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.wilfred.difftastic.cyclonedx.json"
-    },
-    {
-      "id": "org.github.sharkdp.hexyl",
-      "name": "hexyl",
-      "version": "0.14.0",
-      "architecture": "x86_64",
-      "summary": "Colored command-line hex viewer",
-      "license": "Apache-2.0 OR MIT",
-      "ddi_filename": "org.github.sharkdp.hexyl-0.14.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.sharkdp.hexyl-0.14.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1835008,
-      "exported_binaries": [
-        "hexyl"
-      ],
-      "manifest_filename": "org.github.sharkdp.hexyl.manifest.json",
-      "sbom_spdx_filename": "org.github.sharkdp.hexyl.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.sharkdp.hexyl.cyclonedx.json"
-    },
-    {
-      "id": "org.github.aristocratos.btop",
-      "name": "btop",
-      "version": "1.3.2",
-      "architecture": "x86_64",
-      "summary": "Modern TUI resource monitor (CPU, memory, disks, network, processes)",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.aristocratos.btop-1.3.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.aristocratos.btop-1.3.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2883584,
-      "exported_binaries": [
-        "btop"
-      ],
-      "manifest_filename": "org.github.aristocratos.btop.manifest.json",
-      "sbom_spdx_filename": "org.github.aristocratos.btop.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.aristocratos.btop.cyclonedx.json"
-    },
-    {
-      "id": "org.github.clementtsang.bottom",
-      "name": "bottom",
-      "version": "0.9.6",
-      "architecture": "x86_64",
-      "summary": "Graphical process/system monitor for the terminal",
-      "license": "MIT",
-      "ddi_filename": "org.github.clementtsang.bottom-0.9.6.ddi",
-      "ddi_sha256": "sha256-verified-org.github.clementtsang.bottom-0.9.6",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3145728,
-      "exported_binaries": [
-        "btm"
-      ],
-      "manifest_filename": "org.github.clementtsang.bottom.manifest.json",
-      "sbom_spdx_filename": "org.github.clementtsang.bottom.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.clementtsang.bottom.cyclonedx.json"
-    },
-    {
-      "id": "org.github.nicolargo.glances",
-      "name": "glances",
-      "version": "4.1.2",
-      "architecture": "x86_64",
-      "summary": "Comprehensive system monitoring tool with web/terminal interfaces",
-      "license": "LGPL-3.0-or-later",
-      "ddi_filename": "org.github.nicolargo.glances-4.1.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.nicolargo.glances-4.1.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 5242880,
-      "exported_binaries": [
-        "glances"
-      ],
-      "manifest_filename": "org.github.nicolargo.glances.manifest.json",
-      "sbom_spdx_filename": "org.github.nicolargo.glances.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.nicolargo.glances.cyclonedx.json"
-    },
-    {
-      "id": "org.github.dalance.procs",
-      "name": "procs",
-      "version": "0.14.8",
-      "architecture": "x86_64",
-      "summary": "Modern replacement for ps with color, paging, and tree view",
-      "license": "MIT",
-      "ddi_filename": "org.github.dalance.procs-0.14.8.ddi",
-      "ddi_sha256": "sha256-verified-org.github.dalance.procs-0.14.8",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2752512,
-      "exported_binaries": [
-        "procs"
-      ],
-      "manifest_filename": "org.github.dalance.procs.manifest.json",
-      "sbom_spdx_filename": "org.github.dalance.procs.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.dalance.procs.cyclonedx.json"
-    },
-    {
-      "id": "org.github.bvaisvil.zenith",
-      "name": "zenith",
-      "version": "0.14.1",
-      "architecture": "x86_64",
-      "summary": "Terminal system monitor with zoomable metrics and GPU profiling",
-      "license": "MIT",
-      "ddi_filename": "org.github.bvaisvil.zenith-0.14.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.bvaisvil.zenith-0.14.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3407872,
-      "exported_binaries": [
-        "zenith"
-      ],
-      "manifest_filename": "org.github.bvaisvil.zenith.manifest.json",
-      "sbom_spdx_filename": "org.github.bvaisvil.zenith.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.bvaisvil.zenith.cyclonedx.json"
-    },
-    {
-      "id": "org.github.syllo.nvtop",
-      "name": "nvtop",
-      "version": "3.1.0",
-      "architecture": "x86_64",
-      "summary": "Task monitor for NVIDIA, AMD, and Intel GPUs",
-      "license": "GPL-3.0-or-later",
-      "ddi_filename": "org.github.syllo.nvtop-3.1.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.syllo.nvtop-3.1.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2097152,
-      "exported_binaries": [
-        "nvtop"
-      ],
-      "manifest_filename": "org.github.syllo.nvtop.manifest.json",
-      "sbom_spdx_filename": "org.github.syllo.nvtop.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.syllo.nvtop.cyclonedx.json"
-    },
-    {
-      "id": "org.github.Tomas-M.iotop",
-      "name": "iotop-c",
-      "version": "0.6.1",
-      "architecture": "x86_64",
-      "summary": "Per-process I/O bandwidth usage monitor",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.github.Tomas-M.iotop-0.6.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.Tomas-M.iotop-0.6.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1703936,
-      "exported_binaries": [
-        "iotop"
-      ],
-      "manifest_filename": "org.github.Tomas-M.iotop.manifest.json",
-      "sbom_spdx_filename": "org.github.Tomas-M.iotop.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.Tomas-M.iotop.cyclonedx.json"
-    },
-    {
-      "id": "org.github.sysstat.sysstat",
-      "name": "sysstat",
-      "version": "12.7.6",
-      "architecture": "x86_64",
-      "summary": "Linux system performance and activity metrics collection",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.github.sysstat.sysstat-12.7.6.ddi",
-      "ddi_sha256": "sha256-verified-org.github.sysstat.sysstat-12.7.6",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2621440,
-      "exported_binaries": [
-        "iostat",
-        "sar"
-      ],
-      "manifest_filename": "org.github.sysstat.sysstat.manifest.json",
-      "sbom_spdx_filename": "org.github.sysstat.sysstat.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.sysstat.sysstat.cyclonedx.json"
-    },
-    {
-      "id": "org.codeberg.smxi.inxi",
-      "name": "inxi",
-      "version": "3.3.36",
-      "architecture": "x86_64",
-      "summary": "Full-featured CLI system information and hardware reporting tool",
-      "license": "GPL-3.0-or-later",
-      "ddi_filename": "org.codeberg.smxi.inxi-3.3.36.ddi",
-      "ddi_sha256": "sha256-verified-org.codeberg.smxi.inxi-3.3.36",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1572864,
-      "exported_binaries": [
-        "inxi"
-      ],
-      "manifest_filename": "org.codeberg.smxi.inxi.manifest.json",
-      "sbom_spdx_filename": "org.codeberg.smxi.inxi.spdx.json",
-      "sbom_cyclonedx_filename": "org.codeberg.smxi.inxi.cyclonedx.json"
-    },
-    {
-      "id": "org.alioth.debian.ltrace",
-      "name": "ltrace",
-      "version": "0.7.91",
-      "architecture": "x86_64",
-      "summary": "Dynamic library call interceptor and debugger",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.alioth.debian.ltrace-0.7.91.ddi",
-      "ddi_sha256": "sha256-verified-org.alioth.debian.ltrace-0.7.91",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1835008,
-      "exported_binaries": [
-        "ltrace"
-      ],
-      "manifest_filename": "org.alioth.debian.ltrace.manifest.json",
-      "sbom_spdx_filename": "org.alioth.debian.ltrace.spdx.json",
-      "sbom_cyclonedx_filename": "org.alioth.debian.ltrace.cyclonedx.json"
-    },
-    {
-      "id": "org.kernel.perf",
-      "name": "perf",
-      "version": "6.11.0",
-      "architecture": "x86_64",
-      "summary": "Linux kernel performance counters and CPU profiling subsystem",
-      "license": "GPL-2.0-only",
-      "ddi_filename": "org.kernel.perf-6.11.0.ddi",
-      "ddi_sha256": "sha256-verified-org.kernel.perf-6.11.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 5242880,
-      "exported_binaries": [
-        "perf"
-      ],
-      "manifest_filename": "org.kernel.perf.manifest.json",
-      "sbom_spdx_filename": "org.kernel.perf.spdx.json",
-      "sbom_cyclonedx_filename": "org.kernel.perf.cyclonedx.json"
-    },
-    {
-      "id": "org.github.bpftrace.bpftrace",
-      "name": "bpftrace",
-      "version": "0.21.2",
-      "architecture": "x86_64",
-      "summary": "High-level tracing language for Linux eBPF kernel tracing",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.bpftrace.bpftrace-0.21.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.bpftrace.bpftrace-0.21.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 8388608,
-      "exported_binaries": [
-        "bpftrace"
-      ],
-      "manifest_filename": "org.github.bpftrace.bpftrace.manifest.json",
-      "sbom_spdx_filename": "org.github.bpftrace.bpftrace.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.bpftrace.bpftrace.cyclonedx.json"
-    },
-    {
-      "id": "org.github.iovisor.bcc",
-      "name": "bcc-tools",
-      "version": "0.31.0",
-      "architecture": "x86_64",
-      "summary": "BPF-based Linux performance analysis and monitoring tools",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.iovisor.bcc-0.31.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.iovisor.bcc-0.31.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 9437184,
-      "exported_binaries": [
-        "execsnoop"
-      ],
-      "manifest_filename": "org.github.iovisor.bcc.manifest.json",
-      "sbom_spdx_filename": "org.github.iovisor.bcc.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.iovisor.bcc.cyclonedx.json"
-    },
-    {
-      "id": "org.gnu.gdb",
-      "name": "gdb",
-      "version": "15.2",
-      "architecture": "x86_64",
-      "summary": "The GNU Project Debugger for compiled executables",
-      "license": "GPL-3.0-or-later",
-      "ddi_filename": "org.gnu.gdb-15.2.ddi",
-      "ddi_sha256": "sha256-verified-org.gnu.gdb-15.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 12582912,
-      "exported_binaries": [
-        "gdb"
-      ],
-      "manifest_filename": "org.gnu.gdb.manifest.json",
-      "sbom_spdx_filename": "org.gnu.gdb.spdx.json",
-      "sbom_cyclonedx_filename": "org.gnu.gdb.cyclonedx.json"
-    },
-    {
-      "id": "org.llvm.lldb",
-      "name": "lldb",
-      "version": "19.1.1",
-      "architecture": "x86_64",
-      "summary": "High-performance debugger from LLVM project",
-      "license": "Apache-2.0 WITH LLVM-exception",
-      "ddi_filename": "org.llvm.lldb-19.1.1.ddi",
-      "ddi_sha256": "sha256-verified-org.llvm.lldb-19.1.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 14680064,
-      "exported_binaries": [
-        "lldb"
-      ],
-      "manifest_filename": "org.llvm.lldb.manifest.json",
-      "sbom_spdx_filename": "org.llvm.lldb.spdx.json",
-      "sbom_cyclonedx_filename": "org.llvm.lldb.cyclonedx.json"
-    },
-    {
-      "id": "org.valgrind.valgrind",
-      "name": "valgrind",
-      "version": "3.23.0",
-      "architecture": "x86_64",
-      "summary": "Memory error detector, profiler, and leak sanitizer",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.valgrind.valgrind-3.23.0.ddi",
-      "ddi_sha256": "sha256-verified-org.valgrind.valgrind-3.23.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 11534336,
-      "exported_binaries": [
-        "valgrind"
-      ],
-      "manifest_filename": "org.valgrind.valgrind.manifest.json",
-      "sbom_spdx_filename": "org.valgrind.valgrind.spdx.json",
-      "sbom_cyclonedx_filename": "org.valgrind.valgrind.cyclonedx.json"
-    },
-    {
-      "id": "org.github.lsof-org.lsof",
-      "name": "lsof",
-      "version": "4.99.3",
-      "architecture": "x86_64",
-      "summary": "List open files, sockets, and IPC handles across processes",
-      "license": "Purdue-BSD",
-      "ddi_filename": "org.github.lsof-org.lsof-4.99.3.ddi",
-      "ddi_sha256": "sha256-verified-org.github.lsof-org.lsof-4.99.3",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1703936,
-      "exported_binaries": [
-        "lsof"
-      ],
-      "manifest_filename": "org.github.lsof-org.lsof.manifest.json",
-      "sbom_spdx_filename": "org.github.lsof-org.lsof.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.lsof-org.lsof.cyclonedx.json"
-    },
-    {
-      "id": "org.kernel.fuser",
-      "name": "fuser",
-      "version": "23.7",
-      "architecture": "x86_64",
-      "summary": "Identify processes using host files, sockets, or mount points",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.kernel.fuser-23.7.ddi",
-      "ddi_sha256": "sha256-verified-org.kernel.fuser-23.7",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1441792,
-      "exported_binaries": [
-        "fuser"
-      ],
-      "manifest_filename": "org.kernel.fuser.manifest.json",
-      "sbom_spdx_filename": "org.kernel.fuser.spdx.json",
-      "sbom_cyclonedx_filename": "org.kernel.fuser.cyclonedx.json"
-    },
-    {
-      "id": "org.haxx.curl",
-      "name": "curl",
-      "version": "8.10.1",
-      "architecture": "x86_64",
-      "summary": "Command line tool for transferring data with URLs",
-      "license": "curl",
-      "ddi_filename": "org.haxx.curl-8.10.1.ddi",
-      "ddi_sha256": "sha256-verified-org.haxx.curl-8.10.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2621440,
-      "exported_binaries": [
-        "curl"
-      ],
-      "manifest_filename": "org.haxx.curl.manifest.json",
-      "sbom_spdx_filename": "org.haxx.curl.spdx.json",
-      "sbom_cyclonedx_filename": "org.haxx.curl.cyclonedx.json"
-    },
-    {
-      "id": "org.httpie.httpie",
-      "name": "httpie",
-      "version": "3.2.3",
-      "architecture": "x86_64",
-      "summary": "User-friendly HTTP client with JSON support and colors",
-      "license": "BSD-3-Clause",
-      "ddi_filename": "org.httpie.httpie-3.2.3.ddi",
-      "ddi_sha256": "sha256-verified-org.httpie.httpie-3.2.3",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4194304,
-      "exported_binaries": [
-        "http"
-      ],
-      "manifest_filename": "org.httpie.httpie.manifest.json",
-      "sbom_spdx_filename": "org.httpie.httpie.spdx.json",
-      "sbom_cyclonedx_filename": "org.httpie.httpie.cyclonedx.json"
-    },
-    {
-      "id": "org.github.rs.curlie",
-      "name": "curlie",
-      "version": "1.7.2",
-      "architecture": "x86_64",
-      "summary": "Power of curl with the ease of use and formatting of httpie",
-      "license": "MIT",
-      "ddi_filename": "org.github.rs.curlie-1.7.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.rs.curlie-1.7.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2490368,
-      "exported_binaries": [
-        "curlie"
-      ],
-      "manifest_filename": "org.github.rs.curlie.manifest.json",
-      "sbom_spdx_filename": "org.github.rs.curlie.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.rs.curlie.cyclonedx.json"
-    },
-    {
-      "id": "org.github.ducaale.xh",
-      "name": "xh",
-      "version": "0.22.2",
-      "architecture": "x86_64",
-      "summary": "Fast and friendly tool for sending HTTP requests",
-      "license": "MIT",
-      "ddi_filename": "org.github.ducaale.xh-0.22.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.ducaale.xh-0.22.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2883584,
-      "exported_binaries": [
-        "xh"
-      ],
-      "manifest_filename": "org.github.ducaale.xh.manifest.json",
-      "sbom_spdx_filename": "org.github.ducaale.xh.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.ducaale.xh.cyclonedx.json"
-    },
-    {
-      "id": "org.github.mr-karan.doggo",
-      "name": "doggo",
-      "version": "1.0.5",
-      "architecture": "x86_64",
-      "summary": "Modern DNS client with DoH, DoT, JSON output, and colored results",
-      "license": "GPL-3.0-or-later",
-      "ddi_filename": "org.github.mr-karan.doggo-1.0.5.ddi",
-      "ddi_sha256": "sha256-verified-org.github.mr-karan.doggo-1.0.5",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3145728,
-      "exported_binaries": [
-        "doggo"
-      ],
-      "manifest_filename": "org.github.mr-karan.doggo.manifest.json",
-      "sbom_spdx_filename": "org.github.mr-karan.doggo.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.mr-karan.doggo.cyclonedx.json"
-    },
-    {
-      "id": "org.nmap.nmap",
-      "name": "nmap",
-      "version": "7.95",
-      "architecture": "x86_64",
-      "summary": "Network exploration tool and security / port scanner",
-      "license": "Nmap-Public-Source-License",
-      "ddi_filename": "org.nmap.nmap-7.95.ddi",
-      "ddi_sha256": "sha256-verified-org.nmap.nmap-7.95",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 7340032,
-      "exported_binaries": [
-        "nmap"
-      ],
-      "manifest_filename": "org.nmap.nmap.manifest.json",
-      "sbom_spdx_filename": "org.nmap.nmap.spdx.json",
-      "sbom_cyclonedx_filename": "org.nmap.nmap.cyclonedx.json"
-    },
-    {
-      "id": "org.tcpdump.tcpdump",
-      "name": "tcpdump",
-      "version": "4.99.5",
-      "architecture": "x86_64",
-      "summary": "Command-line packet analyzer and network sniffer",
-      "license": "BSD-3-Clause",
-      "ddi_filename": "org.tcpdump.tcpdump-4.99.5.ddi",
-      "ddi_sha256": "sha256-verified-org.tcpdump.tcpdump-4.99.5",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2490368,
-      "exported_binaries": [
-        "tcpdump"
-      ],
-      "manifest_filename": "org.tcpdump.tcpdump.manifest.json",
-      "sbom_spdx_filename": "org.tcpdump.tcpdump.spdx.json",
-      "sbom_cyclonedx_filename": "org.tcpdump.tcpdump.cyclonedx.json"
-    },
-    {
-      "id": "org.github.gcla.termshark",
-      "name": "termshark",
-      "version": "2.4.0",
-      "architecture": "x86_64",
-      "summary": "Terminal UI for Wireshark packet capture and inspection",
-      "license": "MIT",
-      "ddi_filename": "org.github.gcla.termshark-2.4.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.gcla.termshark-2.4.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 5242880,
-      "exported_binaries": [
-        "termshark"
-      ],
-      "manifest_filename": "org.github.gcla.termshark.manifest.json",
-      "sbom_spdx_filename": "org.github.gcla.termshark.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.gcla.termshark.cyclonedx.json"
-    },
-    {
-      "id": "org.github.fujiapple852.trippy",
-      "name": "trippy",
-      "version": "0.11.0",
-      "architecture": "x86_64",
-      "summary": "Network diagnostic tool combining traceroute and ping in a TUI",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.fujiapple852.trippy-0.11.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.fujiapple852.trippy-0.11.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3145728,
-      "exported_binaries": [
-        "trip"
-      ],
-      "manifest_filename": "org.github.fujiapple852.trippy.manifest.json",
-      "sbom_spdx_filename": "org.github.fujiapple852.trippy.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.fujiapple852.trippy.cyclonedx.json"
-    },
-    {
-      "id": "org.github.imsnif.bandwhich",
-      "name": "bandwhich",
-      "version": "0.23.1",
-      "architecture": "x86_64",
-      "summary": "Terminal bandwidth utilization monitor displaying process usage",
-      "license": "MIT",
-      "ddi_filename": "org.github.imsnif.bandwhich-0.23.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.imsnif.bandwhich-0.23.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2883584,
-      "exported_binaries": [
-        "bandwhich"
-      ],
-      "manifest_filename": "org.github.imsnif.bandwhich.manifest.json",
-      "sbom_spdx_filename": "org.github.imsnif.bandwhich.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.imsnif.bandwhich.cyclonedx.json"
-    },
-    {
-      "id": "org.es.net.iperf3",
-      "name": "iperf3",
-      "version": "3.17.1",
-      "architecture": "x86_64",
-      "summary": "Active measurement tool for maximum achievable bandwidth on IP networks",
-      "license": "BSD-3-Clause",
-      "ddi_filename": "org.es.net.iperf3-3.17.1.ddi",
-      "ddi_sha256": "sha256-verified-org.es.net.iperf3-3.17.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1835008,
-      "exported_binaries": [
-        "iperf3"
-      ],
-      "manifest_filename": "org.es.net.iperf3.manifest.json",
-      "sbom_spdx_filename": "org.es.net.iperf3.spdx.json",
-      "sbom_cyclonedx_filename": "org.es.net.iperf3.cyclonedx.json"
-    },
-    {
-      "id": "org.dest-unreach.socat",
-      "name": "socat",
-      "version": "1.8.0.1",
-      "architecture": "x86_64",
-      "summary": "Multipurpose relay for bidirectional data transfer across streams",
-      "license": "GPL-2.0-only",
-      "ddi_filename": "org.dest-unreach.socat-1.8.0.1.ddi",
-      "ddi_sha256": "sha256-verified-org.dest-unreach.socat-1.8.0.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1966080,
-      "exported_binaries": [
-        "socat"
-      ],
-      "manifest_filename": "org.dest-unreach.socat.manifest.json",
-      "sbom_spdx_filename": "org.dest-unreach.socat.spdx.json",
-      "sbom_cyclonedx_filename": "org.dest-unreach.socat.cyclonedx.json"
-    },
-    {
-      "id": "org.bitwizard.mtr",
-      "name": "mtr",
-      "version": "0.95",
-      "architecture": "x86_64",
-      "summary": "Network diagnostic tool combining traceroute and ping functionality",
-      "license": "GPL-2.0-only",
-      "ddi_filename": "org.bitwizard.mtr-0.95.ddi",
-      "ddi_sha256": "sha256-verified-org.bitwizard.mtr-0.95",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1703936,
-      "exported_binaries": [
-        "mtr"
-      ],
-      "manifest_filename": "org.bitwizard.mtr.manifest.json",
-      "sbom_spdx_filename": "org.bitwizard.mtr.spdx.json",
-      "sbom_cyclonedx_filename": "org.bitwizard.mtr.cyclonedx.json"
-    },
-    {
-      "id": "org.github.cli",
-      "name": "gh",
-      "version": "2.58.0",
-      "architecture": "x86_64",
-      "summary": "Official GitHub CLI for issues, PRs, releases, and actions",
-      "license": "MIT",
-      "ddi_filename": "org.github.cli-2.58.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.cli-2.58.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 8388608,
-      "exported_binaries": [
-        "gh"
-      ],
-      "manifest_filename": "org.github.cli.manifest.json",
-      "sbom_spdx_filename": "org.github.cli.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.cli.cyclonedx.json"
-    },
-    {
-      "id": "org.gitlab.cli",
-      "name": "glab",
-      "version": "1.47.0",
-      "architecture": "x86_64",
-      "summary": "Official GitLab CLI for pipelines, MRs, and snippets",
-      "license": "MIT",
-      "ddi_filename": "org.gitlab.cli-1.47.0.ddi",
-      "ddi_sha256": "sha256-verified-org.gitlab.cli-1.47.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 7864320,
-      "exported_binaries": [
-        "glab"
-      ],
-      "manifest_filename": "org.gitlab.cli.manifest.json",
-      "sbom_spdx_filename": "org.gitlab.cli.spdx.json",
-      "sbom_cyclonedx_filename": "org.gitlab.cli.cyclonedx.json"
-    },
-    {
-      "id": "org.github.jesseduffield.lazygit",
-      "name": "lazygit",
-      "version": "0.44.1",
-      "architecture": "x86_64",
-      "summary": "Simple, keyboard-driven terminal UI for git commands",
-      "license": "MIT",
-      "ddi_filename": "org.github.jesseduffield.lazygit-0.44.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.jesseduffield.lazygit-0.44.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 5242880,
-      "exported_binaries": [
-        "lazygit"
-      ],
-      "manifest_filename": "org.github.jesseduffield.lazygit.manifest.json",
-      "sbom_spdx_filename": "org.github.jesseduffield.lazygit.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.jesseduffield.lazygit.cyclonedx.json"
-    },
-    {
-      "id": "org.github.jonas.tig",
-      "name": "tig",
-      "version": "2.5.10",
-      "architecture": "x86_64",
-      "summary": "Text-mode interface for git repository revision graph navigation",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.github.jonas.tig-2.5.10.ddi",
-      "ddi_sha256": "sha256-verified-org.github.jonas.tig-2.5.10",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2228224,
-      "exported_binaries": [
-        "tig"
-      ],
-      "manifest_filename": "org.github.jonas.tig.manifest.json",
-      "sbom_spdx_filename": "org.github.jonas.tig.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.jonas.tig.cyclonedx.json"
-    },
-    {
-      "id": "org.github.orhun.git-cliff",
-      "name": "git-cliff",
-      "version": "2.6.1",
-      "architecture": "x86_64",
-      "summary": "Highly customizable changelog generator from conventional commits",
-      "license": "Apache-2.0 OR MIT",
-      "ddi_filename": "org.github.orhun.git-cliff-2.6.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.orhun.git-cliff-2.6.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3407872,
-      "exported_binaries": [
-        "git-cliff"
-      ],
-      "manifest_filename": "org.github.orhun.git-cliff.manifest.json",
-      "sbom_spdx_filename": "org.github.orhun.git-cliff.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.orhun.git-cliff.cyclonedx.json"
-    },
-    {
-      "id": "org.git-lfs.git-lfs",
-      "name": "git-lfs",
-      "version": "3.5.1",
-      "architecture": "x86_64",
-      "summary": "Git extension for versioning large files",
-      "license": "MIT",
-      "ddi_filename": "org.git-lfs.git-lfs-3.5.1.ddi",
-      "ddi_sha256": "sha256-verified-org.git-lfs.git-lfs-3.5.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4718592,
-      "exported_binaries": [
-        "git-lfs"
-      ],
-      "manifest_filename": "org.git-lfs.git-lfs.manifest.json",
-      "sbom_spdx_filename": "org.git-lfs.git-lfs.spdx.json",
-      "sbom_cyclonedx_filename": "org.git-lfs.git-lfs.cyclonedx.json"
-    },
-    {
-      "id": "org.github.o2sh.onefetch",
-      "name": "onefetch",
-      "version": "2.22.0",
-      "architecture": "x86_64",
-      "summary": "Git repository summary tool directly in your terminal",
-      "license": "MIT",
-      "ddi_filename": "org.github.o2sh.onefetch-2.22.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.o2sh.onefetch-2.22.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3932160,
-      "exported_binaries": [
-        "onefetch"
-      ],
-      "manifest_filename": "org.github.o2sh.onefetch.manifest.json",
-      "sbom_spdx_filename": "org.github.o2sh.onefetch.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.o2sh.onefetch.cyclonedx.json"
-    },
-    {
-      "id": "org.github.kamiyaa.joshuto",
-      "name": "joshuto",
-      "version": "0.9.8",
-      "architecture": "x86_64",
-      "summary": "Ranger-like terminal file manager built in Rust",
-      "license": "LGPL-3.0-only",
-      "ddi_filename": "org.github.kamiyaa.joshuto-0.9.8.ddi",
-      "ddi_sha256": "sha256-verified-org.github.kamiyaa.joshuto-0.9.8",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3670016,
-      "exported_binaries": [
-        "joshuto"
-      ],
-      "manifest_filename": "org.github.kamiyaa.joshuto.manifest.json",
-      "sbom_spdx_filename": "org.github.kamiyaa.joshuto.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.kamiyaa.joshuto.cyclonedx.json"
-    },
-    {
-      "id": "org.github.derailed.k9s",
-      "name": "k9s",
-      "version": "0.32.5",
-      "architecture": "x86_64",
-      "summary": "Terminal UI to interact with your Kubernetes clusters",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.derailed.k9s-0.32.5.ddi",
-      "ddi_sha256": "sha256-verified-org.github.derailed.k9s-0.32.5",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 8912896,
-      "exported_binaries": [
-        "k9s"
-      ],
-      "manifest_filename": "org.github.derailed.k9s.manifest.json",
-      "sbom_spdx_filename": "org.github.derailed.k9s.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.derailed.k9s.cyclonedx.json"
-    },
-    {
-      "id": "org.k8s.kubectl",
-      "name": "kubectl",
-      "version": "1.31.1",
-      "architecture": "x86_64",
-      "summary": "Kubernetes cluster control CLI",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.k8s.kubectl-1.31.1.ddi",
-      "ddi_sha256": "sha256-verified-org.k8s.kubectl-1.31.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 11534336,
-      "exported_binaries": [
-        "kubectl"
-      ],
-      "manifest_filename": "org.k8s.kubectl.manifest.json",
-      "sbom_spdx_filename": "org.k8s.kubectl.spdx.json",
-      "sbom_cyclonedx_filename": "org.k8s.kubectl.cyclonedx.json"
-    },
-    {
-      "id": "org.sh.helm",
-      "name": "helm",
-      "version": "3.16.2",
-      "architecture": "x86_64",
-      "summary": "The package manager for Kubernetes",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.sh.helm-3.16.2.ddi",
-      "ddi_sha256": "sha256-verified-org.sh.helm-3.16.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 9437184,
-      "exported_binaries": [
-        "helm"
-      ],
-      "manifest_filename": "org.sh.helm.manifest.json",
-      "sbom_spdx_filename": "org.sh.helm.spdx.json",
-      "sbom_cyclonedx_filename": "org.sh.helm.cyclonedx.json"
-    },
-    {
-      "id": "org.github.wagoodman.dive",
-      "name": "dive",
-      "version": "0.12.0",
-      "architecture": "x86_64",
-      "summary": "Tool for exploring container layers and discovering wasted space",
-      "license": "MIT",
-      "ddi_filename": "org.github.wagoodman.dive-0.12.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.wagoodman.dive-0.12.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4718592,
-      "exported_binaries": [
-        "dive"
-      ],
-      "manifest_filename": "org.github.wagoodman.dive.manifest.json",
-      "sbom_spdx_filename": "org.github.wagoodman.dive.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.wagoodman.dive.cyclonedx.json"
-    },
-    {
-      "id": "org.github.containers.skopeo",
-      "name": "skopeo",
-      "version": "1.16.1",
-      "architecture": "x86_64",
-      "summary": "Work with remote container registries without running a daemon",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.containers.skopeo-1.16.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.containers.skopeo-1.16.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 6291456,
-      "exported_binaries": [
-        "skopeo"
-      ],
-      "manifest_filename": "org.github.containers.skopeo.manifest.json",
-      "sbom_spdx_filename": "org.github.containers.skopeo.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.containers.skopeo.cyclonedx.json"
-    },
-    {
-      "id": "org.github.containers.podman-tui",
-      "name": "podman-tui",
-      "version": "1.1.0",
-      "architecture": "x86_64",
-      "summary": "Terminal UI for Podman container and pod management",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.containers.podman-tui-1.1.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.containers.podman-tui-1.1.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 5767168,
-      "exported_binaries": [
-        "podman-tui"
-      ],
-      "manifest_filename": "org.github.containers.podman-tui.manifest.json",
-      "sbom_spdx_filename": "org.github.containers.podman-tui.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.containers.podman-tui.cyclonedx.json"
-    },
-    {
-      "id": "org.github.stern.stern",
-      "name": "stern",
-      "version": "1.31.0",
-      "architecture": "x86_64",
-      "summary": "Multi-pod and container log tailing for Kubernetes",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.stern.stern-1.31.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.stern.stern-1.31.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4194304,
-      "exported_binaries": [
-        "stern"
-      ],
-      "manifest_filename": "org.github.stern.stern.manifest.json",
-      "sbom_spdx_filename": "org.github.stern.stern.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.stern.stern.cyclonedx.json"
-    },
-    {
-      "id": "org.github.ahmetb.kubectx",
-      "name": "kubectx",
-      "version": "0.9.5",
-      "architecture": "x86_64",
-      "summary": "Fast switching between Kubernetes contexts and namespaces",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.ahmetb.kubectx-0.9.5.ddi",
-      "ddi_sha256": "sha256-verified-org.github.ahmetb.kubectx-0.9.5",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1835008,
-      "exported_binaries": [
-        "kubectx",
-        "kubens"
-      ],
-      "manifest_filename": "org.github.ahmetb.kubectx.manifest.json",
-      "sbom_spdx_filename": "org.github.ahmetb.kubectx.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.ahmetb.kubectx.cyclonedx.json"
-    },
-    {
-      "id": "org.github.aquasecurity.trivy",
-      "name": "trivy",
-      "version": "0.56.2",
-      "architecture": "x86_64",
-      "summary": "Comprehensive security scanner for container images and filesystems",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.github.aquasecurity.trivy-0.56.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.aquasecurity.trivy-0.56.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 13631488,
-      "exported_binaries": [
-        "trivy"
-      ],
-      "manifest_filename": "org.github.aquasecurity.trivy.manifest.json",
-      "sbom_spdx_filename": "org.github.aquasecurity.trivy.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.aquasecurity.trivy.cyclonedx.json"
-    },
-    {
-      "id": "org.k8s.minikube",
-      "name": "minikube",
-      "version": "1.34.0",
-      "architecture": "x86_64",
-      "summary": "Local Kubernetes cluster orchestrator for developer workstations",
-      "license": "Apache-2.0",
-      "ddi_filename": "org.k8s.minikube-1.34.0.ddi",
-      "ddi_sha256": "sha256-verified-org.k8s.minikube-1.34.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 15728640,
-      "exported_binaries": [
-        "minikube"
-      ],
-      "manifest_filename": "org.k8s.minikube.manifest.json",
-      "sbom_spdx_filename": "org.k8s.minikube.spdx.json",
-      "sbom_cyclonedx_filename": "org.k8s.minikube.cyclonedx.json"
-    },
-    {
-      "id": "org.github.zellij-org.zellij",
-      "name": "zellij",
-      "version": "0.41.1",
-      "architecture": "x86_64",
-      "summary": "Modern terminal workspace with layouts, plugins, and tabs",
-      "license": "MIT",
-      "ddi_filename": "org.github.zellij-org.zellij-0.41.1.ddi",
-      "ddi_sha256": "sha256-verified-org.github.zellij-org.zellij-0.41.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 7864320,
-      "exported_binaries": [
-        "zellij"
-      ],
-      "manifest_filename": "org.github.zellij-org.zellij.manifest.json",
-      "sbom_spdx_filename": "org.github.zellij-org.zellij.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.zellij-org.zellij.cyclonedx.json"
-    },
-    {
-      "id": "org.github.direnv.direnv",
-      "name": "direnv",
-      "version": "2.34.0",
-      "architecture": "x86_64",
-      "summary": "Environment switcher based on current directory .envrc",
-      "license": "MIT",
-      "ddi_filename": "org.github.direnv.direnv-2.34.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.direnv.direnv-2.34.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2621440,
-      "exported_binaries": [
-        "direnv"
-      ],
-      "manifest_filename": "org.github.direnv.direnv.manifest.json",
-      "sbom_spdx_filename": "org.github.direnv.direnv.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.direnv.direnv.cyclonedx.json"
-    },
-    {
-      "id": "org.starship.starship",
-      "name": "starship",
-      "version": "1.20.1",
-      "architecture": "x86_64",
-      "summary": "Fast, ultra-customizable prompt for any shell",
-      "license": "ISC",
-      "ddi_filename": "org.starship.starship-1.20.1.ddi",
-      "ddi_sha256": "sha256-verified-org.starship.starship-1.20.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4194304,
-      "exported_binaries": [
-        "starship"
-      ],
-      "manifest_filename": "org.starship.starship.manifest.json",
-      "sbom_spdx_filename": "org.starship.starship.spdx.json",
-      "sbom_cyclonedx_filename": "org.starship.starship.cyclonedx.json"
-    },
-    {
-      "id": "org.github.atuinsh.atuin",
-      "name": "atuin",
-      "version": "18.3.0",
-      "architecture": "x86_64",
-      "summary": "Magical shell history sync and search using SQLite",
-      "license": "MIT",
-      "ddi_filename": "org.github.atuinsh.atuin-18.3.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.atuinsh.atuin-18.3.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4718592,
-      "exported_binaries": [
-        "atuin"
-      ],
-      "manifest_filename": "org.github.atuinsh.atuin.manifest.json",
-      "sbom_spdx_filename": "org.github.atuinsh.atuin.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.atuinsh.atuin.cyclonedx.json"
-    },
-    {
-      "id": "org.gnu.screen",
-      "name": "screen",
-      "version": "5.0.0",
-      "architecture": "x86_64",
-      "summary": "Full-screen terminal multiplexer with session detach",
-      "license": "GPL-3.0-or-later",
-      "ddi_filename": "org.gnu.screen-5.0.0.ddi",
-      "ddi_sha256": "sha256-verified-org.gnu.screen-5.0.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1835008,
-      "exported_binaries": [
-        "screen"
-      ],
-      "manifest_filename": "org.gnu.screen.manifest.json",
-      "sbom_spdx_filename": "org.gnu.screen.spdx.json",
-      "sbom_cyclonedx_filename": "org.gnu.screen.cyclonedx.json"
-    },
-    {
-      "id": "org.ezix.lshw",
-      "name": "lshw",
-      "version": "02.20",
-      "architecture": "x86_64",
-      "summary": "Detailed hardware configuration report generator",
-      "license": "GPL-2.0-only",
-      "ddi_filename": "org.ezix.lshw-02.20.ddi",
-      "ddi_sha256": "sha256-verified-org.ezix.lshw-02.20",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2359296,
-      "exported_binaries": [
-        "lshw"
-      ],
-      "manifest_filename": "org.ezix.lshw.manifest.json",
-      "sbom_spdx_filename": "org.ezix.lshw.spdx.json",
-      "sbom_cyclonedx_filename": "org.ezix.lshw.cyclonedx.json"
-    },
-    {
-      "id": "org.kernel.pciutils",
-      "name": "pciutils",
-      "version": "3.13.0",
-      "architecture": "x86_64",
-      "summary": "Inspect host PCI bus topology and expansion devices",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.kernel.pciutils-3.13.0.ddi",
-      "ddi_sha256": "sha256-verified-org.kernel.pciutils-3.13.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1703936,
-      "exported_binaries": [
-        "lspci"
-      ],
-      "manifest_filename": "org.kernel.pciutils.manifest.json",
-      "sbom_spdx_filename": "org.kernel.pciutils.spdx.json",
-      "sbom_cyclonedx_filename": "org.kernel.pciutils.cyclonedx.json"
-    },
-    {
-      "id": "org.kernel.usbutils",
-      "name": "usbutils",
-      "version": "017",
-      "architecture": "x86_64",
-      "summary": "Inspect host USB bus topology and connected hardware",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.kernel.usbutils-017.ddi",
-      "ddi_sha256": "sha256-verified-org.kernel.usbutils-017",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1572864,
-      "exported_binaries": [
-        "lsusb"
-      ],
-      "manifest_filename": "org.kernel.usbutils.manifest.json",
-      "sbom_spdx_filename": "org.kernel.usbutils.spdx.json",
-      "sbom_cyclonedx_filename": "org.kernel.usbutils.cyclonedx.json"
-    },
-    {
-      "id": "org.smartmontools.smartctl",
-      "name": "smartmontools",
-      "version": "7.4",
-      "architecture": "x86_64",
-      "summary": "Control and monitor S.M.A.R.T. disk storage telemetry",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.smartmontools.smartctl-7.4.ddi",
-      "ddi_sha256": "sha256-verified-org.smartmontools.smartctl-7.4",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2490368,
-      "exported_binaries": [
-        "smartctl"
-      ],
-      "manifest_filename": "org.smartmontools.smartctl.manifest.json",
-      "sbom_spdx_filename": "org.smartmontools.smartctl.spdx.json",
-      "sbom_cyclonedx_filename": "org.smartmontools.smartctl.cyclonedx.json"
-    },
-    {
-      "id": "org.kernel.stress-ng",
-      "name": "stress-ng",
-      "version": "0.18.05",
-      "architecture": "x86_64",
-      "summary": "Stress test CPU, memory, I/O, network, and kernel subsystems",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.kernel.stress-ng-0.18.05.ddi",
-      "ddi_sha256": "sha256-verified-org.kernel.stress-ng-0.18.05",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3932160,
-      "exported_binaries": [
-        "stress-ng"
-      ],
-      "manifest_filename": "org.kernel.stress-ng.manifest.json",
-      "sbom_spdx_filename": "org.kernel.stress-ng.spdx.json",
-      "sbom_cyclonedx_filename": "org.kernel.stress-ng.cyclonedx.json"
-    },
-    {
-      "id": "org.github.lm-sensors.lm-sensors",
-      "name": "lm_sensors",
-      "version": "3.6.0",
-      "architecture": "x86_64",
-      "summary": "Hardware health and temperature sensor reporting",
-      "license": "GPL-2.0-or-later",
-      "ddi_filename": "org.github.lm-sensors.lm-sensors-3.6.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.lm-sensors.lm-sensors-3.6.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1703936,
-      "exported_binaries": [
-        "sensors"
-      ],
-      "manifest_filename": "org.github.lm-sensors.lm-sensors.manifest.json",
-      "sbom_spdx_filename": "org.github.lm-sensors.lm-sensors.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.lm-sensors.lm-sensors.cyclonedx.json"
-    },
-    {
-      "id": "org.kernel.ethtool",
-      "name": "ethtool",
-      "version": "6.10",
-      "architecture": "x86_64",
-      "summary": "Query and control host Ethernet network drivers and hardware settings",
-      "license": "GPL-2.0-only",
-      "ddi_filename": "org.kernel.ethtool-6.10.ddi",
-      "ddi_sha256": "sha256-verified-org.kernel.ethtool-6.10",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1835008,
-      "exported_binaries": [
-        "ethtool"
-      ],
-      "manifest_filename": "org.kernel.ethtool.manifest.json",
-      "sbom_spdx_filename": "org.kernel.ethtool.spdx.json",
-      "sbom_cyclonedx_filename": "org.kernel.ethtool.cyclonedx.json"
-    },
-    {
-      "id": "org.7-zip.7z",
-      "name": "p7zip",
-      "version": "17.05",
-      "architecture": "x86_64",
-      "summary": "High-compression multi-format file archiver",
-      "license": "LGPL-2.1-or-later",
-      "ddi_filename": "org.7-zip.7z-17.05.ddi",
-      "ddi_sha256": "sha256-verified-org.7-zip.7z-17.05",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2883584,
-      "exported_binaries": [
-        "7z"
-      ],
-      "manifest_filename": "org.7-zip.7z.manifest.json",
-      "sbom_spdx_filename": "org.7-zip.7z.spdx.json",
-      "sbom_cyclonedx_filename": "org.7-zip.7z.cyclonedx.json"
-    },
-    {
-      "id": "org.github.facebook.zstd",
-      "name": "zstd",
-      "version": "1.5.6",
-      "architecture": "x86_64",
-      "summary": "Fast lossless compression algorithm CLI by Meta",
-      "license": "BSD-3-Clause OR GPL-2.0-only",
-      "ddi_filename": "org.github.facebook.zstd-1.5.6.ddi",
-      "ddi_sha256": "sha256-verified-org.github.facebook.zstd-1.5.6",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2228224,
-      "exported_binaries": [
-        "zstd"
-      ],
-      "manifest_filename": "org.github.facebook.zstd.manifest.json",
-      "sbom_spdx_filename": "org.github.facebook.zstd.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.facebook.zstd.cyclonedx.json"
-    },
-    {
-      "id": "org.zlib.pigz",
-      "name": "pigz",
-      "version": "2.8",
-      "architecture": "x86_64",
-      "summary": "Parallel implementation of gzip for multi-core CPUs",
-      "license": "Zlib",
-      "ddi_filename": "org.zlib.pigz-2.8.ddi",
-      "ddi_sha256": "sha256-verified-org.zlib.pigz-2.8",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1572864,
-      "exported_binaries": [
-        "pigz"
-      ],
-      "manifest_filename": "org.zlib.pigz.manifest.json",
-      "sbom_spdx_filename": "org.zlib.pigz.spdx.json",
-      "sbom_cyclonedx_filename": "org.zlib.pigz.cyclonedx.json"
-    },
-    {
-      "id": "org.dev.yorhel.ncdu",
-      "name": "ncdu",
-      "version": "2.5",
-      "architecture": "x86_64",
-      "summary": "NCurses disk usage analyzer for interactive cleanups",
-      "license": "MIT",
-      "ddi_filename": "org.dev.yorhel.ncdu-2.5.ddi",
-      "ddi_sha256": "sha256-verified-org.dev.yorhel.ncdu-2.5",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 1703936,
-      "exported_binaries": [
-        "ncdu"
-      ],
-      "manifest_filename": "org.dev.yorhel.ncdu.manifest.json",
-      "sbom_spdx_filename": "org.dev.yorhel.ncdu.spdx.json",
-      "sbom_cyclonedx_filename": "org.dev.yorhel.ncdu.cyclonedx.json"
-    },
-    {
-      "id": "org.github.dundee.gdu",
-      "name": "gdu",
-      "version": "5.29.0",
-      "architecture": "x86_64",
-      "summary": "Fast disk usage analyzer written in Go with console interface",
-      "license": "MIT",
-      "ddi_filename": "org.github.dundee.gdu-5.29.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.dundee.gdu-5.29.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3670016,
-      "exported_binaries": [
-        "gdu"
-      ],
-      "manifest_filename": "org.github.dundee.gdu.manifest.json",
-      "sbom_spdx_filename": "org.github.dundee.gdu.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.dundee.gdu.cyclonedx.json"
     },
     {
       "id": "org.samba.rsync",
@@ -1670,9 +1327,9 @@
       "summary": "Fast, versatile remote and local file-copying tool",
       "license": "GPL-3.0-or-later",
       "ddi_filename": "org.samba.rsync-3.3.0.ddi",
-      "ddi_sha256": "sha256-verified-org.samba.rsync-3.3.0",
+      "ddi_sha256": "dcc75f5fc6b91efa97e4e6f508b55c6cb974022950703a791e465a71fd60fd96",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2228224,
+      "ddi_size_bytes": 4669952,
       "exported_binaries": [
         "rsync"
       ],
@@ -1681,130 +1338,40 @@
       "sbom_cyclonedx_filename": "org.samba.rsync.cyclonedx.json"
     },
     {
-      "id": "org.rclone.rclone",
-      "name": "rclone",
-      "version": "1.68.1",
+      "id": "org.gnu.screen",
+      "name": "screen",
+      "version": "5.0.0",
       "architecture": "x86_64",
-      "summary": "Rsync for cloud storage with FUSE mounting",
+      "summary": "Full-screen terminal multiplexer with session detach",
+      "license": "GPL-3.0-or-later",
+      "ddi_filename": "org.gnu.screen-5.0.0.ddi",
+      "ddi_sha256": "8509cff759935c67f43896ebd844950205d4f8eb97ce19bff3bfcd06567b1194",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "screen"
+      ],
+      "manifest_filename": "org.gnu.screen.manifest.json",
+      "sbom_spdx_filename": "org.gnu.screen.spdx.json",
+      "sbom_cyclonedx_filename": "org.gnu.screen.cyclonedx.json"
+    },
+    {
+      "id": "org.github.chmln.sd",
+      "name": "sd",
+      "version": "1.0.0",
+      "architecture": "x86_64",
+      "summary": "Intuitive find & replace CLI alternative to sed",
       "license": "MIT",
-      "ddi_filename": "org.rclone.rclone-1.68.1.ddi",
-      "ddi_sha256": "sha256-verified-org.rclone.rclone-1.68.1",
+      "ddi_filename": "org.github.chmln.sd-1.0.0.ddi",
+      "ddi_sha256": "fe49dbbead7c4bfcbb7b5ae1030632e60e5789b4e13348b27fbc4ffa230cc789",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 12582912,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
-        "rclone"
+        "sd"
       ],
-      "manifest_filename": "org.rclone.rclone.manifest.json",
-      "sbom_spdx_filename": "org.rclone.rclone.spdx.json",
-      "sbom_cyclonedx_filename": "org.rclone.rclone.cyclonedx.json"
-    },
-    {
-      "id": "org.restic.restic",
-      "name": "restic",
-      "version": "0.17.1",
-      "architecture": "x86_64",
-      "summary": "Secure, deduplicated, encrypted backup program",
-      "license": "BSD-2-Clause",
-      "ddi_filename": "org.restic.restic-0.17.1.ddi",
-      "ddi_sha256": "sha256-verified-org.restic.restic-0.17.1",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 6815744,
-      "exported_binaries": [
-        "restic"
-      ],
-      "manifest_filename": "org.restic.restic.manifest.json",
-      "sbom_spdx_filename": "org.restic.restic.spdx.json",
-      "sbom_cyclonedx_filename": "org.restic.restic.cyclonedx.json"
-    },
-    {
-      "id": "org.github.casey.just",
-      "name": "just",
-      "version": "1.36.0",
-      "architecture": "x86_64",
-      "summary": "Handy, modern command runner alternative to make",
-      "license": "CC0-1.0",
-      "ddi_filename": "org.github.casey.just-1.36.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.casey.just-1.36.0",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2883584,
-      "exported_binaries": [
-        "just"
-      ],
-      "manifest_filename": "org.github.casey.just.manifest.json",
-      "sbom_spdx_filename": "org.github.casey.just.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.casey.just.cyclonedx.json"
-    },
-    {
-      "id": "org.github.go-task.task",
-      "name": "task",
-      "version": "3.39.2",
-      "architecture": "x86_64",
-      "summary": "Task runner and build tool with YAML configuration",
-      "license": "MIT",
-      "ddi_filename": "org.github.go-task.task-3.39.2.ddi",
-      "ddi_sha256": "sha256-verified-org.github.go-task.task-3.39.2",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3932160,
-      "exported_binaries": [
-        "task"
-      ],
-      "manifest_filename": "org.github.go-task.task.manifest.json",
-      "sbom_spdx_filename": "org.github.go-task.task.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.go-task.task.cyclonedx.json"
-    },
-    {
-      "id": "org.github.jdx.mise",
-      "name": "mise",
-      "version": "2024.10.3",
-      "architecture": "x86_64",
-      "summary": "Polyglot tool version manager and environment manager",
-      "license": "MIT",
-      "ddi_filename": "org.github.jdx.mise-2024.10.3.ddi",
-      "ddi_sha256": "sha256-verified-org.github.jdx.mise-2024.10.3",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 5242880,
-      "exported_binaries": [
-        "mise"
-      ],
-      "manifest_filename": "org.github.jdx.mise.manifest.json",
-      "sbom_spdx_filename": "org.github.jdx.mise.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.jdx.mise.cyclonedx.json"
-    },
-    {
-      "id": "org.github.cargo-bins.cargo-binstall",
-      "name": "cargo-binstall",
-      "version": "1.10.15",
-      "architecture": "x86_64",
-      "summary": "Install precompiled binary artifacts for crates directly",
-      "license": "GPL-3.0-only",
-      "ddi_filename": "org.github.cargo-bins.cargo-binstall-1.10.15.ddi",
-      "ddi_sha256": "sha256-verified-org.github.cargo-bins.cargo-binstall-1.10.15",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4718592,
-      "exported_binaries": [
-        "cargo-binstall"
-      ],
-      "manifest_filename": "org.github.cargo-bins.cargo-binstall.manifest.json",
-      "sbom_spdx_filename": "org.github.cargo-bins.cargo-binstall.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.cargo-bins.cargo-binstall.cyclonedx.json"
-    },
-    {
-      "id": "org.github.astral-sh.uv",
-      "name": "uv",
-      "version": "0.4.20",
-      "architecture": "x86_64",
-      "summary": "Extremely fast Python package installer and resolver in Rust",
-      "license": "Apache-2.0 OR MIT",
-      "ddi_filename": "org.github.astral-sh.uv-0.4.20.ddi",
-      "ddi_sha256": "sha256-verified-org.github.astral-sh.uv-0.4.20",
-      "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 7340032,
-      "exported_binaries": [
-        "uv"
-      ],
-      "manifest_filename": "org.github.astral-sh.uv.manifest.json",
-      "sbom_spdx_filename": "org.github.astral-sh.uv.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.astral-sh.uv.cyclonedx.json"
+      "manifest_filename": "org.github.chmln.sd.manifest.json",
+      "sbom_spdx_filename": "org.github.chmln.sd.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.chmln.sd.cyclonedx.json"
     },
     {
       "id": "org.shellcheck.shellcheck",
@@ -1814,9 +1381,9 @@
       "summary": "Static analysis tool for shell scripts",
       "license": "GPL-3.0-or-later",
       "ddi_filename": "org.shellcheck.shellcheck-0.10.0.ddi",
-      "ddi_sha256": "sha256-verified-org.shellcheck.shellcheck-0.10.0",
+      "ddi_sha256": "b944f1d991f22205fa9da1c9a423bc8a29011f128ca6a0b1d1e0891f0b2f338c",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 4194304,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
         "shellcheck"
       ],
@@ -1832,9 +1399,9 @@
       "summary": "Shell parser, formatter, and interpreter",
       "license": "BSD-3-Clause",
       "ddi_filename": "org.github.mvdan.sh-3.9.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.mvdan.sh-3.9.0",
+      "ddi_sha256": "b0e8fe9a1666a60789f91ac2b3db020c5adba015fe7a52a8e0e1caaef78d8e44",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2621440,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
         "shfmt"
       ],
@@ -1843,40 +1410,58 @@
       "sbom_cyclonedx_filename": "org.github.mvdan.sh.cyclonedx.json"
     },
     {
-      "id": "org.github.crate-ci.typos",
-      "name": "typos",
-      "version": "1.26.0",
+      "id": "org.github.containers.skopeo",
+      "name": "skopeo",
+      "version": "1.16.1",
       "architecture": "x86_64",
-      "summary": "High-speed source code spell checker with near-zero false positives",
-      "license": "Apache-2.0 OR MIT",
-      "ddi_filename": "org.github.crate-ci.typos-1.26.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.crate-ci.typos-1.26.0",
+      "summary": "Work with remote container registries without running a daemon",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.containers.skopeo-1.16.1.ddi",
+      "ddi_sha256": "708a02d3fbd3488f757f1acc1782d5f883bca7dbbd2ae8327b777616930737ff",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 3145728,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
-        "typos"
+        "skopeo"
       ],
-      "manifest_filename": "org.github.crate-ci.typos.manifest.json",
-      "sbom_spdx_filename": "org.github.crate-ci.typos.spdx.json",
-      "sbom_cyclonedx_filename": "org.github.crate-ci.typos.cyclonedx.json"
+      "manifest_filename": "org.github.containers.skopeo.manifest.json",
+      "sbom_spdx_filename": "org.github.containers.skopeo.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.containers.skopeo.cyclonedx.json"
     },
     {
-      "id": "org.filippo.age",
-      "name": "age",
-      "version": "1.2.0",
+      "id": "org.smartmontools.smartctl",
+      "name": "smartmontools",
+      "version": "7.4",
       "architecture": "x86_64",
-      "summary": "Simple, modern and secure encryption tool with small keys",
-      "license": "BSD-3-Clause",
-      "ddi_filename": "org.filippo.age-1.2.0.ddi",
-      "ddi_sha256": "sha256-verified-org.filippo.age-1.2.0",
+      "summary": "Control and monitor S.M.A.R.T. disk storage telemetry",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.smartmontools.smartctl-7.4.ddi",
+      "ddi_sha256": "ceb82134975de39eb53b0a431cbabc75c2cfe40146c8f28ad1d1f38ab8c1aa2b",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 2490368,
+      "ddi_size_bytes": 2904576,
       "exported_binaries": [
-        "age"
+        "smartctl"
       ],
-      "manifest_filename": "org.filippo.age.manifest.json",
-      "sbom_spdx_filename": "org.filippo.age.spdx.json",
-      "sbom_cyclonedx_filename": "org.filippo.age.cyclonedx.json"
+      "manifest_filename": "org.smartmontools.smartctl.manifest.json",
+      "sbom_spdx_filename": "org.smartmontools.smartctl.spdx.json",
+      "sbom_cyclonedx_filename": "org.smartmontools.smartctl.cyclonedx.json"
+    },
+    {
+      "id": "org.dest-unreach.socat",
+      "name": "socat",
+      "version": "1.8.0.1",
+      "architecture": "x86_64",
+      "summary": "Multipurpose relay for bidirectional data transfer across streams",
+      "license": "GPL-2.0-only",
+      "ddi_filename": "org.dest-unreach.socat-1.8.0.1.ddi",
+      "ddi_sha256": "616ca12b0ced5b01f0b07b6d1f17417e7dd613fde8ecd649d52a5b928bdfe2ad",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 4686336,
+      "exported_binaries": [
+        "socat"
+      ],
+      "manifest_filename": "org.dest-unreach.socat.manifest.json",
+      "sbom_spdx_filename": "org.dest-unreach.socat.spdx.json",
+      "sbom_cyclonedx_filename": "org.dest-unreach.socat.cyclonedx.json"
     },
     {
       "id": "org.github.getsops.sops",
@@ -1886,15 +1471,33 @@
       "summary": "Simple and flexible tool for managing secrets in files",
       "license": "MPL-2.0",
       "ddi_filename": "org.github.getsops.sops-3.9.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.getsops.sops-3.9.0",
+      "ddi_sha256": "f91313a213811ab09fe8fabd08696256504995dc6ceb0d487a3b8697aa634498",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 6291456,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
         "sops"
       ],
       "manifest_filename": "org.github.getsops.sops.manifest.json",
       "sbom_spdx_filename": "org.github.getsops.sops.spdx.json",
       "sbom_cyclonedx_filename": "org.github.getsops.sops.cyclonedx.json"
+    },
+    {
+      "id": "org.starship.starship",
+      "name": "starship",
+      "version": "1.20.1",
+      "architecture": "x86_64",
+      "summary": "Fast, ultra-customizable prompt for any shell",
+      "license": "ISC",
+      "ddi_filename": "org.starship.starship-1.20.1.ddi",
+      "ddi_sha256": "6419333d6aeaa5a565777c2fdc13fe77a2d369b46267ec5fa3cbb998d41051ed",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "starship"
+      ],
+      "manifest_filename": "org.starship.starship.manifest.json",
+      "sbom_spdx_filename": "org.starship.starship.spdx.json",
+      "sbom_cyclonedx_filename": "org.starship.starship.cyclonedx.json"
     },
     {
       "id": "org.smallstep.step",
@@ -1904,9 +1507,9 @@
       "summary": "Zero trust Swiss army knife for certificates, keys, and tokens",
       "license": "Apache-2.0",
       "ddi_filename": "org.smallstep.step-0.27.2.ddi",
-      "ddi_sha256": "sha256-verified-org.smallstep.step-0.27.2",
+      "ddi_sha256": "b1270e77597ef00d32dc8010c190bc38c525a7d2430a8a0ed47bfe1dd20ca3a4",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 7864320,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
         "step"
       ],
@@ -1915,22 +1518,58 @@
       "sbom_cyclonedx_filename": "org.smallstep.step.cyclonedx.json"
     },
     {
-      "id": "org.sigstore.cosign",
-      "name": "cosign",
-      "version": "2.4.1",
+      "id": "org.github.stern.stern",
+      "name": "stern",
+      "version": "1.31.0",
       "architecture": "x86_64",
-      "summary": "Code signing and verification for OCI container images and blobs",
+      "summary": "Multi-pod and container log tailing for Kubernetes",
       "license": "Apache-2.0",
-      "ddi_filename": "org.sigstore.cosign-2.4.1.ddi",
-      "ddi_sha256": "sha256-verified-org.sigstore.cosign-2.4.1",
+      "ddi_filename": "org.github.stern.stern-1.31.0.ddi",
+      "ddi_sha256": "129dc7f97f781c75c4f323221630bf71f62289acadfb509da2753ce4830fd572",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 9437184,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
-        "cosign"
+        "stern"
       ],
-      "manifest_filename": "org.sigstore.cosign.manifest.json",
-      "sbom_spdx_filename": "org.sigstore.cosign.spdx.json",
-      "sbom_cyclonedx_filename": "org.sigstore.cosign.cyclonedx.json"
+      "manifest_filename": "org.github.stern.stern.manifest.json",
+      "sbom_spdx_filename": "org.github.stern.stern.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.stern.stern.cyclonedx.json"
+    },
+    {
+      "id": "org.kernel.strace",
+      "name": "strace",
+      "version": "7.2",
+      "architecture": "x86_64",
+      "summary": "Diagnostic, debugging and instructional userspace tracer with host ptrace access",
+      "license": "LGPL-2.1-or-later",
+      "ddi_filename": "org.kernel.strace-7.2.ddi",
+      "ddi_sha256": "1184225a46885f25458d3fb5db651c70528ef61520573b01e42a353b04fee02f",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 3142144,
+      "exported_binaries": [
+        "strace"
+      ],
+      "manifest_filename": "org.kernel.strace.manifest.json",
+      "sbom_spdx_filename": "org.kernel.strace.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.strace.cyclonedx.json"
+    },
+    {
+      "id": "org.kernel.stress-ng",
+      "name": "stress-ng",
+      "version": "0.18.05",
+      "architecture": "x86_64",
+      "summary": "Stress test CPU, memory, I/O, network, and kernel subsystems",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.kernel.stress-ng-0.18.05.ddi",
+      "ddi_sha256": "a5e22e18d1f757962725e79eb10783998b5a9afd7de2266f19df58c8240d037d",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "stress-ng"
+      ],
+      "manifest_filename": "org.kernel.stress-ng.manifest.json",
+      "sbom_spdx_filename": "org.kernel.stress-ng.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.stress-ng.cyclonedx.json"
     },
     {
       "id": "org.github.anchore.syft",
@@ -1940,15 +1579,376 @@
       "summary": "CLI tool for generating Software Bill of Materials (SBOMs)",
       "license": "Apache-2.0",
       "ddi_filename": "org.github.anchore.syft-1.14.0.ddi",
-      "ddi_sha256": "sha256-verified-org.github.anchore.syft-1.14.0",
+      "ddi_sha256": "19825b746ade7dfb63f9db2a24ee7c2e23882eff7377d173ac1cebd403eecee3",
       "root_hash_hex": "dm-verity",
-      "ddi_size_bytes": 8912896,
+      "ddi_size_bytes": 49664,
       "exported_binaries": [
         "syft"
       ],
       "manifest_filename": "org.github.anchore.syft.manifest.json",
       "sbom_spdx_filename": "org.github.anchore.syft.spdx.json",
       "sbom_cyclonedx_filename": "org.github.anchore.syft.cyclonedx.json"
+    },
+    {
+      "id": "org.github.sysstat.sysstat",
+      "name": "sysstat",
+      "version": "12.7.6",
+      "architecture": "x86_64",
+      "summary": "Linux system performance and activity metrics collection",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.github.sysstat.sysstat-12.7.6.ddi",
+      "ddi_sha256": "04978b07ec789762209654f0995320694529a496ea8a76c17bc32a59f81b3b90",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "iostat",
+        "sar"
+      ],
+      "manifest_filename": "org.github.sysstat.sysstat.manifest.json",
+      "sbom_spdx_filename": "org.github.sysstat.sysstat.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.sysstat.sysstat.cyclonedx.json"
+    },
+    {
+      "id": "org.github.go-task.task",
+      "name": "task",
+      "version": "3.39.2",
+      "architecture": "x86_64",
+      "summary": "Task runner and build tool with YAML configuration",
+      "license": "MIT",
+      "ddi_filename": "org.github.go-task.task-3.39.2.ddi",
+      "ddi_sha256": "37e43f72803f6ea19f9e0909290a197fbab9ce7ae89e128b81219a64f53c3206",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "task"
+      ],
+      "manifest_filename": "org.github.go-task.task.manifest.json",
+      "sbom_spdx_filename": "org.github.go-task.task.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.go-task.task.cyclonedx.json"
+    },
+    {
+      "id": "org.tcpdump.tcpdump",
+      "name": "tcpdump",
+      "version": "4.99.5",
+      "architecture": "x86_64",
+      "summary": "Command-line packet analyzer and network sniffer",
+      "license": "BSD-3-Clause",
+      "ddi_filename": "org.tcpdump.tcpdump-4.99.5.ddi",
+      "ddi_sha256": "54a387cea8207c160d51bb8e72e4455351290b53fa495eeeb26d420be931d78b",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 4911616,
+      "exported_binaries": [
+        "tcpdump"
+      ],
+      "manifest_filename": "org.tcpdump.tcpdump.manifest.json",
+      "sbom_spdx_filename": "org.tcpdump.tcpdump.spdx.json",
+      "sbom_cyclonedx_filename": "org.tcpdump.tcpdump.cyclonedx.json"
+    },
+    {
+      "id": "org.github.gcla.termshark",
+      "name": "termshark",
+      "version": "2.4.0",
+      "architecture": "x86_64",
+      "summary": "Terminal UI for Wireshark packet capture and inspection",
+      "license": "MIT",
+      "ddi_filename": "org.github.gcla.termshark-2.4.0.ddi",
+      "ddi_sha256": "92fc01d102feab2555f67f1b50daf721019f4f9427b197e8468169c6c526efee",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "termshark"
+      ],
+      "manifest_filename": "org.github.gcla.termshark.manifest.json",
+      "sbom_spdx_filename": "org.github.gcla.termshark.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.gcla.termshark.cyclonedx.json"
+    },
+    {
+      "id": "org.github.jonas.tig",
+      "name": "tig",
+      "version": "2.5.10",
+      "architecture": "x86_64",
+      "summary": "Text-mode interface for git repository revision graph navigation",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.github.jonas.tig-2.5.10.ddi",
+      "ddi_sha256": "a6c3e558b22032c85d19c12bf9826354d65a22c71672d8549c0f1504809436b4",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "tig"
+      ],
+      "manifest_filename": "org.github.jonas.tig.manifest.json",
+      "sbom_spdx_filename": "org.github.jonas.tig.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.jonas.tig.cyclonedx.json"
+    },
+    {
+      "id": "org.tmux.tmux",
+      "name": "tmux",
+      "version": "3.7c",
+      "architecture": "x86_64",
+      "summary": "Terminal multiplexer with persistent host sessions and split panes",
+      "license": "ISC",
+      "ddi_filename": "org.tmux.tmux-3.7c.ddi",
+      "ddi_sha256": "64e20a5c597ffc22ff05e3c1b69300e3946f1b6db3832089332024ed2be47e92",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 2175488,
+      "exported_binaries": [
+        "tmux"
+      ],
+      "manifest_filename": "org.tmux.tmux.manifest.json",
+      "sbom_spdx_filename": "org.tmux.tmux.spdx.json",
+      "sbom_cyclonedx_filename": "org.tmux.tmux.cyclonedx.json"
+    },
+    {
+      "id": "org.github.andreafrancia.trash-cli",
+      "name": "trash-cli",
+      "version": "0.24.5",
+      "architecture": "x86_64",
+      "summary": "Command-line interface to the FreeDesktop.org trashcan",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.github.andreafrancia.trash-cli-0.24.5.ddi",
+      "ddi_sha256": "ce3f4b60a1b1a633c3ba968e118d8baf0b67d9a15cea386f62c1a10f033fc4a2",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "trash"
+      ],
+      "manifest_filename": "org.github.andreafrancia.trash-cli.manifest.json",
+      "sbom_spdx_filename": "org.github.andreafrancia.trash-cli.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.andreafrancia.trash-cli.cyclonedx.json"
+    },
+    {
+      "id": "org.github.fujiapple852.trippy",
+      "name": "trippy",
+      "version": "0.11.0",
+      "architecture": "x86_64",
+      "summary": "Network diagnostic tool combining traceroute and ping in a TUI",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.fujiapple852.trippy-0.11.0.ddi",
+      "ddi_sha256": "fa526eef5abe890826e8673b2292a3b3b09c48dfe09683ead5a407f47c563230",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "trip"
+      ],
+      "manifest_filename": "org.github.fujiapple852.trippy.manifest.json",
+      "sbom_spdx_filename": "org.github.fujiapple852.trippy.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.fujiapple852.trippy.cyclonedx.json"
+    },
+    {
+      "id": "org.github.aquasecurity.trivy",
+      "name": "trivy",
+      "version": "0.56.2",
+      "architecture": "x86_64",
+      "summary": "Comprehensive security scanner for container images and filesystems",
+      "license": "Apache-2.0",
+      "ddi_filename": "org.github.aquasecurity.trivy-0.56.2.ddi",
+      "ddi_sha256": "0ce1567f458ab6df496a52160246c203396be43262f60be532a7fd0e1ec893f0",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "trivy"
+      ],
+      "manifest_filename": "org.github.aquasecurity.trivy.manifest.json",
+      "sbom_spdx_filename": "org.github.aquasecurity.trivy.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.aquasecurity.trivy.cyclonedx.json"
+    },
+    {
+      "id": "org.github.crate-ci.typos",
+      "name": "typos",
+      "version": "1.26.0",
+      "architecture": "x86_64",
+      "summary": "High-speed source code spell checker with near-zero false positives",
+      "license": "Apache-2.0 OR MIT",
+      "ddi_filename": "org.github.crate-ci.typos-1.26.0.ddi",
+      "ddi_sha256": "c69c93b12bd9243f90968d67cf97ab442724c905aa0751174c07fcee3750d488",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "typos"
+      ],
+      "manifest_filename": "org.github.crate-ci.typos.manifest.json",
+      "sbom_spdx_filename": "org.github.crate-ci.typos.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.crate-ci.typos.cyclonedx.json"
+    },
+    {
+      "id": "org.kernel.usbutils",
+      "name": "usbutils",
+      "version": "017",
+      "architecture": "x86_64",
+      "summary": "Inspect host USB bus topology and connected hardware",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.kernel.usbutils-017.ddi",
+      "ddi_sha256": "083e99648395f1938658f4aecc7e213919c6e5d5172f01b80d2a217dcbde7b64",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 549376,
+      "exported_binaries": [
+        "lsusb"
+      ],
+      "manifest_filename": "org.kernel.usbutils.manifest.json",
+      "sbom_spdx_filename": "org.kernel.usbutils.spdx.json",
+      "sbom_cyclonedx_filename": "org.kernel.usbutils.cyclonedx.json"
+    },
+    {
+      "id": "org.github.astral-sh.uv",
+      "name": "uv",
+      "version": "0.4.20",
+      "architecture": "x86_64",
+      "summary": "Extremely fast Python package installer and resolver in Rust",
+      "license": "Apache-2.0 OR MIT",
+      "ddi_filename": "org.github.astral-sh.uv-0.4.20.ddi",
+      "ddi_sha256": "37d5ac4d8b4e6e7921cad16726dfc3078481bf15d6d3c98884dcfdd368e9c01f",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "uv"
+      ],
+      "manifest_filename": "org.github.astral-sh.uv.manifest.json",
+      "sbom_spdx_filename": "org.github.astral-sh.uv.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.astral-sh.uv.cyclonedx.json"
+    },
+    {
+      "id": "org.valgrind.valgrind",
+      "name": "valgrind",
+      "version": "3.23.0",
+      "architecture": "x86_64",
+      "summary": "Memory error detector, profiler, and leak sanitizer",
+      "license": "GPL-2.0-or-later",
+      "ddi_filename": "org.valgrind.valgrind-3.23.0.ddi",
+      "ddi_sha256": "2141dedac103a1199b852877c0851efafd79e96462f499a1a99e61d69e91097d",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "valgrind"
+      ],
+      "manifest_filename": "org.valgrind.valgrind.manifest.json",
+      "sbom_spdx_filename": "org.valgrind.valgrind.spdx.json",
+      "sbom_cyclonedx_filename": "org.valgrind.valgrind.cyclonedx.json"
+    },
+    {
+      "id": "org.github.ducaale.xh",
+      "name": "xh",
+      "version": "0.22.2",
+      "architecture": "x86_64",
+      "summary": "Fast and friendly tool for sending HTTP requests",
+      "license": "MIT",
+      "ddi_filename": "org.github.ducaale.xh-0.22.2.ddi",
+      "ddi_sha256": "e11827341f483aa7624e1a4b001a2535fc0838d19a7458197f53cb469a34246a",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "xh"
+      ],
+      "manifest_filename": "org.github.ducaale.xh.manifest.json",
+      "sbom_spdx_filename": "org.github.ducaale.xh.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.ducaale.xh.cyclonedx.json"
+    },
+    {
+      "id": "org.github.sxyazi.yazi",
+      "name": "yazi",
+      "version": "0.4.1",
+      "architecture": "x86_64",
+      "summary": "Blazing-fast terminal file manager with async I/O",
+      "license": "MIT",
+      "ddi_filename": "org.github.sxyazi.yazi-0.4.1.ddi",
+      "ddi_sha256": "8d24ed84cc53c39841acbe1c8e87790ada804fd3f88bd12cbec6b2c3cd6d5978",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "yazi"
+      ],
+      "manifest_filename": "org.github.sxyazi.yazi.manifest.json",
+      "sbom_spdx_filename": "org.github.sxyazi.yazi.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.sxyazi.yazi.cyclonedx.json"
+    },
+    {
+      "id": "org.github.mikefarah.yq",
+      "name": "yq",
+      "version": "4.44.3",
+      "architecture": "x86_64",
+      "summary": "Portable command-line YAML, JSON, XML, and CSV processor",
+      "license": "MIT",
+      "ddi_filename": "org.github.mikefarah.yq-4.44.3.ddi",
+      "ddi_sha256": "a8b2a66f2d101861ca0de6d782be55bfb011d8c817a2776e6bd1e697f92f53b4",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "yq"
+      ],
+      "manifest_filename": "org.github.mikefarah.yq.manifest.json",
+      "sbom_spdx_filename": "org.github.mikefarah.yq.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.mikefarah.yq.cyclonedx.json"
+    },
+    {
+      "id": "org.github.zellij-org.zellij",
+      "name": "zellij",
+      "version": "0.41.1",
+      "architecture": "x86_64",
+      "summary": "Modern terminal workspace with layouts, plugins, and tabs",
+      "license": "MIT",
+      "ddi_filename": "org.github.zellij-org.zellij-0.41.1.ddi",
+      "ddi_sha256": "e9e15417563632093b86b53d946780fc3b6c0a8c43edde204fdf9aefaa430d43",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "zellij"
+      ],
+      "manifest_filename": "org.github.zellij-org.zellij.manifest.json",
+      "sbom_spdx_filename": "org.github.zellij-org.zellij.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.zellij-org.zellij.cyclonedx.json"
+    },
+    {
+      "id": "org.github.bvaisvil.zenith",
+      "name": "zenith",
+      "version": "0.14.1",
+      "architecture": "x86_64",
+      "summary": "Terminal system monitor with zoomable metrics and GPU profiling",
+      "license": "MIT",
+      "ddi_filename": "org.github.bvaisvil.zenith-0.14.1.ddi",
+      "ddi_sha256": "4bd3839c3b4be3954e5c65b61897b13c3765202a2fe8e45e724e85e9c839d9d7",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 49664,
+      "exported_binaries": [
+        "zenith"
+      ],
+      "manifest_filename": "org.github.bvaisvil.zenith.manifest.json",
+      "sbom_spdx_filename": "org.github.bvaisvil.zenith.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.bvaisvil.zenith.cyclonedx.json"
+    },
+    {
+      "id": "org.github.ajeetdsouza.zoxide",
+      "name": "zoxide",
+      "version": "0.9.6",
+      "architecture": "x86_64",
+      "summary": "Smarter cd command tracking directory usage frecency",
+      "license": "MIT",
+      "ddi_filename": "org.github.ajeetdsouza.zoxide-0.9.6.ddi",
+      "ddi_sha256": "e18671cb36a5df29bf571928e12565cd29145957b3a179c6f713f020e7ec1925",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 893440,
+      "exported_binaries": [
+        "zoxide"
+      ],
+      "manifest_filename": "org.github.ajeetdsouza.zoxide.manifest.json",
+      "sbom_spdx_filename": "org.github.ajeetdsouza.zoxide.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.ajeetdsouza.zoxide.cyclonedx.json"
+    },
+    {
+      "id": "org.github.facebook.zstd",
+      "name": "zstd",
+      "version": "1.5.6",
+      "architecture": "x86_64",
+      "summary": "Fast lossless compression algorithm CLI by Meta",
+      "license": "BSD-3-Clause OR GPL-2.0-only",
+      "ddi_filename": "org.github.facebook.zstd-1.5.6.ddi",
+      "ddi_sha256": "34eb55e05c4a522840ea3014d309c86f7b57fb4d3dcb048c1ac9e8ded6453fce",
+      "root_hash_hex": "dm-verity",
+      "ddi_size_bytes": 795136,
+      "exported_binaries": [
+        "zstd"
+      ],
+      "manifest_filename": "org.github.facebook.zstd.manifest.json",
+      "sbom_spdx_filename": "org.github.facebook.zstd.spdx.json",
+      "sbom_cyclonedx_filename": "org.github.facebook.zstd.cyclonedx.json"
     }
   ]
 }

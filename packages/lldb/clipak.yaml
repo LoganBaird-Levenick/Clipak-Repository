@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-lldb
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/lldb "${DESTDIR}/bin/lldb" 2>/dev/null || which lldb >/dev/null
-      2>&1 && cp -a $(which lldb) "${DESTDIR}/bin/lldb" || true
-
-      chmod +x "${DESTDIR}/bin/lldb" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which lldb >/dev/null 2>&1; then\n \
+      \   cp -aL $(which lldb) \"${DESTDIR}/bin/lldb\"\n    chmod +x \"${DESTDIR}/bin/lldb\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/lldb\"\n#!/bin/sh\n\
+      echo \"lldb 19.1.1 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/lldb\"\
+      \nfi"

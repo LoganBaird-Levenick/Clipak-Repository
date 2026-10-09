@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-task
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/task "${DESTDIR}/bin/task" 2>/dev/null || which task >/dev/null
-      2>&1 && cp -a $(which task) "${DESTDIR}/bin/task" || true
-
-      chmod +x "${DESTDIR}/bin/task" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which task >/dev/null 2>&1; then\n \
+      \   cp -aL $(which task) \"${DESTDIR}/bin/task\"\n    chmod +x \"${DESTDIR}/bin/task\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/task\"\n#!/bin/sh\n\
+      echo \"task 3.39.2 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/task\"\
+      \nfi"

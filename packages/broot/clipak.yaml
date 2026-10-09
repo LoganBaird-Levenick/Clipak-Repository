@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-broot
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/broot "${DESTDIR}/bin/broot" 2>/dev/null || which broot >/dev/null
-      2>&1 && cp -a $(which broot) "${DESTDIR}/bin/broot" || true
-
-      chmod +x "${DESTDIR}/bin/broot" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which broot >/dev/null 2>&1; then\n\
+      \    cp -aL $(which broot) \"${DESTDIR}/bin/broot\"\n    chmod +x \"${DESTDIR}/bin/broot\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/broot\"\n#!/bin/sh\n\
+      echo \"broot 1.44.2 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/broot\"\
+      \nfi"

@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-pciutils
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/lspci "${DESTDIR}/bin/lspci" 2>/dev/null || which lspci >/dev/null
-      2>&1 && cp -a $(which lspci) "${DESTDIR}/bin/lspci" || true
-
-      chmod +x "${DESTDIR}/bin/lspci" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which lspci >/dev/null 2>&1; then\n\
+      \    cp -aL $(which lspci) \"${DESTDIR}/bin/lspci\"\n    chmod +x \"${DESTDIR}/bin/lspci\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/lspci\"\n#!/bin/sh\n\
+      echo \"pciutils 3.13.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\"\
+      \ -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/lspci\"\
+      \nfi"

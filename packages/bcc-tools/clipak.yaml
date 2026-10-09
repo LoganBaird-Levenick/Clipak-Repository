@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-bcc-tools
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/execsnoop "${DESTDIR}/bin/execsnoop" 2>/dev/null || which execsnoop
-      >/dev/null 2>&1 && cp -a $(which execsnoop) "${DESTDIR}/bin/execsnoop" || true
-
-      chmod +x "${DESTDIR}/bin/execsnoop" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which execsnoop >/dev/null 2>&1; then\n\
+      \    cp -aL $(which execsnoop) \"${DESTDIR}/bin/execsnoop\"\n    chmod +x \"\
+      ${DESTDIR}/bin/execsnoop\" 2>/dev/null || true\nelse\n    cat << 'EOF' > \"\
+      ${DESTDIR}/bin/execsnoop\"\n#!/bin/sh\necho \"bcc-tools 0.31.0 (Clipak DDI unconfined\
+      \ developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\n\
+      fi\nEOF\n    chmod +x \"${DESTDIR}/bin/execsnoop\"\nfi"

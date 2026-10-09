@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-bandwhich
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/bandwhich "${DESTDIR}/bin/bandwhich" 2>/dev/null || which bandwhich
-      >/dev/null 2>&1 && cp -a $(which bandwhich) "${DESTDIR}/bin/bandwhich" || true
-
-      chmod +x "${DESTDIR}/bin/bandwhich" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which bandwhich >/dev/null 2>&1; then\n\
+      \    cp -aL $(which bandwhich) \"${DESTDIR}/bin/bandwhich\"\n    chmod +x \"\
+      ${DESTDIR}/bin/bandwhich\" 2>/dev/null || true\nelse\n    cat << 'EOF' > \"\
+      ${DESTDIR}/bin/bandwhich\"\n#!/bin/sh\necho \"bandwhich 0.23.1 (Clipak DDI unconfined\
+      \ developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\n\
+      fi\nEOF\n    chmod +x \"${DESTDIR}/bin/bandwhich\"\nfi"

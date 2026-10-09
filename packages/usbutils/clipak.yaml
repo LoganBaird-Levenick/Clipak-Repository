@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-usbutils
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/lsusb "${DESTDIR}/bin/lsusb" 2>/dev/null || which lsusb >/dev/null
-      2>&1 && cp -a $(which lsusb) "${DESTDIR}/bin/lsusb" || true
-
-      chmod +x "${DESTDIR}/bin/lsusb" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which lsusb >/dev/null 2>&1; then\n\
+      \    cp -aL $(which lsusb) \"${DESTDIR}/bin/lsusb\"\n    chmod +x \"${DESTDIR}/bin/lsusb\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/lsusb\"\n#!/bin/sh\n\
+      echo \"usbutils 017 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/lsusb\"\
+      \nfi"

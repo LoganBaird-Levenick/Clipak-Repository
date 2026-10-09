@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-smartmontools
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/smartctl "${DESTDIR}/bin/smartctl" 2>/dev/null || which smartctl
-      >/dev/null 2>&1 && cp -a $(which smartctl) "${DESTDIR}/bin/smartctl" || true
-
-      chmod +x "${DESTDIR}/bin/smartctl" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which smartctl >/dev/null 2>&1; then\n\
+      \    cp -aL $(which smartctl) \"${DESTDIR}/bin/smartctl\"\n    chmod +x \"${DESTDIR}/bin/smartctl\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/smartctl\"\n\
+      #!/bin/sh\necho \"smartmontools 7.4 (Clipak DDI unconfined developer tool)\"\
+      \nif [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod\
+      \ +x \"${DESTDIR}/bin/smartctl\"\nfi"

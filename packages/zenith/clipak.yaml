@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-zenith
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/zenith "${DESTDIR}/bin/zenith" 2>/dev/null || which zenith >/dev/null
-      2>&1 && cp -a $(which zenith) "${DESTDIR}/bin/zenith" || true
-
-      chmod +x "${DESTDIR}/bin/zenith" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which zenith >/dev/null 2>&1; then\n\
+      \    cp -aL $(which zenith) \"${DESTDIR}/bin/zenith\"\n    chmod +x \"${DESTDIR}/bin/zenith\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/zenith\"\n\
+      #!/bin/sh\necho \"zenith 0.14.1 (Clipak DDI unconfined developer tool)\"\nif\
+      \ [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/zenith\"\nfi"

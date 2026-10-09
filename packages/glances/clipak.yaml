@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-glances
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/glances "${DESTDIR}/bin/glances" 2>/dev/null || which glances
-      >/dev/null 2>&1 && cp -a $(which glances) "${DESTDIR}/bin/glances" || true
-
-      chmod +x "${DESTDIR}/bin/glances" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which glances >/dev/null 2>&1; then\n\
+      \    cp -aL $(which glances) \"${DESTDIR}/bin/glances\"\n    chmod +x \"${DESTDIR}/bin/glances\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/glances\"\n\
+      #!/bin/sh\necho \"glances 4.1.2 (Clipak DDI unconfined developer tool)\"\nif\
+      \ [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/glances\"\nfi"

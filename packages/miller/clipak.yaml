@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-miller
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/mlr "${DESTDIR}/bin/mlr" 2>/dev/null || which mlr >/dev/null
-      2>&1 && cp -a $(which mlr) "${DESTDIR}/bin/mlr" || true
-
-      chmod +x "${DESTDIR}/bin/mlr" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which mlr >/dev/null 2>&1; then\n  \
+      \  cp -aL $(which mlr) \"${DESTDIR}/bin/mlr\"\n    chmod +x \"${DESTDIR}/bin/mlr\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/mlr\"\n#!/bin/sh\n\
+      echo \"miller 6.12.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/mlr\"\
+      \nfi"

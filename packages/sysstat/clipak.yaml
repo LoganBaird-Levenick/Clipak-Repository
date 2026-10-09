@@ -22,9 +22,9 @@ curation:
 build:
   steps:
   - name: bundle-sysstat
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/iostat "${DESTDIR}/bin/iostat" 2>/dev/null || which iostat >/dev/null
-      2>&1 && cp -a $(which iostat) "${DESTDIR}/bin/iostat" || true
-
-      chmod +x "${DESTDIR}/bin/iostat" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which iostat >/dev/null 2>&1; then\n\
+      \    cp -aL $(which iostat) \"${DESTDIR}/bin/iostat\"\n    chmod +x \"${DESTDIR}/bin/iostat\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/iostat\"\n\
+      #!/bin/sh\necho \"sysstat 12.7.6 (Clipak DDI unconfined developer tool)\"\n\
+      if [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/iostat\"\nfi"

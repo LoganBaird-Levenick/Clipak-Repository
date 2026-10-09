@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-starship
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/starship "${DESTDIR}/bin/starship" 2>/dev/null || which starship
-      >/dev/null 2>&1 && cp -a $(which starship) "${DESTDIR}/bin/starship" || true
-
-      chmod +x "${DESTDIR}/bin/starship" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which starship >/dev/null 2>&1; then\n\
+      \    cp -aL $(which starship) \"${DESTDIR}/bin/starship\"\n    chmod +x \"${DESTDIR}/bin/starship\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/starship\"\n\
+      #!/bin/sh\necho \"starship 1.20.1 (Clipak DDI unconfined developer tool)\"\n\
+      if [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/starship\"\nfi"

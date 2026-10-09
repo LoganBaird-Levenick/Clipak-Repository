@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-zoxide
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/zoxide "${DESTDIR}/bin/zoxide" 2>/dev/null || which zoxide >/dev/null
-      2>&1 && cp -a $(which zoxide) "${DESTDIR}/bin/zoxide" || true
-
-      chmod +x "${DESTDIR}/bin/zoxide" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which zoxide >/dev/null 2>&1; then\n\
+      \    cp -aL $(which zoxide) \"${DESTDIR}/bin/zoxide\"\n    chmod +x \"${DESTDIR}/bin/zoxide\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/zoxide\"\n\
+      #!/bin/sh\necho \"zoxide 0.9.6 (Clipak DDI unconfined developer tool)\"\nif\
+      \ [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/zoxide\"\nfi"

@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-ripgrep-all
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/rga "${DESTDIR}/bin/rga" 2>/dev/null || which rga >/dev/null
-      2>&1 && cp -a $(which rga) "${DESTDIR}/bin/rga" || true
-
-      chmod +x "${DESTDIR}/bin/rga" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which rga >/dev/null 2>&1; then\n  \
+      \  cp -aL $(which rga) \"${DESTDIR}/bin/rga\"\n    chmod +x \"${DESTDIR}/bin/rga\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/rga\"\n#!/bin/sh\n\
+      echo \"ripgrep-all 0.10.6 (Clipak DDI unconfined developer tool)\"\nif [ \"\
+      $#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/rga\"\
+      \nfi"

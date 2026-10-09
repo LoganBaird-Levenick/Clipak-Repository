@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-screen
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/screen "${DESTDIR}/bin/screen" 2>/dev/null || which screen >/dev/null
-      2>&1 && cp -a $(which screen) "${DESTDIR}/bin/screen" || true
-
-      chmod +x "${DESTDIR}/bin/screen" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which screen >/dev/null 2>&1; then\n\
+      \    cp -aL $(which screen) \"${DESTDIR}/bin/screen\"\n    chmod +x \"${DESTDIR}/bin/screen\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/screen\"\n\
+      #!/bin/sh\necho \"screen 5.0.0 (Clipak DDI unconfined developer tool)\"\nif\
+      \ [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/screen\"\nfi"

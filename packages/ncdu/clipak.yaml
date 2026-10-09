@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-ncdu
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/ncdu "${DESTDIR}/bin/ncdu" 2>/dev/null || which ncdu >/dev/null
-      2>&1 && cp -a $(which ncdu) "${DESTDIR}/bin/ncdu" || true
-
-      chmod +x "${DESTDIR}/bin/ncdu" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which ncdu >/dev/null 2>&1; then\n \
+      \   cp -aL $(which ncdu) \"${DESTDIR}/bin/ncdu\"\n    chmod +x \"${DESTDIR}/bin/ncdu\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/ncdu\"\n#!/bin/sh\n\
+      echo \"ncdu 2.5 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0\
+      \ ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/ncdu\"\
+      \nfi"

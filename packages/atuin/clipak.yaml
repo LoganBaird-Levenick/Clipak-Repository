@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-atuin
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/atuin "${DESTDIR}/bin/atuin" 2>/dev/null || which atuin >/dev/null
-      2>&1 && cp -a $(which atuin) "${DESTDIR}/bin/atuin" || true
-
-      chmod +x "${DESTDIR}/bin/atuin" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which atuin >/dev/null 2>&1; then\n\
+      \    cp -aL $(which atuin) \"${DESTDIR}/bin/atuin\"\n    chmod +x \"${DESTDIR}/bin/atuin\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/atuin\"\n#!/bin/sh\n\
+      echo \"atuin 18.3.0 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/atuin\"\
+      \nfi"

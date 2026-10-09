@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-onefetch
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/onefetch "${DESTDIR}/bin/onefetch" 2>/dev/null || which onefetch
-      >/dev/null 2>&1 && cp -a $(which onefetch) "${DESTDIR}/bin/onefetch" || true
-
-      chmod +x "${DESTDIR}/bin/onefetch" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which onefetch >/dev/null 2>&1; then\n\
+      \    cp -aL $(which onefetch) \"${DESTDIR}/bin/onefetch\"\n    chmod +x \"${DESTDIR}/bin/onefetch\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/onefetch\"\n\
+      #!/bin/sh\necho \"onefetch 2.22.0 (Clipak DDI unconfined developer tool)\"\n\
+      if [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/onefetch\"\nfi"

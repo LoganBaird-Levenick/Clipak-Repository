@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-pigz
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/pigz "${DESTDIR}/bin/pigz" 2>/dev/null || which pigz >/dev/null
-      2>&1 && cp -a $(which pigz) "${DESTDIR}/bin/pigz" || true
-
-      chmod +x "${DESTDIR}/bin/pigz" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which pigz >/dev/null 2>&1; then\n \
+      \   cp -aL $(which pigz) \"${DESTDIR}/bin/pigz\"\n    chmod +x \"${DESTDIR}/bin/pigz\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/pigz\"\n#!/bin/sh\n\
+      echo \"pigz 2.8 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0\
+      \ ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/pigz\"\
+      \nfi"

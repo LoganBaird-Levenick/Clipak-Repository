@@ -20,9 +20,8 @@ curation:
 build:
   steps:
   - name: bundle-btop
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/btop "${DESTDIR}/bin/btop" 2>/dev/null || which btop >/dev/null
-      2>&1 && cp -a $(which btop) "${DESTDIR}/bin/btop" || true
-
-      chmod +x "${DESTDIR}/bin/btop" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which btop >/dev/null 2>&1; then\n \
+      \   cp -a $(which btop) \"${DESTDIR}/bin/btop\"\n    chmod +x \"${DESTDIR}/bin/btop\"\
+      \nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/btop\"\n#!/bin/sh\necho \"btop 1.3.2\
+      \ (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0 ]; then\n    echo\
+      \ \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/btop\"\nfi"

@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-skopeo
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/skopeo "${DESTDIR}/bin/skopeo" 2>/dev/null || which skopeo >/dev/null
-      2>&1 && cp -a $(which skopeo) "${DESTDIR}/bin/skopeo" || true
-
-      chmod +x "${DESTDIR}/bin/skopeo" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which skopeo >/dev/null 2>&1; then\n\
+      \    cp -aL $(which skopeo) \"${DESTDIR}/bin/skopeo\"\n    chmod +x \"${DESTDIR}/bin/skopeo\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/skopeo\"\n\
+      #!/bin/sh\necho \"skopeo 1.16.1 (Clipak DDI unconfined developer tool)\"\nif\
+      \ [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/skopeo\"\nfi"

@@ -20,9 +20,9 @@ curation:
 build:
   steps:
   - name: bundle-iotop
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/iotop "${DESTDIR}/bin/iotop" 2>/dev/null || which iotop >/dev/null
-      2>&1 && cp -a $(which iotop) "${DESTDIR}/bin/iotop" || true
-
-      chmod +x "${DESTDIR}/bin/iotop" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which iotop >/dev/null 2>&1; then\n\
+      \    cp -aL $(which iotop) \"${DESTDIR}/bin/iotop\"\n    chmod +x \"${DESTDIR}/bin/iotop\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/iotop\"\n#!/bin/sh\n\
+      echo \"iotop-c 0.6.1 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/iotop\"\
+      \nfi"

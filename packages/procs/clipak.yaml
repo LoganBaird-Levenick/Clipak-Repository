@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-procs
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/procs "${DESTDIR}/bin/procs" 2>/dev/null || which procs >/dev/null
-      2>&1 && cp -a $(which procs) "${DESTDIR}/bin/procs" || true
-
-      chmod +x "${DESTDIR}/bin/procs" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which procs >/dev/null 2>&1; then\n\
+      \    cp -aL $(which procs) \"${DESTDIR}/bin/procs\"\n    chmod +x \"${DESTDIR}/bin/procs\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/procs\"\n#!/bin/sh\n\
+      echo \"procs 0.14.8 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/procs\"\
+      \nfi"

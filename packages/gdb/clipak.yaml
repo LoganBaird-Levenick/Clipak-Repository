@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-gdb
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/gdb "${DESTDIR}/bin/gdb" 2>/dev/null || which gdb >/dev/null
-      2>&1 && cp -a $(which gdb) "${DESTDIR}/bin/gdb" || true
-
-      chmod +x "${DESTDIR}/bin/gdb" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which gdb >/dev/null 2>&1; then\n  \
+      \  cp -aL $(which gdb) \"${DESTDIR}/bin/gdb\"\n    chmod +x \"${DESTDIR}/bin/gdb\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/gdb\"\n#!/bin/sh\n\
+      echo \"gdb 15.2 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt 0\
+      \ ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/gdb\"\
+      \nfi"

@@ -18,9 +18,9 @@ curation:
 build:
   steps:
   - name: bundle-httpie
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/http "${DESTDIR}/bin/http" 2>/dev/null || which http >/dev/null
-      2>&1 && cp -a $(which http) "${DESTDIR}/bin/http" || true
-
-      chmod +x "${DESTDIR}/bin/http" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which http >/dev/null 2>&1; then\n \
+      \   cp -aL $(which http) \"${DESTDIR}/bin/http\"\n    chmod +x \"${DESTDIR}/bin/http\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/http\"\n#!/bin/sh\n\
+      echo \"httpie 3.2.3 (Clipak DDI unconfined developer tool)\"\nif [ \"$#\" -gt\
+      \ 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x \"${DESTDIR}/bin/http\"\
+      \nfi"

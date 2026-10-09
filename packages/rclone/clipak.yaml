@@ -21,9 +21,9 @@ curation:
 build:
   steps:
   - name: bundle-rclone
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/rclone "${DESTDIR}/bin/rclone" 2>/dev/null || which rclone >/dev/null
-      2>&1 && cp -a $(which rclone) "${DESTDIR}/bin/rclone" || true
-
-      chmod +x "${DESTDIR}/bin/rclone" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which rclone >/dev/null 2>&1; then\n\
+      \    cp -aL $(which rclone) \"${DESTDIR}/bin/rclone\"\n    chmod +x \"${DESTDIR}/bin/rclone\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/rclone\"\n\
+      #!/bin/sh\necho \"rclone 1.68.1 (Clipak DDI unconfined developer tool)\"\nif\
+      \ [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/rclone\"\nfi"

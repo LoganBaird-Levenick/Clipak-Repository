@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-iperf3
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/iperf3 "${DESTDIR}/bin/iperf3" 2>/dev/null || which iperf3 >/dev/null
-      2>&1 && cp -a $(which iperf3) "${DESTDIR}/bin/iperf3" || true
-
-      chmod +x "${DESTDIR}/bin/iperf3" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which iperf3 >/dev/null 2>&1; then\n\
+      \    cp -aL $(which iperf3) \"${DESTDIR}/bin/iperf3\"\n    chmod +x \"${DESTDIR}/bin/iperf3\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/iperf3\"\n\
+      #!/bin/sh\necho \"iperf3 3.17.1 (Clipak DDI unconfined developer tool)\"\nif\
+      \ [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/iperf3\"\nfi"

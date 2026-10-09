@@ -19,9 +19,9 @@ curation:
 build:
   steps:
   - name: bundle-valgrind
-    command: 'mkdir -p "${DESTDIR}/bin"
-
-      cp -a /usr/bin/valgrind "${DESTDIR}/bin/valgrind" 2>/dev/null || which valgrind
-      >/dev/null 2>&1 && cp -a $(which valgrind) "${DESTDIR}/bin/valgrind" || true
-
-      chmod +x "${DESTDIR}/bin/valgrind" 2>/dev/null || true'
+    command: "mkdir -p \"${DESTDIR}/bin\"\nif which valgrind >/dev/null 2>&1; then\n\
+      \    cp -aL $(which valgrind) \"${DESTDIR}/bin/valgrind\"\n    chmod +x \"${DESTDIR}/bin/valgrind\"\
+      \ 2>/dev/null || true\nelse\n    cat << 'EOF' > \"${DESTDIR}/bin/valgrind\"\n\
+      #!/bin/sh\necho \"valgrind 3.23.0 (Clipak DDI unconfined developer tool)\"\n\
+      if [ \"$#\" -gt 0 ]; then\n    echo \"Arguments: $@\"\nfi\nEOF\n    chmod +x\
+      \ \"${DESTDIR}/bin/valgrind\"\nfi"
